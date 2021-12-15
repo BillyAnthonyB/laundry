@@ -74,13 +74,13 @@
 
 {{-- Cari paket yang sesuai dan membership --}}
 <section id = "paketDanMember">
+    <img src = "laundryResource/iron.png">
     <div id = "iconPaket">
-        <img src = "laundryResource/money.png">
         <div id="descIconPaket">Cari paket yang sesuai untukmu!</div>
         <div id = 'button'> <a>Cek Paket</a> </div>
     </div>
+    <img src = "laundryResource/12.png">
     <div id = "iconMember">
-        <img src = "laundryResource/money.png">
         <div id="descIconMember">Jadi Member dapat diskon, loh!</div>
         <div id = 'button'> <a>Gabung Sekarang</a> </div>
     </div>

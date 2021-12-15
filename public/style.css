@@ -320,6 +320,22 @@ div.descWhy {
 }
 /* Diatas footer. button paket dan membership */
 
+#paketDanMember{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+#paketDanMember img{
+    width: 200px;
+}
+#iconMember, #iconPaket{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
 
 /* FAQ FAQ FAQ FAQ FAQ ======================================================================================== */
 .accordion{
@@ -328,8 +344,16 @@ div.descWhy {
     padding-right: 25vw;
 }
 
+.judulku h2{
+    font-weight: bolder;
+    padding-top: 10vh;
+    width: 100%;
+    text-align: center;
+}
 
-
+.accordion-button{
+    font-weight: bold;
+}
 
 
 
