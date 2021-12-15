@@ -1,0 +1,623 @@
+*{
+    margin : 0;
+    padding : 0;
+    font-family: Nunito;
+}
+
+/* NAVBARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
+/* styling navbar */
+#sectionNavbar{
+    height: 15vh;
+    /* background-color: pink; */
+    z-index: -1;
+    /* position: absolute;
+    right: 0; */
+}
+.logo{
+    margin-left: 4px;
+    size: 200px;
+}
+.navbar{
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .menu li{
+    position: relative;
+    left: 45vw;
+    list-style: none;
+    display: inline-block;
+    /* float: left; */
+}
+.navbar .menu li a{
+    display: block;
+    color :#222222;
+    opacity: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar .menu li a:hover{
+    color:  #18a4fc;
+    opacity: 100%;
+}
+.navbar.sticky .menu li a:hover{
+    color :#70828d;
+    transition: all 0.3s ease;
+    opacity: 50%;
+}
+/*MASUK DAFTAR di navbar*/
+section#sectionNavbar .navbar #buttonMasuk a{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 2vh;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+}
+section#sectionNavbar .navbar #buttonDaftar a{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 2vh;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+    margin-left: 2px;
+}
+/* USER DROPDOWNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN */
+.itemdropdown{
+    position: fixed;
+    top: 20px;
+    right: 30px
+}
+.itemdropdown .profile{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.itemdropdown .profile img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.itemdropdown .menu-profile{
+    position: absolute;
+    top: 80px;
+    right: -10px;
+    padding: 10px 20px;
+    background: whitesmoke;
+    width: 200px;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1) ;
+    border-radius: 15px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+.itemdropdown .menu-profile.active{
+    top: 80px;
+    visibility: visible;
+    opacity: 1;
+}
+.itemdropdown .menu-profile::before{
+    content:'';
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background: whitesmoke;
+    transform: rotate(45deg);
+}
+.itemdropdown .menu-profile h3{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight:500;
+    font-size: 20px;
+    color: #555;
+    line-height: 1.5em;
+    font-weight: bold;
+}
+.itemdropdown .menu-profile h3 span{
+    font-size: 14px;
+    color: #cecece;
+    font-weight: 400;
+}
+.itemdropdown .menu-profile ul li{
+    list-style: none;
+    padding: 10px 0;
+    /* border-top: 1px solid rgba(2px,0,0,0.05); */
+    direction: flex;
+    align-items: center;
+    justify-content: center;
+}
+.itemdropdown .menu-profile ul li img{
+    max-width: 25px;
+    margin-left: -20px;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+.itemdropdown .menu-profile ul li:hover img{
+    opacity: 1;
+}
+.itemdropdown .menu-profile ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.5s;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.itemdropdown .menu-profile ul li:hover a{
+    color: #18a4fc;
+}
+/* CONTENTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT */
+/* isi webpage */
+#webContent{
+    height: 50vh;
+    /* background-color: gray; */
+    width: 100%;
+}
+/* FOOTERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
+/* styling footer */
+#sectionFooter{
+    height: 20vh;
+    background-color: gold;
+    width: 100%;
+    margin-top: 50vh;
+}
+footer a{
+    display: block;
+    color :#222222;
+    opacity: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    transform: translate(0,100%);
+}
+footer p{
+    color: Black;
+    text-decoration: none;
+    padding-left: 35px;
+    transform: translate(0,-110%);
+}
+footer p:hover{
+    text-decoration: none;
+}
+/* HOMEEEEEEEEEEEEEEEEEEEEEEEEEE HOME HOME HOME EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
+/* gambar di atas */
+section#homeLanding img{
+    width: 50%;
+    float: right;
+    padding-right: 100px;
+}
+section#homeLanding h1{
+    font-weight: bold;
+    width: 50%;
+    font-size: 54px;
+    float: left;
+    padding-top: 5vh;
+    padding-left: 110px;
+}
+section#homeLanding p{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-left: 110px;
+}
+/* button */
+section #homeLanding #button{
+    padding-left: 111px;
+}
+section #homeLanding #button a{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+}
+section #homeLanding #button a:hover{
+    color: #18a4fc;
+    background: none;
+}
+/* Gimana sih cara laundry disini? */
+section#howTo h6{
+    color: #222222;
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+    padding-top: 100px;
+}
+div.gallery {
+    margin: 2px;
+    float: left;
+    width: 14%;
+    color: #222222;
+    margin-left: 4.5%
+}
+div.title {
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bolder;
+}
+div.desc {
+    text-align: center;
+    font-size: 18px;
+}
+section#howTo #button a{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+    margin-left: 34.5vw;
+}
+section#howTo #button a:hover{
+    color: #18a4fc;
+    background: none;
+}
+/* kenapa laundry disini? */
+section#Why h6{
+    color: #222222;
+    font-family: Nunito;
+    font-weight: Bold;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+    padding-top: 100px;
+}
+div.icon {
+    padding-top: 50px;
+    float: left;
+    width: 25%;
+    margin-left: -18px;
+}
+div.descWhy {
+    padding-top: 15vh;
+    padding-left: 85px;
+    text-align: center;
+    font-size: 18px;
+}
+/* Diatas footer. button paket dan membership */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE =============================================================================================== */
+/* RESPONSIVE Resolusi Full High Devinition (FHD)============================================================ */
+@media(max-width: 1920px){
+    .navbar .menu li{
+        left: 35vw;
+    }
+    .navbar .menu li a{
+        display: block;
+        color :#222222;
+        opacity: 50%;
+        font-size: 35px;
+        font-weight: 500;
+        margin-left: 20px;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    section#sectionNavbar .navbar #buttonMasuk a{
+        display: inline-block;
+        background: #18a4fc;
+        color: #fff;
+        font-weight: bold;
+        font-size: 35px;
+        padding: 5px 2vh;
+        border-radius: 6px;
+        border: 2px solid #18a4fc;
+        transition: all 0.3s ease;
+    }
+    section#sectionNavbar .navbar #buttonDaftar a{
+        display: inline-block;
+        background: #18a4fc;
+        color: #fff;
+        font-weight: bold;
+        font-size: 25px;
+        padding: 5px 2vh;
+        border-radius: 6px;
+        border: 2px solid #18a4fc;
+        transition: all 0.3s ease;
+        margin-left: 2px;
+    }
+}
+/* RESPONSIVE Resolusi 4K==================================================================================== */
+@media(max-width: 2560px){
+    .navbar .max-width .logo{
+        image-resolution: 200px;
+    }
+    .navbar .menu li{
+        left: 45vw;
+    }
+    .navbar .menu li a{
+        display: block;
+        color :#222222;
+        opacity: 50%;
+        font-size: 40px;
+        font-weight: 500;
+        margin-left: 25px;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    section#sectionNavbar .navbar #buttonMasuk a{
+        display: inline-block;
+        background: #18a4fc;
+        color: #fff;
+        font-weight: bold;
+        font-size: 40px;
+        padding: 5px 2vh;
+        border-radius: 6px;
+        border: 2px solid #18a4fc;
+        transition: all 0.3s ease;
+    }
+    section#sectionNavbar .navbar #buttonDaftar a{
+        display: inline-block;
+        background: #18a4fc;
+        color: #fff;
+        font-weight: bold;
+        font-size: 40px;
+        padding: 5px 2vh;
+        border-radius: 6px;
+        border: 2px solid #18a4fc;
+        transition: all 0.3s ease;
+        margin-left: 2px;
+    }
+}
+@media(max-width: 1245px){
+    .navbar .menu li{
+        left: 35vw;
+    }
+    .navbar .menu li a{
+        display: block;
+        color :#222222;
+        opacity: 50%;
+        font-size: 18px;
+        font-weight: 500;
+        margin-left: 25px;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+
