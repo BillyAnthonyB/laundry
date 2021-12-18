@@ -366,34 +366,165 @@ div.descWhy {
     padding-top: 5vh;
     padding-left: 2vw;
 }
-#PaketLaundry #Paket{
+#PaketLaundry #Barisan1{
     display: flex;
 }
-#PaketLaundry #Paket .Foto1 img{
+#PaketLaundry #Barisan1 #Paket1{
+    display: flex;
+}
+#PaketLaundry #Barisan1 #Paket1 .Foto1 img{
     padding-top: 5vh;
     size: 40px;
 }
-#PaketLaundry #Paket #PaketKomplit h2{
+#PaketLaundry #Barisan1 #Paket1 #PaketKomplit h2{
     padding-top: 5vh;
     padding-left: 2vw;
     font-family: Nunito;
     font-size: 25px;
     font-weight: Bold;
 }
-#PaketLaundry #Paket #PaketKomplit h3{
+#PaketLaundry #Barisan1 #Paket1 #PaketKomplit h3{
     padding-left: 2vw;
     font-family: Nunito;
     font-size: 20px;
 }
-#PaketLaundry #Paket #PaketKomplit #harga{
+#PaketLaundry #Barisan1 #Paket1 #PaketKomplit #harga{
     display: flex;
 }
-#PaketLaundry #Paket #PaketKomplit #harga h4{
+#PaketLaundry #Barisan1 #Paket1 #PaketKomplit #harga h4{
     padding-left: 2vw;
     padding-top: 5vh;
     font-family: Nunito;
     font-size: 20px;
 }
-#PaketLaundry #Paket #PaketKomplit #harga {
-
+#PaketLaundry #Barisan1 #Paket1 #PaketKomplit #harga #button{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 2vh;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+}
+#PaketLaundry #Barisan1 #Paket2{
+    display: flex;
+}
+#PaketLaundry #Barisan1 #Paket2 .Foto2 img{
+    padding-top: 5vh;
+    size: 40px;
+}
+#PaketLaundry #Barisan1 #Paket2 #PaketSepatu h2{
+    padding-top: 5vh;
+    padding-left: 2vw;
+    font-family: Nunito;
+    font-size: 25px;
+    font-weight: Bold;
+}
+#PaketLaundry #Barisan1 #Paket2 #PaketSepatu h3{
+    padding-left: 2vw;
+    font-family: Nunito;
+    font-size: 20px;
+}
+#PaketLaundry #Barisan1 #Paket2 #PaketSepatu #harga{
+    display: flex;
+}
+#PaketLaundry #Barisan1 #Paket2 #PaketSepatu #harga h4{
+    padding-left: 2vw;
+    padding-top: 5vh;
+    font-family: Nunito;
+    font-size: 20px;
+}
+#PaketLaundry #Barisan1 #Paket2 #PaketSepatu #harga #button{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 2vh;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+}
+#PaketLaundry #Barisan2{
+    display: flex;
+}
+#PaketLaundry #Barisan2 #Paket3{
+    display: flex;
+}
+#PaketLaundry #Barisan2 #Paket3 .Foto3 img{
+    padding-top: 5vh;
+    size: 40px;
+}
+#PaketLaundry #Barisan2 #Paket3 #PaketBed h2{
+    padding-top: 5vh;
+    padding-left: 2vw;
+    font-family: Nunito;
+    font-size: 25px;
+    font-weight: Bold;
+}
+#PaketLaundry #Barisan2 #Paket3 #PaketBed h3{
+    padding-left: 2vw;
+    font-family: Nunito;
+    font-size: 20px;
+}
+#PaketLaundry #Barisan2 #Paket3 #PaketBed #harga{
+    display: flex;
+}
+#PaketLaundry #Barisan2 #Paket3 #PaketBed #harga h4{
+    padding-left: 2vw;
+    padding-top: 5vh;
+    font-family: Nunito;
+    font-size: 20px;
+}
+#PaketLaundry #Barisan2 #Paket3 #PaketBed #harga #button{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 2vh;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+}
+#PaketLaundry #Barisan2 #Paket4{
+    display: flex;
+}
+#PaketLaundry #Barisan2 #Paket4 .Foto4 img{
+    padding-top: 5vh;
+    size: 40px;
+}
+#PaketLaundry #Barisan2 #Paket4 #PaketFormal h2{
+    padding-top: 5vh;
+    padding-left: 2vw;
+    font-family: Nunito;
+    font-size: 25px;
+    font-weight: Bold;
+}
+#PaketLaundry #Barisan2 #Paket4 #PaketFormal h3{
+    padding-left: 2vw;
+    font-family: Nunito;
+    font-size: 20px;
+}
+#PaketLaundry #Barisan2 #Paket4 #PaketFormal #harga{
+    display: flex;
+}
+#PaketLaundry #Barisan2 #Paket4 #PaketFormal #harga h4{
+    padding-left: 2vw;
+    padding-top: 5vh;
+    font-family: Nunito;
+    font-size: 20px;
+}
+#PaketLaundry #Barisan2 #Paket4 #PaketFormal #harga #button{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 2vh;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
 }
