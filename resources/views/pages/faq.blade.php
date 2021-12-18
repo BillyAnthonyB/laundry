@@ -13,8 +13,8 @@
 
 @section('content')
 <div class = "judulku">
-      <h2>Pertanyaan yang Sering Ditanyakan</h2>
-    </div>
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+</div>
     <div class="accordion" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id="panelsStayOpen-headingOne">
