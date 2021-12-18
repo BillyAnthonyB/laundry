@@ -19,7 +19,9 @@
         <p>Pengen ngerasain jadi sultan?<br> Sekarang cuci baju bisa sambil rebahan loh~<br>Yuk, ambil gadgetmu dan laundry sekarang!
     </div>
     <div id = 'button'>
-        <a>Laundry now!</a>
+        <div id = 'laundryNow'>
+            <a>Laundry now!</a>
+        </div>
     </div>
 <section>
 
@@ -47,7 +49,9 @@
         <div class="desc">Lakukan pembayaran, laundry akan segera kami proses!</div>
     </div>
     <div id = 'button'>
-        <a>Pesan sekarang</a>
+        <div id = 'pesanSekarang'>
+            <a>Pesan sekarang</a>
+        </div>
     </div>
 </section>
 
@@ -74,12 +78,12 @@
 
 {{-- Cari paket yang sesuai dan membership --}}
 <section id = "paketDanMember">
-    <img src = "laundryResource/iron.png">
+    <img id = "iron" src = "laundryResource/iron.png">
     <div id = "iconPaket">
-        <div id="descIconPaket">Cari paket yang sesuai untukmu!</div>
+        <div id="descIconPaket">Cari paket yang <br>sesuai untukmu!</div>
         <div id = 'button'> <a>Cek Paket</a> </div>
     </div>
-    <img src = "laundryResource/12.png">
+    <img id = "diskon" src = "laundryResource/12.png">
     <div id = "iconMember">
         <div id="descIconMember">Jadi Member dapat diskon, loh!</div>
         <div id = 'button'> <a>Gabung Sekarang</a> </div>

@@ -40,7 +40,9 @@
 
     {{-- footer --}}
     <section id = "sectionFooter">
-    <hr color="#18a4fc">
+    <br>
+    <br>
+    <hr>
     <footer>
         <a href="tentang-kami" class = "footer">Copyright <span>&copy;</span> 2021 Luxury Bubble: Laundry Service. All right reserved.</a><br>
         <a href="tentang-kami" class="footer">Customer Service</a>

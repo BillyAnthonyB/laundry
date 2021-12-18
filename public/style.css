@@ -185,10 +185,12 @@ section#sectionNavbar .navbar #buttonDaftar a{
 /* FOOTERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
 /* styling footer */
 #sectionFooter{
-    height: 20vh;
-    background-color: gold;
+    height: 33vh;
     width: 100%;
-    margin-top: 50vh;
+}
+#sectionFooter hr{
+    color: #18a4fc;
+    height: 2px;
 }
 footer a{
     display: block;
@@ -233,7 +235,7 @@ section#homeLanding p{
     margin-left: 110px;
 }
 /* button */
-section #homeLanding #button{
+section #homeLanding #button #laundryNow{
     padding-left: 111px;
 }
 section #homeLanding #button a{
@@ -261,13 +263,17 @@ section#howTo h6{
     opacity: 1;
     text-align: center;
     padding-top: 100px;
+    position: relative;
+
 }
 div.gallery {
-    margin: 2px;
+    /* margin: 2px; */
+    margin-left: 4%;
+    display: flex;
+    flex-direction: column;
     float: left;
-    width: 14%;
+    width: 15%;
     color: #222222;
-    margin-left: 4.5%
 }
 div.title {
     padding: 15px;
@@ -279,22 +285,11 @@ div.desc {
     text-align: center;
     font-size: 18px;
 }
-section#howTo #button a{
-    display: inline-block;
-    background: #18a4fc;
-    color: #fff;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px 30px;
-    margin-top: 20px;
-    border-radius: 6px;
-    border: 2px solid #18a4fc;
-    transition: all 0.3s ease;
-    margin-left: 34.5vw;
-}
-section#howTo #button a:hover{
-    color: #18a4fc;
-    background: none;
+section #howTo #button #pesanSekarang{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 /* kenapa laundry disini? */
 section#Why h6{
@@ -318,24 +313,35 @@ div.descWhy {
     text-align: center;
     font-size: 18px;
 }
-/* Diatas footer. button paket dan membership */
 
+/* Diatas footer. button paket dan membership */
 #paketDanMember{
+    padding-top: 100px;
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: space-around;
+    padding-left: 50px;
 }
-#paketDanMember img{
-    width: 200px;
+#diskon{
+    height: 108px;
+    width: 290px;
+    top: 70px;
+    position: relative;
+}
+#iron{
+    width: 287px;
+    height: 265px;
 }
 #iconMember, #iconPaket{
     display: flex;
     flex-direction: column;
     width: 100%;
+    justify-content: space-evenly;
+    padding-left: 0px;
+    font-weight: bold;
+    font-size: 32px;
 }
-
-
-
 
 /* FAQ FAQ FAQ FAQ FAQ ======================================================================================== */
 .accordion{
@@ -355,300 +361,39 @@ div.descWhy {
     font-weight: bold;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* RESPONSIVE =============================================================================================== */
-/* RESPONSIVE Resolusi Full High Devinition (FHD)============================================================ */
-@media(max-width: 1920px){
-    .navbar .menu li{
-        left: 35vw;
-    }
-    .navbar .menu li a{
-        display: block;
-        color :#222222;
-        opacity: 50%;
-        font-size: 35px;
-        font-weight: 500;
-        margin-left: 20px;
-        transition: color 0.3s ease;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    section#sectionNavbar .navbar #buttonMasuk a{
-        display: inline-block;
-        background: #18a4fc;
-        color: #fff;
-        font-weight: bold;
-        font-size: 35px;
-        padding: 5px 2vh;
-        border-radius: 6px;
-        border: 2px solid #18a4fc;
-        transition: all 0.3s ease;
-    }
-    section#sectionNavbar .navbar #buttonDaftar a{
-        display: inline-block;
-        background: #18a4fc;
-        color: #fff;
-        font-weight: bold;
-        font-size: 25px;
-        padding: 5px 2vh;
-        border-radius: 6px;
-        border: 2px solid #18a4fc;
-        transition: all 0.3s ease;
-        margin-left: 2px;
-    }
+/* Page Paket =======================================================================================================================*/
+#PaketLaundry #Paragraft{
+    padding-top: 5vh;
+    padding-left: 2vw;
 }
-/* RESPONSIVE Resolusi 4K==================================================================================== */
-@media(max-width: 2560px){
-    .navbar .max-width .logo{
-        image-resolution: 200px;
-    }
-    .navbar .menu li{
-        left: 45vw;
-    }
-    .navbar .menu li a{
-        display: block;
-        color :#222222;
-        opacity: 50%;
-        font-size: 40px;
-        font-weight: 500;
-        margin-left: 25px;
-        transition: color 0.3s ease;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    section#sectionNavbar .navbar #buttonMasuk a{
-        display: inline-block;
-        background: #18a4fc;
-        color: #fff;
-        font-weight: bold;
-        font-size: 40px;
-        padding: 5px 2vh;
-        border-radius: 6px;
-        border: 2px solid #18a4fc;
-        transition: all 0.3s ease;
-    }
-    section#sectionNavbar .navbar #buttonDaftar a{
-        display: inline-block;
-        background: #18a4fc;
-        color: #fff;
-        font-weight: bold;
-        font-size: 40px;
-        padding: 5px 2vh;
-        border-radius: 6px;
-        border: 2px solid #18a4fc;
-        transition: all 0.3s ease;
-        margin-left: 2px;
-    }
+#PaketLaundry #Paket{
+    display: flex;
 }
-@media(max-width: 1245px){
-    .navbar .menu li{
-        left: 35vw;
-    }
-    .navbar .menu li a{
-        display: block;
-        color :#222222;
-        opacity: 50%;
-        font-size: 18px;
-        font-weight: 500;
-        margin-left: 25px;
-        transition: color 0.3s ease;
-        text-decoration: none;
-        font-weight: bold;
-    }
+#PaketLaundry #Paket .Foto1 img{
+    padding-top: 5vh;
+    size: 40px;
 }
+#PaketLaundry #Paket #PaketKomplit h2{
+    padding-top: 5vh;
+    padding-left: 2vw;
+    font-family: Nunito;
+    font-size: 25px;
+    font-weight: Bold;
+}
+#PaketLaundry #Paket #PaketKomplit h3{
+    padding-left: 2vw;
+    font-family: Nunito;
+    font-size: 20px;
+}
+#PaketLaundry #Paket #PaketKomplit #harga{
+    display: flex;
+}
+#PaketLaundry #Paket #PaketKomplit #harga h4{
+    padding-left: 2vw;
+    padding-top: 5vh;
+    font-family: Nunito;
+    font-size: 20px;
+}
+#PaketLaundry #Paket #PaketKomplit #harga {
 
-
+}

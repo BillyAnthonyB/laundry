@@ -9,7 +9,11 @@
 <script src="app.js"></script>
 
 @section('content')
-<section class = "memberCard">
-    <img src = "laundryResource/Platinum.png" width="25%">
+<section id = "members">
+    <div id = "container">
+        <div id = platinumCard>
+            <img src = "laundryResource/Platinum.png" width="25%">
+        </div>
+    </div>
 </section>
 @endsection
