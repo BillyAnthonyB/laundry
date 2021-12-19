@@ -529,7 +529,7 @@ div.descWhy {
     transition: all 0.3s ease;
 }
 
-/*PAGE TENTANG KAMIIIII*/
+/*PAGE TENTANG KAMI =======================================================================================*/
 
 .judul-tentangkami {
     padding-left: 3vw;
@@ -563,4 +563,75 @@ div.descWhy {
 
 .havemore a{
     padding-left: 4vw;
+}
+
+
+/* MEMBERSHIP =============================================================================================== */
+/* platinum card animation on hover */
+#container{
+    width: 400px;
+    height: 240px;
+    background-color: rebeccapurple;
+}
+#card{
+    --x-pos:0;
+    --y-pos:0;
+    transition: 1s;
+}
+#card:hover{
+    --x-pos: 0;
+    --y-angle: calc(var(--x-pos) * 7deg);
+
+    --y-pos: 0;
+    --x-angle: calc(var(--y-pos) * 7deg);
+
+    transform:
+        perspective(200px)
+        rotateX(var(--x-angle))
+        rotateY(var(--y-angle));
+    transition: 0.1s;
+}
+/* silver card animation on hover */
+#container2{
+    width: 400px;
+    height: 240px;
+    background-color: rosybrown;
+}
+#card2{
+    --x-pos2:0;
+    --y-pos2:0;
+    transition: 1s;
+}
+#card2:hover{
+    --x-pos2: 0;
+    --y-angle2: calc(var(--x-pos2) * 7deg);
+
+    --y-pos2: 0;
+    --x-angle2: calc(var(--y-pos2) * 7deg);
+
+    transform:
+        perspective(200px)
+        rotateX(var(--x-angle2))
+        rotateY(var(--y-angle2));
+    transition: 0.1s;
+}
+/* atur lokasi dan text*/
+#membership{
+    display: flex;
+    flex-direction: row;
+    margin-left: 14vw;
+}
+#platinumDesc{
+    width: 45%;
+}
+#silverDesc{
+    width: 45%;
+}
+#membership h6{
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 4vh;
+}
+#membership p{
+    font-size: 16px;
 }

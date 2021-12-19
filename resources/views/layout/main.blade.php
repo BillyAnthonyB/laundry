@@ -49,7 +49,5 @@
         <a href="faq" class="footer">FAQ</a>
     </footer>
     </section>
-
-
 </body>
 </html>

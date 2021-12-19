@@ -6,14 +6,34 @@
 
 <link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="app.js"></script>
 
 @section('content')
-<section id = "members">
-    <div id = "container">
-        <div id = platinumCard>
-            <img src = "laundryResource/Platinum.png" width="25%">
+<section id = "membership">
+    <div id = "platinum">
+        <div id = "container">
+            <div id = "card">
+                <img src = "laundryResource/Platinum.png" width="100%">
+            </div>
         </div>
+        <section id = "platinumDesc">
+            <h6>Platinum Membership</h6>
+            <p>Keuntungan bergabung dengan Platinum memberhip anda akan mendapat potongan sebesar 12% pada setiap pemesanan laundry</p>
+        </section>
+    </div>
+    <div id = "silver">
+        <div id = "container2">
+            <div id = "card2">
+                <img src = "laundryResource/Silver.png" width="100%">
+            </div>
+        </div>
+        <section id = "silverDesc">
+            <h6>Silver Membership</h6>
+            <p>Keuntungan bergabung dengan Silver memberhip anda akan mendapat potongan sebesar 8% pada setiap pemesanan laundry</p>
+        </section>
     </div>
 </section>
+
+
+<script src="app.js"></script>
+
 @endsection
