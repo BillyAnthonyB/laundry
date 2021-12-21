@@ -540,6 +540,8 @@ div.descWhy {
     padding-right: 50vw;
     text-align: justify;
     font-size: 16px;
+    margin-top: 3vh;
+    margin-bottom: -15vh;
 }
 
 .judul-tentangkami h1{
@@ -548,23 +550,60 @@ div.descWhy {
     padding-top: 2vw;
 }
 
+.Container{
+    height: 0px;
+}
+
+.Container .gambartentangkami{
+    width: 450px;
+    height: 350px;
+    margin-left: 60vw;
+    margin-top: -30vh;
+}
+
 .button-tentangkami-FAQ{
     display: inline-block;
     background: #18a4fc;
     color: #fff;
     font-weight: bold;
     font-size: 16px;
-    padding: 5px 15px;
+    padding: 8px 38px;
+    margin-top: 20px;
+    border-radius: 7px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+    margin-left: 7vw;
+    margin-top: 33vh;
+}
+
+.button-tentangkami-FAQ a:hover{
+    color: #18a4fc;
+    background: none;
+}
+
+.havemore h6{
+    padding-left: 7vw;
+    margin-top: 3vh;
+}
+
+.button-tentangkami-contactus{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 15px;
     margin-top: 20px;
     border-radius: 6px;
     border: 2px solid #18a4fc;
     transition: all 0.3s ease;
+    margin-left: 7vw;
 }
 
-.havemore a{
-    padding-left: 4vw;
+.button-tentangkami-contactus a:hover{
+    color: #18a4fc;
+    background: none;
 }
-
 
 /* MEMBERSHIP =============================================================================================== */
 /* platinum card animation on hover */

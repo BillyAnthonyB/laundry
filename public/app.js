@@ -15,8 +15,8 @@ const container2 = document.querySelector('#container2');
 const card2 = document.querySelector('#card2');
 const { width2, height2 } = container2.getBoundingClientRect();
 
-container2.addEventListener('mousemove', (event) => {
-    const { offsetX2, offsetY2 }  = event;
+container2.addEventListener('mousemove', (event2) => {
+    const { offsetX2, offsetY2 }  = event2;
 
     card2.style.setProperty('--x-pos2', (offsetX2 / width2) - 0.5);
     card2.style.setProperty('--y-pos2', (offsetY2 / height2) - 0.5);
