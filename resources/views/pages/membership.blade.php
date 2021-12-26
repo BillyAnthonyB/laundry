@@ -18,6 +18,10 @@
         <section id = "platinumDesc">
             <h6>Platinum Membership</h6>
             <p>Keuntungan bergabung dengan Platinum memberhip anda akan mendapat potongan sebesar 12% pada setiap pemesanan laundry</p>
+            <div id = "buttonDanHargaPlat">
+                <div id = 'button'> <a>Gabung Sekarang!</a> </div>
+                <div id= 'hargaPlat'>Rp.100.000</div>
+            </div>
         </section>
     </div>
     <div id = "silver">
@@ -29,11 +33,17 @@
         <section id = "silverDesc">
             <h6>Silver Membership</h6>
             <p>Keuntungan bergabung dengan Silver memberhip anda akan mendapat potongan sebesar 8% pada setiap pemesanan laundry</p>
+            <div id = "buttonDanHargaSilv">
+                <div id = 'button'> <a>Gabung Sekarang!</a> </div>
+                <div id = 'hargaSilv'>Rp.50.000</div>
+            </div>
         </section>
     </div>
 </section>
 
-
+{{-- <script src="app2.js"></script> --}}
 <script src="app.js"></script>
+
+
 
 @endsection

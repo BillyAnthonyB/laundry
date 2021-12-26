@@ -34,7 +34,7 @@ Route::get('/tentang-kami', function () {
     return view('pages/tentangkami');
 });
 
-Route::get('/udpate-profile', function () {
+Route::get('/update-profile', function () {
     return view('pages/updateprofile');
 });
 
@@ -50,8 +50,22 @@ Route::get('/payment-membership', function () {
     return view('pages/paymentmembership');
 });
 
-//SEMENTARA BUAT DEBUGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 Route::get('/login', function () {
+    return view('pages/login');
+});
+
+Route::get('/recovery', function () {
+    return view('pages/recovery');
+});
+
+Route::get('/signup', function () {
+    return view('pages/signup');
+});
+Route::get('/recoverysend', function () {
+    return view('pages/recoverysend');
+});
+//SEMENTARA BUAT DEBUG
+Route::get('/debug', function () {
     return view('layout/in');
 });
 

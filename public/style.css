@@ -178,7 +178,6 @@ section#sectionNavbar .navbar #buttonDaftar a{
 /* CONTENTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT */
 /* isi webpage */
 #webContent{
-    height: 50vh;
     /* background-color: gray; */
     width: 100%;
 }
@@ -343,6 +342,47 @@ div.descWhy {
     font-size: 32px;
 }
 
+#membership #button a{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+}
+
+#membership #button a:hover{
+    color: #18a4fc;
+    background: none;
+}
+
+#buttonDanHargaPlat{
+    display: flex;
+    flex-direction: row;
+}
+
+#buttonDanHargaSilv{
+    display: flex;
+    flex-direction: row;
+}
+
+#hargaPlat{
+    font-weight: bolder;
+    padding-top: 27px;
+    padding-left: 20px;
+}
+
+#hargaSilv{
+    font-weight: bolder;
+    padding-top: 27px;
+    padding-left: 20px;
+}
+
+
 /* FAQ FAQ FAQ FAQ FAQ ======================================================================================== */
 .accordion{
     padding-top: 5vh;
@@ -362,6 +402,7 @@ div.descWhy {
 }
 
 /* Page Paket =======================================================================================================================*/
+
 #PaketLaundry #Paragraft{
     padding-top: 5vh;
     padding-left: 2vw;
@@ -378,23 +419,23 @@ div.descWhy {
 }
 #PaketLaundry #Barisan1 #Paket1 #PaketKomplit h2{
     padding-top: 5vh;
-    padding-left: 2vw;
+    padding-left: 3.5vw;
     font-family: Nunito;
     font-size: 25px;
     font-weight: Bold;
 }
 #PaketLaundry #Barisan1 #Paket1 #PaketKomplit h3{
-    padding-left: 2vw;
+    padding-left: 3.5vw;
     font-family: Nunito;
     font-size: 20px;
 }
 #PaketLaundry #Barisan1 #Paket1 #PaketKomplit #harga{
     display: flex;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 13vh;
 }
 #PaketLaundry #Barisan1 #Paket1 #PaketKomplit #harga h4{
-    padding-left: 2vw;
+    padding-left: 3.5vw;
     padding-right:2vw;
     font-family: Nunito;
     font-size: 20px;
@@ -416,17 +457,16 @@ div.descWhy {
 }
 #PaketLaundry #Barisan1 #Paket2 .Foto2 img{
     padding-top: 5vh;
+    padding-left: 5vw;
     size: 40px;
 }
 #PaketLaundry #Barisan1 #Paket2 #PaketSepatu h2{
     padding-top: 5vh;
-    padding-left: 2vw;
     font-family: Nunito;
     font-size: 25px;
     font-weight: Bold;
 }
 #PaketLaundry #Barisan1 #Paket2 #PaketSepatu h3{
-    padding-left: 2vw;
     font-family: Nunito;
     font-size: 20px;
 }
@@ -436,7 +476,6 @@ div.descWhy {
     padding-top: 5vh;
 }
 #PaketLaundry #Barisan1 #Paket2 #PaketSepatu #harga h4{
-    padding-left: 2vw;
     padding-right:2vw;
     font-family: Nunito;
     font-size: 20px;
@@ -479,7 +518,7 @@ div.descWhy {
 #PaketLaundry #Barisan2 #Paket3 #PaketBed #harga{
     display: flex;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 13vh;
 }
 #PaketLaundry #Barisan2 #Paket3 #PaketBed #harga h4{
     padding-left: 2vw;
@@ -623,7 +662,6 @@ div.descWhy {
 #container{
     width: 400px;
     height: 240px;
-    background-color: rebeccapurple;
 }
 #card{
     --x-pos:0;
@@ -647,24 +685,23 @@ div.descWhy {
 #container2{
     width: 400px;
     height: 240px;
-    background-color: rosybrown;
 }
 #card2{
-    --x-pos2:0;
-    --y-pos2:0;
+    --x2-pos:0;
+    --y2-pos:0;
     transition: 1s;
 }
 #card2:hover{
-    --x-pos2: 0;
-    --y-angle2: calc(var(--x-pos2) * 7deg);
+    --x2-pos: 0;
+    --y2-angle: calc(var(--x2-pos) * 7deg);
 
-    --y-pos2: 0;
-    --x-angle2: calc(var(--y-pos2) * 7deg);
+    --y2-pos: 0;
+    --x2-angle: calc(var(--y2-pos) * 7deg);
 
     transform:
         perspective(200px)
-        rotateX(var(--x-angle2))
-        rotateY(var(--y-angle2));
+        rotateX(var(--x2-angle))
+        rotateY(var(--y2-angle));
     transition: 0.1s;
 }
 /* atur lokasi dan text*/
@@ -686,4 +723,54 @@ div.descWhy {
 }
 #membership p{
     font-size: 16px;
+}
+/* Login =============================================================================================== */
+#login{
+    padding-top: 150px;
+    display: flex;
+
+}
+#login #image{
+    width: 70px;
+    padding-left: 350px;
+}
+
+#login .form-group{
+    padding-left: 25vw;
+    margin-top: 4vh;
+}
+
+#login .btn{
+    margin-left: 25vw;
+    margin-top: 3vh;
+}
+
+/* Sign Up =============================================================================================== */
+#recovery{
+    padding-top: 150px;
+    display: flex;
+}
+#recovery #image{
+    width: 70px;
+    padding-left: 350px;
+}
+
+/* Recovery =============================================================================================== */
+#signup{
+    padding-top: 150px;
+    display: flex;
+}
+#signup #image{
+    width: 70px;
+    padding-left: 350px;
+}
+
+/* Recoverysend =============================================================================================== */
+#recoverysend{
+    padding-top: 150px;
+    display: flex;
+}
+#recoverysend #image{
+    width: 70px;
+    padding-left: 350px;
 }
