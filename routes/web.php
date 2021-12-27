@@ -63,7 +63,11 @@ Route::get('/signup', function () {
 });
 Route::get('/recoverysend', function () {
     return view('pages/recoverysend');
+
+});Route::get('/requestsend', function () {
+    return view('pages/requestsend');
 });
+
 //SEMENTARA BUAT DEBUG
 Route::get('/debug', function () {
     return view('layout/in');

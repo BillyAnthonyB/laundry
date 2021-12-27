@@ -25,8 +25,8 @@
         </section>
     </div>
     <div id = "silver">
-        <div id = "container2">
-            <div id = "card2">
+        <div id = "container">
+            <div id = "card">
                 <img src = "laundryResource/Silver.png" width="100%">
             </div>
         </div>
