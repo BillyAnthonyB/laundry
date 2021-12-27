@@ -24,6 +24,9 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Masuk</button>
+            <div class = "box-akun">
+                <h6>Apakah belum memiliki akun ? <a href="signup">Buat Akun</a><br><a href="recovery">Lupa Password</a></h6>
+            </div>
         </div>
     </form>
 </section>

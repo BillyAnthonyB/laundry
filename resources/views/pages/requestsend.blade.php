@@ -27,8 +27,8 @@
                 </div>
             </div>
         <h2>Kurir kami akan segera menjemput pesanan anda</h2>
-        <h2>Mohon lakukan pembayaran setelah pesanan anda ditimbang</h2>
-        <h2>untuk melanjutkan pesanan</h2>
+        <h3>Mohon lakukan pembayaran setelah pesanan anda ditimbang</h3>
+        <h4>untuk melanjutkan pesanan</h4>
     </div>
 </section>
 
