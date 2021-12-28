@@ -22,9 +22,12 @@ Route::get('/membership', function () {
     return view('pages/membership');
 });
 
-Route::get('/laundryku', function () {
-    return view('pages/laundryku');
-});
+// Route::get('/laundryku', function () {
+//     return view('pages/laundryku');
+// });
+
+Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_transaksi');
+
 
 Route::get('/faq', function () {
     return view('pages/faq');
@@ -34,12 +37,8 @@ Route::get('/tentang-kami', function () {
     return view('pages/tentangkami');
 });
 
-Route::get('/update-profile', function () {
+Route::get('/updateprofile', function () {
     return view('pages/updateprofile');
-});
-
-Route::get('/request-sent', function () {
-    return view('pages/requestsent');
 });
 
 Route::get('/payment', function () {
@@ -61,12 +60,18 @@ Route::get('/recovery', function () {
 Route::get('/signup', function () {
     return view('pages/signup');
 });
+
 Route::get('/recoverysend', function () {
     return view('pages/recoverysend');
+});
 
-});Route::get('/requestsend', function () {
+Route::get('/requestsend', function () {
     return view('pages/requestsend');
 });
+
+
+
+
 
 //SEMENTARA BUAT DEBUG
 Route::get('/debug', function () {

@@ -1004,5 +1004,194 @@ button, input, optgroup, select, textarea {
     position: absolute;
     top: 60%;
     left: 38%;
+}
+/* updateprofil =============================================================================================== */
+#profil {
+    display:flex;
+}
+#profil #button {
+    display:flex;
+}
+#profil h1{
+    margin-top: 20px;
+    margin-left: 50px;
+    font-family: Nunito;
+    font-weight: bold;
+}
+#profil #button #batal{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px 50px;
+    margin-top: 20px;
+    margin-left: 50px;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+}
+#profil #button #simpan{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px 50px;
+    margin-top: 20px;
+    margin-left: 50px;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+}
+#profil #memberupdate {
+    display: flex;
+}
+#profil #memberupdate h3{
+    margin-top: 20px;
+    margin-left: 50px;
+    font-weight: bold;
+    font-size: 17px;
+    margin-right: 20px;
 
+}
+#profil #memberupdate #perbarui{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px 30px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+}
+
+#profil .box-login{
+    margin-top: 5vh;
+    margin-left: 3vw;
+    margin-right: -15vw;
+}
+
+#profil .form-control{
+    padding: 0.5vh;
+    padding-right: 6vw;
+    border: 2px solid #18a4fc;
+    border-radius: 0.6rem;
+}
+
+#profil.col-form-label{
+    font-family: Nunito;
+    font-weight: bold;
+}
+button, input, optgroup, select, textarea {
+    font-family: Nunito;
+}
+
+#profil #imageupdateprofile img{
+    width: 60%;
+    margin-left: 400px;
+}
+/* pickup =============================================================================================== */
+#pickup{
+    padding-top: 120px;
+    display: flex;
+    height: 500px;
+}
+#pickup #paragraft h1{
+    padding-top: 80px;
+    padding-left: 80px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+#pickup #paragraft h2{
+    padding-left: 80px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#pickup #paragraft h2 li{
+    padding-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#pickup #paragraft2 #border img{
+    z-index: -1;
+    position: absolute;
+    width: 80%;
+    padding-left: 500px;
+}
+#pickup #paragraft2 #permintaan{
+    display: flex;
+    flex-direction: row;
+    margin-left: 550px;
+    margin-top: 65px;
+}
+#pickup#paragraft2 #permintaan h1{
+    padding-top: 10px;
+    padding-left: 200px;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    left: 60%;
+}
+
+#pickup #paragraft2 h2{
+    padding-left: 50px;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#pickup #paragraft2 h3{
+    padding-left: 50px;
+    font-size: 18px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+}
+#pickup #paragraft2 h4{
+    padding-left: 50px;
+    font-size: 18px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+}
+
+#pickup .box-login{
+    margin-top: 5vh;
+    margin-left: 3vw;
+    margin-right: -15vw;
+}
+
+#pickup .box-login-2{
+    margin-left: 3vw;
+    margin-right: -15vw;
+}
+
+#pickup .form-control{
+    padding: 0.5vh;
+    padding-right: 6vw;
+    border: 2px solid #18a4fc;
+    border-radius: 0.6rem;
+}
+
+#pickup.col-form-label{
+    font-family: Nunito;
+    font-weight: bold;
+}
+button, input, optgroup, select, textarea {
+    font-family: Nunito;
+}
+
+#pickup .form-control2{
+    padding: 0.5vh;
+    padding-right: 10vw;
+    border: 2px solid #18a4fc;
+    border-radius: 0.6rem;
+}
+
+#pickup #paragraft h1{
+    margin-top: -10vh;
+    margin-left: -2.2vw;
+    margin-bottom: -2vh;
 }
