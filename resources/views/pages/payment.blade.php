@@ -9,34 +9,38 @@
 <section id = "payment">
     <div id = "paymentbox1">
         <h1>Payment Page</h1>
-        <div id = "border">
-                    <img src = "laundryResource/border.png">
-                </div>
-            <div id = "permintaan">
-                <h1>Paket yang dipilih:</h1>
+        <div class = "kotak">
+            <div id = "paragraf">
+                <h4>Paket yang dipilih :</h4><br>
+                <h6>Bed - Komplit  Platinum - Berlaku seumur hidup</h6><br>
+                <h6>3 kg total</h6>
             </div>
-        <h2>Bed - Komplit</h2>
-        <h3>3 kg total </h3>
-    </div>
-        <h4>Pemesanan dan pembayaran</h4>
-        <h4>Pemesan: Budi - Jl. Merdeka no. 1</h4>
+        </div>
+        <div id = "paragraf2">
+            <h6>Pemesanan dan pembayaran</h6>
+            <h6>Pemesan: <b>Budi - Jl. Merdeka no. 1</b></h6><br>
+            <div id = "image">
+                <img src = "laundryResource/ovo.png">
+            </div>
+        </div>
     </div>
     <div id = "paymentbox2">
-    <div id = "border">
-                    <img src = "laundryResource/border.png">
-                </div>
-            <div id = "permintaan">
-                <h1>Ringkasan Belanja</h1>
-                <div id = "image">
-                    <img src = "laundryResource/Protect.png">
-                </div>
+        <div class = "kotak">
+            <div id = "paragraf1">
+                <h4>Ringkasan Belanja</h4><br>
+                <h6>Pesanan diterima dengan jenis 'Paket Komplit' dan 'Paket Bed'. <h6>
+                <h6>Lakukan pembayaran untuk melanjutkan pesanan</h6><br>
             </div>
-        <h2>Pesanan diterima dengan jenis</h2>
-        <h3>Lakukan pembayaran untuk melanjutkan pesanan</h3><br>
-        <h4>Total tagihan</h4>
-        <h5>Rp. 20.000</h5>
-        <div id = "button">
-           <div id = 'bayar'> <a>Bayar Sekarang</a> </div>
+            <div id = "paragraf2">
+                <h6>Total Tagihan</h6>
+                <h6 id = "paragraf3">Rp 20.000</h6><br>
+            </div>
+            <div id = "button">
+                <div id = "image">
+                    <img src = "laundryResource/Protect2.png">
+                </div>
+                <div id = 'bayar'> <a>  Bayar Sekarang</a> </div>
+            </div>
         </div>
     </div>
 </section>

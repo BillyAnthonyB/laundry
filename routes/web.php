@@ -69,9 +69,9 @@ Route::get('/requestsend', function () {
     return view('pages/requestsend');
 });
 
-
-
-
+Route::get('/admincheckorder', function () {
+    return view('pages/admincheckorder');
+});
 
 //SEMENTARA BUAT DEBUG
 Route::get('/debug', function () {

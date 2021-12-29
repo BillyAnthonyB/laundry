@@ -30,9 +30,14 @@
             <img src = "laundryResource/border.png">
         </div>
         <h1>Konfirmasi Pick-up Laundry</h1>
-        <h2>ketentuan</h2>
+        <h2>Ketentuan :</h2>
         <h3>Barang yang sudah di pick up tidak dapat dibatalkan</h3>
-
+        <div id = "button">
+            <div id = "image">
+                <img src = "laundryResource/Protect2.png">
+            </div>
+            <div id = 'ajukan'> <a>Ajukan Pickup</a> </div>
+        </div>
     </div>
 </section>
 
