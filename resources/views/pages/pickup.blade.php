@@ -26,18 +26,13 @@
         </div>
     </div>
     <div id = "paragraft2">
-                <div id = "border">
-                    <img src = "laundryResource/border.png">
-                </div>
-            <div id = "permintaan">
-                <h1>Permintaan Pick-up diterima</h1>
-                <div id = "image">
-                    <img src = "laundryResource/Protect.png">
-                </div>
-            </div>
-        <h2>Kurir kami akan segera menjemput pesanan anda</h2>
-        <h3>Mohon lakukan pembayaran setelah pesanan anda ditimbang</h3>
-        <h4>untuk melanjutkan pesanan</h4>
+        <div id = "border">
+            <img src = "laundryResource/border.png">
+        </div>
+        <h1>Konfirmasi Pick-up Laundry</h1>
+        <h2>ketentuan</h2>
+        <h3>Barang yang sudah di pick up tidak dapat dibatalkan</h3>
+
     </div>
 </section>
 

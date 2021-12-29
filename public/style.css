@@ -1121,6 +1121,7 @@ button, input, optgroup, select, textarea {
     z-index: -1;
     position: absolute;
     width: 80%;
+
     padding-left: 500px;
 }
 #pickup #paragraft2 #permintaan{
@@ -1129,36 +1130,29 @@ button, input, optgroup, select, textarea {
     margin-left: 550px;
     margin-top: 65px;
 }
-#pickup#paragraft2 #permintaan h1{
+#pickup#paragraft2 h1{
     padding-top: 10px;
-    padding-left: 200px;
+    padding-left: 100px;
     font-size: 24px;
     font-weight: bold;
     position: absolute;
-    top: 40%;
-    left: 60%;
+    top: 25%;
+    left: 25%;
 }
 
 #pickup #paragraft2 h2{
     padding-left: 50px;
     font-size: 18px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 53%;
+    left: 53%;
 }
 #pickup #paragraft2 h3{
     padding-left: 50px;
     font-size: 18px;
     position: absolute;
-    top: 55%;
-    left: 50%;
-}
-#pickup #paragraft2 h4{
-    padding-left: 50px;
-    font-size: 18px;
-    position: absolute;
-    top: 60%;
-    left: 50%;
+    top: 58%;
+    left: 53%;
 }
 
 #pickup .box-login{
