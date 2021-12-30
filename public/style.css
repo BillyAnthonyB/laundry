@@ -384,26 +384,47 @@ div.descWhy {
 
 
 /* FAQ FAQ FAQ FAQ FAQ ======================================================================================== */
-.accordion{
-    padding-top: 5vh;
-    padding-left: 25vw;
-    padding-right: 25vw;
+
+#faq{
+    display: flex;
+    flex-direction: column;
 }
 
-.judulku h2{
-    font-weight: bolder;
-    padding-top: 10vh;
-    width: 100%;
-    text-align: center;
+#faq .judulku{
+    margin-left: 32vw;
+    margin-right: 20vw;
+    margin-top: 3vh;
 }
 
-.accordion-button{
-    font-weight: bold;
+#faq .accordion{
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 5vh;
+    overflow: hidden;
 }
 
-.accordion-button:not(.collapsed) {
+#faq .accordion-item {
+    border: none;
+}
+
+#faq .accordion-button:not(.collapsed) {
+    color: black;
     background-color: white;
+    box-shadow: none;
 }
+
+#faq h2{
+    font-weight: bolder;
+}
+
+#faq h6{
+    font-weight: bolder;
+}
+
+#faq .accordion-button:focus{
+    box-shadow: none;
+}
+
 
 /* Page Paket =======================================================================================================================*/
 #PaketLaundry{
@@ -807,6 +828,7 @@ button, input, optgroup, select, textarea {
     color: black;
 }
 
+
 /* Recovery =============================================================================================== */
 #recovery{
     padding-top: 150px;
@@ -969,6 +991,8 @@ button, input, optgroup, select, textarea {
     border: 2px solid #18a4fc;
     transition: all 0.3s ease;
 }
+
+
 /* Requestsend =============================================================================================== */
 #requestsend{
     padding-top: 120px;
@@ -1572,15 +1596,13 @@ button, input, optgroup, select, textarea {
 }
 
 #admin .col-sm-10{
-    padding-right: 10vw;
+    padding-right: 3vw;
 }
 
 #admin .form-control{
     padding: 0.5vh;
-    padding-right: 0vw;
     border: 2px solid #18a4fc;
     border-radius: 0.4rem;
-    margin-right: 5vw;
     width: 300px;
 }
 
@@ -1591,11 +1613,26 @@ button, input, optgroup, select, textarea {
 
 #admin select{
     border: 2px solid #18a4fc;
-    border-radius: 5px;
+    border-radius: 0.4rem;
     font-family: nunito;
+    padding: 0.5vh;
+    width: 200px;
 }
 
 #admin #text{
     display: flex;
     flex-direction: row;
 }
+
+#admin .mb-3{
+    display: flex;
+    flex-direction: row;
+}
+
+#admin #kotak{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4vh;
+    margin-left: 3vw;
+}
+

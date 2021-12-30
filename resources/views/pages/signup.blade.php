@@ -18,15 +18,15 @@
                 </div>
             </div>
             <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Email</label>
+                <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >Email</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword" aria-describedby="emailHelp" placeholder="">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                 </div>
             </div>
             <div class="mb-3 row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">No. Hp</label>
+                <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >No. Hp</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword" aria-describedby="emailHelp" placeholder="">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
                 </div>
             </div>
             <div class="mb-3 row">
