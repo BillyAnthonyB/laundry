@@ -32,7 +32,7 @@
             </div>
             <div id = "paragraf2">
                 <h6>Total Tagihan</h6>
-                <h6>Rp 20.000</h6><br>
+                <h2>Rp 20.000</h2><br>
             </div>
             <div id = "button">
                 <div id = "image">

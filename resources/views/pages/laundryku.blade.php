@@ -28,12 +28,40 @@
         <button class="accordionL">
             <div id = "accordionJudul">
                 <h6>Paket {{$transaksi->PAKET}} - Berat {{ $transaksi->BERAT }} kg</h6>
-                <h6 id = "accordionHarga">Rp.{{ $transaksi->HARGA }}</h6>
-                {{-- dsni image --}}
+                <h6 id = "accordionHarga">
+                    <?php
+                        if ($transaksi->STATUS_CUCI == 1)
+                        {
+                        echo "Pesanan selesai";
+                        }
+                        else
+                        {
+                        echo "Rp.$transaksi->HARGA";
+                        }
+                        ?>
+                    </h6>
             </div>
         </button>
         <div class="panel">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div id = "statusL">
+                <p><br>Status: </p>
+                <p id = "statusLBold"><br>
+                    <?php
+                        if ($transaksi->STATUS_BAYAR == 1)
+                        {
+                        echo "&nbsp Pesanan sedang dicuci";
+                        }
+                        else
+                        {
+                        echo "&nbsp Lakukan pembayaran untuk melanjutkan pesanan";
+                        }
+                        ?>
+                </p>
+            </div>
+            <div id = "tanggalL">
+                <p><br>Tanggal Pemesanan: &nbsp</p>
+                <p id = "tanggalLBold"><br>{{$transaksi->TANGGAL}}</p>
+            </div>
         </div>
         <br>
 

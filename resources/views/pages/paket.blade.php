@@ -24,7 +24,7 @@
                 <h3>dengan estimasi 2-3 hari</h3>
                 <div id = 'Harga'>
                     <h4>Rp.5.000 / kg</h4>
-                    <div id = 'button'> <a>pesan</a> </div>
+                    <div id = 'button'> <a href="http://127.0.0.1:8000/pickup">Pesan</a> </div>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 <h3>terhitung 1 kilo</h3>
                 <div id = 'Harga'>
                     <h4>Rp.15.000 / kg</h4>
-                    <div id = 'button'> <a>pesan</a> </div>
+                    <div id = 'button'> <a href="http://127.0.0.1:8000/pickup">Pesan</a> </div>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@
                 <h3> dengan seri UltraEco</h3>
                 <div id = 'Harga'>
                     <h4>Rp.17.000 / kg</h4>
-                    <div id = 'button'> <a>pesan</a> </div>
+                    <div id = 'button'> <a href="http://127.0.0.1:8000/pickup">Pesan</a> </div>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
                 <h3> pengerjaan 2 - 3 hari</h3>
                 <div id = 'Harga'>
                     <h4>Rp.15.000 / pcs</h4>
-                    <div id = 'button'> <a>pesan</a> </div>
+                    <div id = 'button'> <a href="http://127.0.0.1:8000/pickup">Pesan</a> </div>
                 </div>
             </div>
         </div>
