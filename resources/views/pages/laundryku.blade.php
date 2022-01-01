@@ -47,13 +47,21 @@
                 <p><br>Status: </p>
                 <p id = "statusLBold"><br>
                     <?php
-                        if ($transaksi->STATUS_BAYAR == 1)
+                        if ($transaksi->STATUS_BAYAR == 0)
                         {
-                        echo "&nbsp Pesanan sedang dicuci";
+                        echo "&nbsp Lakukan pembayaran untuk melanjutkan pesanan";
                         }
                         else
                         {
-                        echo "&nbsp Lakukan pembayaran untuk melanjutkan pesanan";
+                            if($transaksi->STATUS_CUCI == 1)
+                            {
+                                echo "&nbsp Pesanan telah selesai";
+                            }
+                            else
+                            {
+                                echo "&nbsp Pesanan sedang diproses";
+                            }
+
                         }
                         ?>
                 </p>

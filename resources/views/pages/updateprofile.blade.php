@@ -32,7 +32,11 @@
             <h6>Laundry membershipKu</h6>
         </div>
         <div id = "imageupdateprofile">
-            <img src = "laundryResource/Silver.png">
+            <div id = "container">
+                <div id = "card">
+                    <img src = "laundryResource/Reguler.png">
+                </div>
+            </div>
         </div>
         <div id = "memberupdate">
             <h3>Perbarui Membership</h3>
@@ -40,5 +44,8 @@
         </div>
     </div>
 </div>
+
+<script src="app.js"></script>
+
 
 @endsection

@@ -1204,7 +1204,10 @@ button, input, optgroup, select, textarea {
 }
 
 #profil #imageupdateprofile img{
-    width: 80%;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 
 #profil #box-gambar{
@@ -1215,6 +1218,11 @@ button, input, optgroup, select, textarea {
 }
 
 #profil #box-gambar #textmembership h5{
+    font-family: Nunito;
+    font-weight: bold;
+}
+
+#profil #box-gambar #textmembership h6{
     font-family: Nunito;
     font-weight: bold;
 }
@@ -1427,7 +1435,6 @@ button, input, optgroup, select, textarea {
     flex-direction: row;
     justify-content: space-between;
     width: 61.5vw;
-    background-color: aqua;
 }
 
 #payment #paymentbox1 .kotak #paragraf h4 {
@@ -1448,6 +1455,15 @@ button, input, optgroup, select, textarea {
 
 #payment #paymentbox2 .kotak #paragraf2 h6 {
     font-weight: bolder;
+}
+
+#payment #paymentbox1 .kotak #paragraf #harga{
+    display: flex;
+}
+
+#payment #paymentbox2 #button a{
+    text-decoration: none;
+    color: white;
 }
 
 /* ini payment membership ============================================================================= */

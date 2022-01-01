@@ -17,5 +17,15 @@ class laundryController extends Controller
     {
         $semuaTransaksi = $this -> laundryModel -> get_transaksi();
         return view('pages/laundryku', ['semuaTransaksi' => $semuaTransaksi]);
+
+
     }
+
+    public function send_paket()
+    {
+        $semuaPaket = $this -> laundryModel -> get_paket();
+        return view('pages/paket', ['semuaPaket' => $semuaPaket]);
+    }
+
+
 }

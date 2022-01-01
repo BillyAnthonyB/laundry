@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::post('/', function () {
 return view('pages/home');
 });
 
-Route::get('/home', function () {
+Route::post('/home', function () {
     return view('pages/home');
 });
 
@@ -49,7 +49,7 @@ Route::get('/payment-membership', function () {
     return view('pages/paymentmembership');
 });
 
-Route::get('/login', function () {
+Route::post('/login', function () {
     return view('pages/login');
 });
 
@@ -57,7 +57,7 @@ Route::get('/recovery', function () {
     return view('pages/recovery');
 });
 
-Route::get('/signup', function () {
+Route::post('/signup', function () {
     return view('pages/signup');
 });
 

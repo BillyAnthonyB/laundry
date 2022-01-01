@@ -9,7 +9,18 @@ use Illuminate\Support\Facades\DB;
 class laundryModel extends Model
 {
     function get_transaksi() {
-        return DB::table('laundry_service.transaksi')->get();
+        // return DB::table('laundry_service.transaksi')->get();
+        $queryTransaksi = "SELECT * FROM laundry_service.transaksi";
+        $executeQueryTransaksi = DB::select($queryTransaksi);
+        return $executeQueryTransaksi;
     }
+
+    function get_paket() {
+        return DB::table('laundry_service.paket')->get();
+    }
+
+
+
+
 
 }

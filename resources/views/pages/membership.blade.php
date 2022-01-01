@@ -41,9 +41,4 @@
     </div>
 </section>
 
-{{-- <script src="app2.js"></script> --}}
-<script src="app.js"></script>
-
-
-
 @endsection
