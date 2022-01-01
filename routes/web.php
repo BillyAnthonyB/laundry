@@ -6,7 +6,7 @@ Route::post('/', function () {
 return view('pages/home');
 });
 
-Route::post('/home', function () {
+Route::GET('/home', function () {
     return view('pages/home');
 });
 
@@ -27,7 +27,6 @@ Route::get('/membership', function () {
 // });
 
 Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_transaksi');
-
 
 Route::get('/faq', function () {
     return view('pages/faq');
