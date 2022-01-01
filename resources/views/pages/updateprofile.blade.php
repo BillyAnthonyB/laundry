@@ -23,16 +23,21 @@
             </div>
         </div>
         <div id = "button">
-           <div id = 'batal'> <a>batal</a> </div>
-           <div id = 'simpan'> <a>simpan</a> </div>
+           <div id = 'batal'> <a>Batal</a> </div>
+           <div id = 'simpan'> <a>Simpan</a> </div>
+        </div>
+    </form>
+    <div id = "box-gambar">
+        <div id = "textmembership">
+            <h6>Laundry membershipKu</h6>
+        </div>
+        <div id = "imageupdateprofile">
+            <img src = "laundryResource/Silver.png">
         </div>
         <div id = "memberupdate">
             <h3>Perbarui Membership</h3>
-        <div id = 'perbarui'> <a>perbarui</a> </div>
-    </div>
-    </form>
-    <div id = "imageupdateprofile">
-        <img src = "laundryResource/update.png">
+            <div id = 'Perbarui'> <a>Perbarui</a> </div>
+        </div>
     </div>
 </div>
 

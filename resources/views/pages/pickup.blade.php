@@ -7,7 +7,7 @@
 @section('content')
 <section id='pickup'>
     <div id = "paragraft">
-        <h1>Request Pick Up</h1>
+        <h1>Ajukan Pick Up</h1>
         <div class = "box-login">
             <div class="form-group">
                 <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >Nama</label>
@@ -19,9 +19,9 @@
             </div>
         </div>
         <div class = "box-login-2">
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <div class="form-group">
+                <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >Alamat</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
             </div>
         </div>
     </div>

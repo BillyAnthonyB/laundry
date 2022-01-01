@@ -20,7 +20,7 @@
     </div>
     <div id = 'button'>
         <div id = 'laundryNow'>
-            <a>Laundry now!</a>
+            <a>Laundry sekarang!</a>
         </div>
     </div>
 <section>

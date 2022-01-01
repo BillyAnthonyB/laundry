@@ -27,7 +27,6 @@
         <div class = "kotak">
             <div id = "paragraf1">
                 <h4>Ringkasan Belanja</h4><br>
-                <h6>Ringkasan Belanja</h6>
                 <h6>Platinum - Berlaku seumur hidup</h6><br>
             </div>
             <div id = "paragraf2">
@@ -38,7 +37,7 @@
                 <div id = "image">
                     <img src = "laundryResource/Protect2.png">
                 </div>
-                <div id = 'bayar'> <a>  Bayar Sekarang</a> </div>
+                <div id = 'bayar'> <a href="http://localhost:8000/paymentreceived">  Bayar Sekarang</a> </div>
             </div>
         </div>
     </div>

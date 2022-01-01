@@ -73,6 +73,10 @@ Route::get('/admincheckorder', function () {
     return view('pages/admincheckorder');
 });
 
+Route::get('/paymentreceived', function () {
+    return view('pages/paymentreceived');
+});
+
 //SEMENTARA BUAT DEBUG
 Route::get('/debug', function () {
     return view('layout/in');
