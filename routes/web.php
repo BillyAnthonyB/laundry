@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::post('/', function () {
+
+Route::get('/', function () {
 return view('pages/home');
 });
 
@@ -48,7 +49,7 @@ Route::get('/payment-membership', function () {
     return view('pages/paymentmembership');
 });
 
-Route::post('/login', function () {
+Route::get('/login', function() {
     return view('pages/login');
 });
 
@@ -56,9 +57,8 @@ Route::get('/recovery', function () {
     return view('pages/recovery');
 });
 
-Route::post('/signup', function () {
-    return view('pages/signup');
-});
+Route::get('/signup', 'App\Http\Controllers\laundryController@regindex');
+Route::post('/signup', 'App\Http\Controllers\laundryController@regstore');
 
 Route::get('/recoverysend', function () {
     return view('pages/recoverysend');

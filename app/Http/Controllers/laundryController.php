@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\laundryModel;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class laundryController extends Controller
 {
@@ -27,5 +29,30 @@ class laundryController extends Controller
         return view('pages/paket', ['semuaPaket' => $semuaPaket]);
     }
 
+    public function regindex()
+    {
+        return view('pages.signup', [
+            'title' => 'signup',
+            'active' => 'signup'
+
+        ]);
+    }
+
+    public function regstore(request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email:dns|unique:customer',
+            'nohp' => 'required',
+            'password' => 'required|min:5'
+        ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        User::created($validatedData);
+
+        return redirect('/login');
+
+    }
 
 }
