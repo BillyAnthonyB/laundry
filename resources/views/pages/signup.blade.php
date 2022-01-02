@@ -15,7 +15,7 @@
             <div class="mb-3 row">
                 <label for="name"  class="col-sm-2 col-form-label" >Nama</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name = 'name'  id="name" aria-describedby="emailHelp" placeholder="name" required value="{{ old('name') }}">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name = 'name'  id="name" aria-describedby="emailHelp" placeholder="Nama" required value="{{ old('name') }}">
                 @error('name')
                     <div class="invalid-feedback">
                     {{$message}}
@@ -26,7 +26,7 @@
             <div class="mb-3 row">
                 <label for="email"  class="col-sm-2 col-form-label" >Email</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name = 'email' id="email" aria-describedby="emailHelp" placeholder="email" required value="{{ old('email') }}">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name = 'email' id="email" aria-describedby="emailHelp" placeholder="Email" required value="{{ old('email') }}">
                 @error('email')
                     <div class="invalid-feedback">
                     {{$message}}
@@ -37,7 +37,7 @@
             <div class="mb-3 row">
                 <label for="nohp"  class="col-sm-2 col-form-label" >No. Hp</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control @error('nohp') is-invalid @enderror" name = 'nohp' id="nohp" aria-describedby="emailHelp" placeholder="nohp" required value="{{ old('nohp') }}">
+                <input type="text" class="form-control @error('nohp') is-invalid @enderror" name = 'nohp' id="nohp" aria-describedby="emailHelp" placeholder="Nomor HP" required value="{{ old('nohp') }}">
                 @error('nohp')
                     <div class="invalid-feedback">
                     {{$message}}

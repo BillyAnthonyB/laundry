@@ -10,7 +10,21 @@
     <br>
     <div id = "accordionButton">
         <h2>Cucian saya</h2>
-        <div id = 'button'> <a>Bayar Sekarang</a> </div>
+        @foreach ($cekAlamat as $hasilCekAlamat)
+        <?php
+            $adaAlamat = "http://localhost:8000/payment";
+            $tidakAdaAlamat = "http://localhost:8000/updateprofile";
+            if ($hasilCekAlamat->alamat == '-')
+            {
+                echo "<div id = 'button'> <a href=".$tidakAdaAlamat.">Bayar Sekarang</a> </div> ";
+            }
+            else
+            {
+                echo "<div id = 'button'> <a href=".$adaAlamat.">Bayar Sekarang</a> </div>";
+            }
+        ?>
+        @endforeach
+        {{-- diatas ini blum slesai lanjutin --}}
     </div>
     <br>
     @foreach($semuaTransaksi as $transaksi)

@@ -7,9 +7,11 @@ Route::get('/', function () {
 return view('pages/home');
 });
 
-Route::GET('/home', function () {
-    return view('pages/home');
-});
+Route::get('/in', function () {
+    return view('layout/in');
+    });
+
+Route::get('/home', 'App\Http\Controllers\laundryController@homeindex');
 
 Route::get('/paket', function () {
     return view('pages/paket');
@@ -23,11 +25,11 @@ Route::get('/membership', function () {
     return view('pages/membership');
 });
 
-// Route::get('/laundryku', function () {
-//     return view('pages/laundryku');
-// });
+// Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_transaksi');
+// Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_cekAlamat');
+Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_queryLaundryKu');
 
-Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_transaksi');
+
 
 Route::get('/faq', function () {
     return view('pages/faq');
@@ -49,9 +51,8 @@ Route::get('/payment-membership', function () {
     return view('pages/paymentmembership');
 });
 
-Route::get('/login', function() {
-    return view('pages/login');
-});
+Route::get('/login', 'App\Http\Controllers\laundryController@logindex');
+Route::post('/login', 'App\Http\Controllers\laundryController@logauthenticate');
 
 Route::get('/recovery', function () {
     return view('pages/recovery');

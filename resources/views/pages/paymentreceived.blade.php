@@ -17,7 +17,7 @@
             </div>
         </div>
         <h2>Terima kasih atas kepercayaan anda.</h2>
-        <div id = 'button'> <a>OK</a> </div>
+        <div id = 'button'> <a href="http://localhost:8000/">OK</a> </div>
     </div>
 </section>
 @endsection

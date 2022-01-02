@@ -27,7 +27,7 @@
             </div>
             <form action="/action_page.php">
                     <select name="tanggal" id="tanggal">
-                    <option value="Januari">Januari</option>
+                    <option value="laundryResource/ovo.png"></option>
                     <option value="Februari">Februari</option>
                     <option value="Maret">Maret</option>
                     <option value="April">April</option>

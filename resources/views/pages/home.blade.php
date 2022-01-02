@@ -20,7 +20,7 @@
     </div>
     <div id = 'button'>
         <div id = 'laundryNow'>
-            <a>Laundry sekarang!</a>
+            <a href="http://localhost:8000/paket">Laundry sekarang!</a>
         </div>
     </div>
 <section>
@@ -50,7 +50,7 @@
     </div>
     <div id = 'button'>
         <div id = 'pesanSekarang'>
-            <a>Pesan sekarang</a>
+            <a href="http://localhost:8000/paket">Pesan sekarang</a>
         </div>
     </div>
 </section>
@@ -81,12 +81,12 @@
     <img id = "iron" src = "laundryResource/iron.png">
     <div id = "iconPaket">
         <div id="descIconPaket">Cari paket yang <br>sesuai untukmu!</div>
-        <div id = 'button'> <a>Cek Paket</a> </div>
+        <div id = 'button'> <a href="http://localhost:8000/paket">Cek Paket</a> </div>
     </div>
     <img id = "diskon" src = "laundryResource/12.png">
     <div id = "iconMember">
         <div id="descIconMember">Jadi Member dapat diskon, loh!</div>
-        <div id = 'button'> <a>Gabung Sekarang</a> </div>
+        <div id = 'button'> <a href="http://localhost:8000/membership">Gabung Sekarang</a> </div>
     </div>
 </section>
 

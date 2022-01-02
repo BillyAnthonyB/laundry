@@ -15,7 +15,7 @@
     </div>
 </div>
 <div class = "button-tentangkami-FAQ">
-    <a>FAQ</a>
+    <a href="http://localhost:8000/faq">FAQ</a>
 </div>
 <div class = "havemore">
     <h6>Have More Questions?</h6>

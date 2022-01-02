@@ -48,9 +48,9 @@
         <div class = "menu-profile">
             <h3>Laundry<br><span>Luxury Bubble</span></h3>
             <ul>
-                <li><img src ="LaundryResource/profileee.png"><a href="#">Profil</a></li>
-                <li><img src ="LaundryResource/payment.png"><a href="#">Pembayaran</a></li>
-                <li><img src ="LaundryResource/exit.png"><a href="#">Keluar</a></li>
+                <li><img src ="LaundryResource/profileee.png"><a href="http://127.0.0.1:8000/updateprofile">Profil</a></li>
+                <li><img src ="LaundryResource/payment.png"><a href="http://127.0.0.1:8000/laundryku">Pembayaran</a></li>
+                <li><img src ="LaundryResource/exit.png"><a href="http://127.0.0.1:8000/home">Keluar</a></li>
             </ul>
         </div>
     </div>
