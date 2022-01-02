@@ -59,7 +59,7 @@ Route::get('/recovery', function () {
 });
 
 Route::get('/signup', 'App\Http\Controllers\laundryController@regindex');
-Route::post('/signup', 'App\Http\Controllers\laundryController@regstore');
+Route::post('/signup', 'App\Http\Controllers\laundryController@register');
 
 Route::get('/recoverysend', function () {
     return view('pages/recoverysend');

@@ -27,18 +27,18 @@
             </div>
             <form action="/action_page.php">
                     <select name="tanggal" id="tanggal">
-                    <option value="laundryResource/ovo.png"></option>
-                    <option value="Februari">Februari</option>
-                    <option value="Maret">Maret</option>
-                    <option value="April">April</option>
-                    <option value="Mei">Mei</option>
-                    <option value="Juni">Juni</option>
-                    <option value="Juli">Juli</option>
-                    <option value="Agustus">Agustus</option>
-                    <option value="September">September</option>
-                    <option value="Oktober">Oktober</option>
-                    <option value="November">November</option>
-                    <option value="Desember">Desember</option>
+                    <option value="laundryResource/ovo.png"> <img src = "laundryResource/ovo.png"></option>
+                    <option value="Februari"><img src = "laundryResource/ovo.png"></option>
+                    <option value="Maret"><img src = "laundryResource/ovo.png"></option>
+                    <option value="April"><img src = "laundryResource/ovo.png"></option>
+                    <option value="Mei"><img src = "laundryResource/ovo.png"></option>
+                    <option value="Juni"><img src = "laundryResource/ovo.png"></option>
+                    <option value="Juli"><img src = "laundryResource/ovo.png"></option>
+                    <option value="Agustus"><img src = "laundryResource/ovo.png"></option>
+                    <option value="September"><img src = "laundryResource/ovo.png"></option>
+                    <option value="Oktober"><img src = "laundryResource/ovo.png"></option>
+                    <option value="November"><img src = "laundryResource/ovo.png"></option>
+                    <option value="Desember"><img src = "laundryResource/ovo.png"></option>
                     </select>
             </form>
         </div>
@@ -61,6 +61,10 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+    </script>
 </section>
 
 @endsection

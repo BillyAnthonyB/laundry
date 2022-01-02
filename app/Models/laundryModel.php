@@ -36,10 +36,18 @@ class laundryModel extends Model
         return $executeQuerysignup;
     }
 
-    function get_email(){
-        $queryCekEmail = "SELECT * FROM customer WHERE email = '(dari text user)'";
-        $executeQueryCekEmail = DB::select($queryCekEmail);
-        return $executeQueryCekEmail;
+    function simpan_user($request)
+    {
+        DB::table('customer')->insert(
+            [
+                'm' => $request->nim,
+                'nama' => $request->nama,
+                'tempat_lahir' => '',
+                'tanggal_lahir' => date("Ymd"),
+                'fakultas' => '',
+                'program_studi' => '',
+                'ipk' => 0
+            ]);
     }
 
 

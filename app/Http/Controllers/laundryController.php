@@ -45,8 +45,8 @@ class laundryController extends Controller
     }
 
 
-    public function login(){
-        $cekusername = $this -> laundryModel -> get_email();
+    public function register(){
+        $simpanDataUser = $this -> laundryModel -> simpan_user();
 
     }
 
