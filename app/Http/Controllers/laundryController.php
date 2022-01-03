@@ -45,23 +45,22 @@ class laundryController extends Controller
         return view('pages/paket', ['semuaPaket' => $semuaPaket]);
     }
 
-    public function send_login()
+    public function send_login(Request $request)
     {
-        $loginEmail = $_POST['loginEmail'];
+        $loginMail = $_POST['loginEmail'];
         $loginPass = $_POST['loginPassword'];
 
-
         $tboxLogin = [
-            'loginEmail' => $loginEmail,
+            'loginEmail' => $loginMail,
             'loginPassword' => $loginPass
         ];
 
-        $sambungKeModel = new laundryModel();
+        $sambungKeModel = new laundryModel;
         $loginCountCheck = $sambungKeModel -> cekLogin($tboxLogin);
 
         if($loginCountCheck)
         {
-            Session::put('login', $loginEmail);
+            Session::put('login', $loginMail);
             Session::put('pass', $loginPass);
 
             Session::flash('succes', 'Anda berhasil login');
@@ -73,6 +72,15 @@ class laundryController extends Controller
             Session::flash('loginError', 'Email atau password salah.');
             return redirect('/login');
         }
+    }
+
+    public function loginIndex()
+    {
+        return view('pages/login', [
+            'title' => 'login',
+            'active' => 'login'
+
+        ]);
     }
 
 
@@ -118,9 +126,9 @@ class laundryController extends Controller
 
         $data = [
 
-            'name'=>$name,
+            'nama'=>$name,
             'email' =>$email,
-            'password' =>$password
+            'password_customer' =>$password
 
         ];
 

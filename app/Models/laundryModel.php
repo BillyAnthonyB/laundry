@@ -29,11 +29,11 @@ class laundryModel extends Model
         return DB::table('laundry_service.paket')->get();
     }
 
-    function cekLogin($tboxLogin){
-        $queryCekLogin = "SELECT count(*) is_exist from laundry_service.customer where email = :loginEmail and 'password' = :loginPassword";
+    public function cekLogin($tboxLogin){
+        $queryCekLogin = "SELECT count(*) hitung from laundry_service.customer where EMAIL = :loginEmail and 'PASSWORD' = :loginPassword;";
         $executeQueryCekLogin = DB::select($queryCekLogin, $tboxLogin);
 
-        if($executeQueryCekLogin[0]->is_exist == 1){
+        if($executeQueryCekLogin[0]->hitung == 1){
             return true;
         }
         return false;
@@ -45,7 +45,7 @@ class laundryModel extends Model
     }
 
     function post_datasignup($data) {
-        $cmd = "INSERT INTO customer( `ID_MEMBERSHIP`, `NAMA_CUSTOMER`, `ALAMAT`, `PHONE`, `EMAIL`, `PASSWORD`, `DELETE_CUSTOMER`) VALUES ('REGU',':name','-','-',':email',':password','0')";
+        $cmd = "INSERT INTO customer( `ID_MEMBERSHIP`, `NAMA_CUSTOMER`, `ALAMAT`, `PHONE`, `EMAIL`, `PASSWORD`, `DELETE_CUSTOMER`) VALUES ('REGU', :nama,'-', '-', :email, :password_customer,'0')";
 
         $result =DB::insert($cmd, $data);
         return $result;

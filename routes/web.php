@@ -51,6 +51,7 @@ Route::get('/payment-membership', function () {
     return view('pages/paymentmembership');
 });
 
+Route::get('/login', 'App\Http\Controllers\laundryController@loginIndex');
 Route::post('/login', 'App\Http\Controllers\laundryController@send_login');
 
 Route::get('/recovery', function () {
