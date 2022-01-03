@@ -47,8 +47,8 @@ class laundryController extends Controller
 
     public function send_login(Request $request)
     {
-        $loginMail = $_POST['loginEmail'];
-        $loginPass = $_POST['loginPassword'];
+        $loginMail = $request->input('loginEmail');
+        $loginPass = $request->input('loginPassword');
 
         $tboxLogin = [
             'loginEmail' => $loginMail,
@@ -63,9 +63,9 @@ class laundryController extends Controller
             Session::put('login', $loginMail);
             Session::put('pass', $loginPass);
 
-            Session::flash('succes', 'Anda berhasil login');
+            Session::flash('success', 'Anda berhasil login');
 
-            return redirect('/laundryKu');
+            return redirect('/');
         }
         else
         {
@@ -82,30 +82,6 @@ class laundryController extends Controller
 
         ]);
     }
-
-
-    // public function register(Request $request)
-    // {
-
-
-    //     $simpanDataUser = $this -> laundryModel -> post_datasignup();
-
-    //     return redirect('/login');
-
-    // }
-
-
-
-
-    // public function logindex()
-    // {
-    //   return view('pages.login', [
-    //     'title' => 'login',
-    //     'active' => 'login'
-
-    //     ]);
-    // }
-
 
     public function regindex()
     {
@@ -135,15 +111,22 @@ class laundryController extends Controller
         $return = $user->post_datasignup($data);
 
         if($return==1){
-            echo 'berhail signup';
-            Session::flash('succes', 'anda berhasil signup');
+            // echo 'berhail signup';
+            Session::flash('success', 'anda berhasil signup');
             return redirect('/login');
         }
 
         return redirect('/register');
+    }
 
+    public function logout(request $request){
 
-
+        $haslogin = $request->session()->has('login');
+        if(isset($haslogin)){
+            session::flush();
+            // session::flash('exit', 'Anda telah logout!!')
+            return redirect('/');
+        }
     }
 
     // public function logauthenticate(request $request)
@@ -170,5 +153,26 @@ class laundryController extends Controller
 
     // }
 
+    // public function register(Request $request)
+    // {
+
+
+    //     $simpanDataUser = $this -> laundryModel -> post_datasignup();
+
+    //     return redirect('/login');
+
+    // }
+
+
+
+
+    // public function logindex()
+    // {
+    //   return view('pages.login', [
+    //     'title' => 'login',
+    //     'active' => 'login'
+
+    //     ]);
+    // }
 
 }

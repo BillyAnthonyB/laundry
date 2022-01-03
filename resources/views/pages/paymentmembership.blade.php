@@ -1,5 +1,5 @@
 {{-- untuk menghubungkan isi konten payment membership ke template --}}
-@extends('layout.in')
+@extends('layout.main')
 
 {{-- mengisi value title ke template --}}
 @section('title', 'Payment Membership')
@@ -18,9 +18,18 @@
         <div id = "paragraf2">
             <h6>Pemesanan dan pembayaran</h6>
             <h6>Pemesan: <b>Budi - Jl. Merdeka no. 1</b></h6><br>
-            <div id = "image">
-                <img src = "laundryResource/ovo.png">
-            </div>
+            <input type ="radio" name="payment" id="ovo" class = "pembayaran">
+            <label for="ovo">
+                <img src="laundryResource/ovo.png">
+            </label>
+            <input type ="radio" name="payment" id="gopay" class = "pembayaran">
+            <label for="gopay">
+                <img src="laundryResource/gopay.png">
+            </label>
+            <input type ="radio" name="payment" id="dana" class = "pembayaran">
+            <label for="dana">
+                <img src="laundryResource/dana.png">
+            </label>
         </div>
     </div>
     <div id = "paymentbox2">

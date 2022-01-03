@@ -1,5 +1,5 @@
 {{-- untuk menghubungkan isi konten laundryku ke template --}}
-@extends('layout.in')
+@extends('layout.main')
 
 {{-- mengisi value title ke template --}}
 @section('title', 'Laundryku')

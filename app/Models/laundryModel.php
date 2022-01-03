@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -30,10 +29,13 @@ class laundryModel extends Model
     }
 
     public function cekLogin($tboxLogin){
-        $queryCekLogin = "SELECT count(*) hitung from laundry_service.customer where EMAIL = :loginEmail and 'PASSWORD' = :loginPassword;";
+        $queryCekLogin = "SELECT count(*) is_exist ".
+                         "FROM laundry_service.customer ".
+                         "WHERE EMAIL = :loginEmail AND PASSWORD = :loginPassword ;";
         $executeQueryCekLogin = DB::select($queryCekLogin, $tboxLogin);
+        // dd($executeQueryCekLogin);
 
-        if($executeQueryCekLogin[0]->hitung == 1){
+        if($executeQueryCekLogin[0]->is_exist == 1){
             return true;
         }
         return false;

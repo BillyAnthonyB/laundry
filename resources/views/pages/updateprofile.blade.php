@@ -1,5 +1,5 @@
 {{-- untuk menghubungkan isi konten update profile ke template --}}
-@extends('layout.in')
+@extends('layout.main')
 
 {{-- mengisi value title ke template --}}
 @section('title', 'update profile')
@@ -40,7 +40,7 @@
         </div>
         <div id = "memberupdate">
             <h3>Perbarui Membership</h3>
-            <div id = 'Perbarui'> <a>Perbarui</a> </div>
+            <div id = 'Perbarui'> <a href = "http://localhost:8000/membership">Perbarui</a> </div>
         </div>
     </div>
 </div>

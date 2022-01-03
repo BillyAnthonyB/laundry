@@ -29,7 +29,11 @@
             </label>
             <input type ="radio" name="payment" id="gopay" class = "pembayaran">
             <label for="gopay">
-                <img src="laundryResource/12.png">
+                <img src="laundryResource/gopay.png">
+            </label>
+            <input type ="radio" name="payment" id="dana" class = "pembayaran">
+            <label for="dana">
+                <img src="laundryResource/dana.png">
             </label>
         </div>
     </div>
