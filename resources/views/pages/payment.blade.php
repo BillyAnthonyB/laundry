@@ -20,27 +20,17 @@
             </div>
         </div>
         <div id = "paragraf2">
-            <h6>Pemesanan dan pembayaran</h6>
+            <!-- <h6>Pemesanan dan pembayaran</h6> -->
             <h6>Pemesan: <b>Budi - Jl. Merdeka no. 1</b></h6><br>
-            <div id = "image">
-                <img src = "laundryResource/ovo.png">
-            </div>
-            <form action="/action_page.php">
-                    <select name="tanggal" id="tanggal">
-                    <option value="laundryResource/ovo.png"> <img src = "laundryResource/ovo.png"></option>
-                    <option value="Februari"><img src = "laundryResource/ovo.png"></option>
-                    <option value="Maret"><img src = "laundryResource/ovo.png"></option>
-                    <option value="April"><img src = "laundryResource/ovo.png"></option>
-                    <option value="Mei"><img src = "laundryResource/ovo.png"></option>
-                    <option value="Juni"><img src = "laundryResource/ovo.png"></option>
-                    <option value="Juli"><img src = "laundryResource/ovo.png"></option>
-                    <option value="Agustus"><img src = "laundryResource/ovo.png"></option>
-                    <option value="September"><img src = "laundryResource/ovo.png"></option>
-                    <option value="Oktober"><img src = "laundryResource/ovo.png"></option>
-                    <option value="November"><img src = "laundryResource/ovo.png"></option>
-                    <option value="Desember"><img src = "laundryResource/ovo.png"></option>
-                    </select>
-            </form>
+            <h6><b>Metode pembayaran :</h6>
+            <input type ="radio" name="payment" id="ovo" class = "pembayaran">
+            <label for="ovo">
+                <img src="laundryResource/ovo.png">
+            </label>
+            <input type ="radio" name="payment" id="gopay" class = "pembayaran">
+            <label for="gopay">
+                <img src="laundryResource/12.png">
+            </label>
         </div>
     </div>
     <div id = "paymentbox2">

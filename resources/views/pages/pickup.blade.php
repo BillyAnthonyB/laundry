@@ -11,17 +11,17 @@
         <div class = "box-login">
             <div class="form-group">
                 <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >Nama</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" disabled>
             </div>
             <div class="form-group">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Kontak</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                <label for="inputPassword" class="col-sm-2 col-form-label" >Kontak</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" disabled>
             </div>
         </div>
         <div class = "box-login-2">
             <div class="form-group">
                 <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >Alamat</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" disabled>
             </div>
         </div>
     </div>

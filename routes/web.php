@@ -51,16 +51,14 @@ Route::get('/payment-membership', function () {
     return view('pages/paymentmembership');
 });
 
-Route::get('/login', 'App\Http\Controllers\laundryController@logindex');
-Route::post('/login', 'App\Http\Controllers\laundryController@logauthenticate');
+Route::post('/login', 'App\Http\Controllers\laundryController@send_login');
 
 Route::get('/recovery', function () {
     return view('pages/recovery');
 });
 
 Route::get('/signup', 'App\Http\Controllers\laundryController@regindex');
-Route::post('/signup', 'App\Http\Controllers\laundryController@register');
-
+Route::post('/signup', 'App\Http\Controllers\laundryController@regstore');
 Route::get('/recoverysend', function () {
     return view('pages/recoverysend');
 });

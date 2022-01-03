@@ -184,7 +184,7 @@ section#sectionNavbar .navbar #buttonDaftar a{
 /* FOOTERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
 /* styling footer */
 #sectionFooter{
-    height: 33vh;
+    height: 20vh;
     width: 100%;
 }
 #sectionFooter hr{
@@ -202,6 +202,19 @@ footer a{
     text-decoration: none;
     font-weight: bold;
     transform: translate(0,100%);
+}
+footer h6{
+    display: block;
+    color :#222222;
+    opacity: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
+    transform: translate(0,100%);
+    margin-top: 8px;
 }
 footer p{
     color: Black;
@@ -395,7 +408,7 @@ div.descWhy {
 }
 
 #faq .judulku{
-    margin-left: 32vw;
+    margin-left: 42vw;
     margin-right: 20vw;
     margin-top: 3vh;
 }
@@ -1010,7 +1023,7 @@ button, input, optgroup, select, textarea {
     font-family: Nunito;
     font-weight: 400;
 }
-#recoverysend #text #button{
+#recoverysend #text #button a{
     display: inline-block;
     background: #18a4fc;
     color: #fff;
@@ -1023,9 +1036,11 @@ button, input, optgroup, select, textarea {
     border: 2px solid #18a4fc;
     transition: all 0.3s ease;
     font-family: Nunito;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-#recoverysend #text #button:hover{
+#recoverysend #text #button a:hover{
     color: #18a4fc;
     background: none;
 }
@@ -1042,14 +1057,14 @@ button, input, optgroup, select, textarea {
     height: 500px;
 }
 #requestsend #paragraft h1{
-    padding-top: 90px;
+    padding-top: 40px;
     padding-left: 80px;
     font-size: 24px;
     font-weight: bolder;
     font-family: Nunito;
 }
 #requestsend #paragraft h2{
-    padding-left: 90px;
+    padding-left: 50px;
     font-size: 18px;
     font-weight: bolder;
     font-family: Nunito;
@@ -1064,14 +1079,14 @@ button, input, optgroup, select, textarea {
     z-index: -1;
     position: absolute;
     width: 50%;
-    padding-left: 40px;
+    padding-left: 50px;
     font-family: Nunito;
 }
 #requestsend #paragraft2 #permintaan{
     display: flex;
     flex-direction: row;
     margin-left: 420px;
-    margin-top: 78px;
+    margin-top: 28px;
     font-family: Nunito;
 }
 #requestsend #paragraft2 #permintaan h1{
@@ -1080,8 +1095,8 @@ button, input, optgroup, select, textarea {
     font-size: 24px;
     font-weight: bold;
     position: absolute;
-    top: 45%;
-    left: 38%;
+    top: 35%;
+    left: 36%;
     font-family: Nunito;
 }
 
@@ -1090,24 +1105,24 @@ button, input, optgroup, select, textarea {
     padding-left: 200px;
     font-size: 18px;
     position: absolute;
-    top: 52%;
-    left: 38%;
+    top: 37%;
+    left: 36%;
     font-family: Nunito;
 }
 #requestsend #paragraft2 h3{
     padding-left: 200px;
     font-size: 18px;
     position: absolute;
-    top: 55%;
-    left: 38%;
+    top: 51%;
+    left: 36%;
     font-family: Nunito;
 }
 #requestsend #paragraft2 h4{
     padding-left: 200px;
     font-size: 18px;
     position: absolute;
-    top: 64%;
-    left: 38%;
+    top: 60%;
+    left: 36%;
     font-family: Nunito;
 }
 /* updateprofil =============================================================================================== */
@@ -1344,7 +1359,7 @@ button, input, optgroup, select, textarea {
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
-    margin: 4px 2px;
+    margin: -15px 2px;
     cursor: pointer;
     position: absolute;
     top: 70%;
@@ -1465,6 +1480,24 @@ button, input, optgroup, select, textarea {
 #payment #paymentbox2 #button a{
     text-decoration: none;
     color: white;
+}
+
+#payment .pembayaran{
+    position: absolute;
+    left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+    border: 1px solid #18a4fc;
+    box-shadow: 0 0 3px 3px #18a4fc;
+    border-radius: 6px;
+}
+
+input[type=radio] + label>img {
+    width: 130px;
+    height: 52px;
+    transition: 0.1s all;
+    margin-right: 1vw;
 }
 
 /* ini payment membership ============================================================================= */

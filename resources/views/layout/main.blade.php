@@ -44,9 +44,10 @@
     <br>
     <hr>
     <footer>
-        <a href="tentang-kami" class = "footer">Copyright <span>&copy;</span> 2021 Luxury Bubble: Laundry Service. All right reserved.</a><br>
-        <a href="tentang-kami" class="footer">Customer Service</a>
+        <a href="tentang-kami" class="footer">Tentang Kami</a>
         <a href="faq" class="footer">FAQ</a>
+        <h6 class = "footer">Copyright <span>&copy;</span> 2021 Luxury Bubble: Laundry Service. All right reserved.</h6><br>
+        <br>
     </footer>
     </section>
 </body>

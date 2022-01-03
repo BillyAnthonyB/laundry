@@ -10,7 +10,7 @@
         <h1>Email dikirim</h1>
         <h2>Kami telah mengirimkan email berisi tautan</h2>
         <h3>untuk masuk ke akun anda</h3>
-        <div id = 'button'> <a>Pesan</a> </div>
+        <div id = 'button'> <a href="http://127.0.0.1:8000">OK</a> </div>
     </div>
 
 </section>

@@ -29,13 +29,13 @@
     <div id = "imageLogin">
         <img src = "laundryResource/logoFull.png">
     </div>
-    <form action="/login" method="post">
+    <form action="{{url('/login')}}" method="POST">
         @csrf
         <div class = "box-login">
             <div class="mb-3 row">
                 <label for="email"  class="col-sm-2 col-form-label" >Email</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name = 'email' id="email" aria-describedby="emailHelp" placeholder="email" required value="{{ old('email') }}">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name = 'loginEmail' id="email" aria-describedby="emailHelp" placeholder=" Email" required value="{{ old('email') }}">
                 @error('email')
                     <div class="invalid-feedback">
                     {{$message}}
@@ -46,7 +46,7 @@
             <div class="mb-3 row">
                 <label for="password" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" name = 'password' id="password" aria-describedby="emailHelp" placeholder="password" required>
+                <input type="password" class="form-control" name = 'loginPassword' id="password" aria-describedby="emailHelp" placeholder=" Password" required>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Masuk</button>

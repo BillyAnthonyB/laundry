@@ -9,13 +9,13 @@
     <div id = "image">
         <img src = "laundryResource/logoFull.png">
     </div>
-    <form action="/signup" method="post">
+    <form action="/signup" method="POST">
         @csrf
         <div class = "box-login">
             <div class="mb-3 row">
                 <label for="name"  class="col-sm-2 col-form-label" >Nama</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name = 'name'  id="name" aria-describedby="emailHelp" placeholder="Nama" required value="{{ old('name') }}">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name = 'name'  id="name" aria-describedby="emailHelp" placeholder=" Nama" required value="{{ old('name') }}">
                 @error('name')
                     <div class="invalid-feedback">
                     {{$message}}
@@ -26,7 +26,7 @@
             <div class="mb-3 row">
                 <label for="email"  class="col-sm-2 col-form-label" >Email</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name = 'email' id="email" aria-describedby="emailHelp" placeholder="Email" required value="{{ old('email') }}">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name = 'email' id="email" aria-describedby="emailHelp" placeholder=" Email" required value="{{ old('email') }}">
                 @error('email')
                     <div class="invalid-feedback">
                     {{$message}}
@@ -34,21 +34,21 @@
                 @enderror
                 </div>
             </div>
-            <div class="mb-3 row">
+            <!-- <div class="mb-3 row">
                 <label for="nohp"  class="col-sm-2 col-form-label" >No. Hp</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control @error('nohp') is-invalid @enderror" name = 'nohp' id="nohp" aria-describedby="emailHelp" placeholder="Nomor HP" required value="{{ old('nohp') }}">
+                <input type="text" class="form-control @error('nohp') is-invalid @enderror" name = 'nohp' id="nohp" aria-describedby="emailHelp" placeholder=" Nomor HP" required value="{{ old('nohp') }}">
                 @error('nohp')
                     <div class="invalid-feedback">
                     {{$message}}
                     </div>
                 @enderror
                 </div>
-            </div>
+            </div> -->
             <div class="mb-3 row">
                 <label for="password" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control @error('password') is-invalid @enderror" name = 'password' id="password" aria-describedby="emailHelp" placeholder="password" required>
+                <input type="password" class="form-control @error('password') is-invalid @enderror" name = 'password' id="password" aria-describedby="emailHelp" placeholder=" Password" required>
                 @error('password')
                     <div class="invalid-feedback">
                     {{$message}}
@@ -58,7 +58,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Daftar</button>
             <div class = "box-akun">
-                <h6>Sudah memiliki akun ? <a href="login">Masuk</a><br><a href="recovery">Lupa Password</a></h6>
+                <h6>Sudah memiliki akun ? <a href="login">Masuk</a><br><a href="recovery"></a></h6>
             </div>
         </div>
     </form>

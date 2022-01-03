@@ -14,7 +14,7 @@
 @section('content')
 <section id = "faq">
   <div class = "judulku">
-    <h2>Pertanyaan yang Sering Ditanyakan</h2>
+    <h2>Pertanyaan Umum</h2>
   </div>
   <div class="accordion" id="accordionPanelsStayOpenExample">
 

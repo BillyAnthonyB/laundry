@@ -29,26 +29,29 @@ class laundryModel extends Model
         return DB::table('laundry_service.paket')->get();
     }
 
-    function post_datasignup() {
-        // return DB::table('laundry_service.customer')->get();
-        $querysignup = "INSERT INTO customer ('ID_CUSTOMER', 'ID_MEMBERSHIP', 'NAMA_CUSTOMER', 'PHONE', 'EMAIL', 'PASSWORD', 'DELETE_CUSTOMER') VALUES ('', 'REGU', '', '', '', 'Norway','0');";
-        $executeQuerysignup = DB::select($querysignup);
-        return $executeQuerysignup;
+    function cekLogin($tboxLogin){
+        $queryCekLogin = "SELECT count(*) is_exist from laundry_service.customer where email = :loginEmail and 'password' = :loginPassword";
+        $executeQueryCekLogin = DB::select($queryCekLogin, $tboxLogin);
+
+        if($executeQueryCekLogin[0]->is_exist == 1){
+            return true;
+        }
+        return false;
+
+        if(isset($executeQueryCekLogin) && count($executeQueryCekLogin) > 0){
+            return $executeQueryCekLogin;
+        }
+        return null;
     }
 
-    function simpan_user($request)
-    {
-        DB::table('customer')->insert(
-            [
-                'm' => $request->nim,
-                'nama' => $request->nama,
-                'tempat_lahir' => '',
-                'tanggal_lahir' => date("Ymd"),
-                'fakultas' => '',
-                'program_studi' => '',
-                'ipk' => 0
-            ]);
+    function post_datasignup($data) {
+        $cmd = "INSERT INTO customer( `ID_MEMBERSHIP`, `NAMA_CUSTOMER`, `ALAMAT`, `PHONE`, `EMAIL`, `PASSWORD`, `DELETE_CUSTOMER`) VALUES ('REGU',':name','-','-',':email',':password','0')";
+
+        $result =DB::insert($cmd, $data);
+        return $result;
     }
+
+
 
 
 

@@ -7,6 +7,7 @@ use App\Models\laundryModel;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class laundryController extends Controller
 {
@@ -44,50 +45,98 @@ class laundryController extends Controller
         return view('pages/paket', ['semuaPaket' => $semuaPaket]);
     }
 
+    public function send_login()
+    {
+        $loginEmail = $_POST['loginEmail'];
+        $loginPass = $_POST['loginPassword'];
 
-    public function register(){
-        $simpanDataUser = $this -> laundryModel -> simpan_user();
 
+        $tboxLogin = [
+            'loginEmail' => $loginEmail,
+            'loginPassword' => $loginPass
+        ];
+
+        $sambungKeModel = new laundryModel();
+        $loginCountCheck = $sambungKeModel -> cekLogin($tboxLogin);
+
+        if($loginCountCheck)
+        {
+            Session::put('login', $loginEmail);
+            Session::put('pass', $loginPass);
+
+            Session::flash('succes', 'Anda berhasil login');
+
+            return redirect('/laundryKu');
+        }
+        else
+        {
+            Session::flash('loginError', 'Email atau password salah.');
+            return redirect('/login');
+        }
     }
 
 
-
-    // codingan pak sandhika login
-    // public function logindex()
+    // public function register(Request $request)
     // {
-    //   return view('pages.login', [
-    //     'title' => 'login',
-    //  'active' => 'login'
 
-    //     ]);
-    // }
 
-    // codingan pak sandhika registrasi
-    // public function regindex()
-    // {
-    //     return view('pages.signup', [
-    //         'title' => 'signup',
-    //         'active' => 'signup'
-
-    //     ]);
-    // }
-
-    // public function regstore(request $request)
-    // {
-    //     $validatedData = $request->validate([
-    //         'name' => 'required|max:255',
-    //         'email' => 'required|email:dns|unique:customer',
-    //         'nohp' => 'required',
-    //         'password' => 'required|min:5'
-    //     ]);
-
-    //     $validatedData['password'] = Hash::make($validatedData['password']);
-
-    //     User::create($validatedData);
+    //     $simpanDataUser = $this -> laundryModel -> post_datasignup();
 
     //     return redirect('/login');
 
     // }
+
+
+
+
+    // public function logindex()
+    // {
+    //   return view('pages.login', [
+    //     'title' => 'login',
+    //     'active' => 'login'
+
+    //     ]);
+    // }
+
+
+    public function regindex()
+    {
+        return view('pages.signup', [
+            'title' => 'signup',
+            'active' => 'signup'
+
+        ]);
+    }
+
+    public function regstore(request $request)
+    {
+        $name = strtolower(stripslashes($_POST['name']));
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $user = new  laundryModel();
+
+        $data = [
+
+            'name'=>$name,
+            'email' =>$email,
+            'password' =>$password
+
+        ];
+
+        $return = $user->post_datasignup($data);
+
+        if($return==1){
+            echo 'berhail signup';
+            Session::flash('succes', 'anda berhasil signup');
+            return redirect('/login');
+        }
+
+        return redirect('/register');
+
+
+
+    }
 
     // public function logauthenticate(request $request)
     // {
@@ -109,7 +158,7 @@ class laundryController extends Controller
 
     // public function homeindex()
     // {
-    //     return view('layout/in');
+    //     return view('pages/home');
 
     // }
 
