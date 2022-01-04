@@ -33,8 +33,10 @@ class laundryController extends Controller
 
     public function send_queryLaundryku()
     {
-        $semuaTransaksi = $this -> laundryModel -> get_transaksi();
-        $cekAlamat = $this -> laundryModel -> get_cekAlamat();
+        $loggedInId = Session::get('id'); //ambil data session isinya id
+
+        $semuaTransaksi = $this -> laundryModel -> get_transaksi($loggedInId); //masukin ke function model
+        $cekAlamat = $this -> laundryModel -> get_cekAlamat($loggedInId);
 
         return view('pages/laundryku', compact(['semuaTransaksi', 'cekAlamat']));
     }
@@ -60,6 +62,10 @@ class laundryController extends Controller
 
         if($loginCountCheck)
         {
+            $Id = $sambungKeModel -> get_id($loginMail); //nyambung ke model get id membawa var $loginMail
+
+            Session::put('nama', $Id[0] -> NAMA_CUSTOMER); //buat session yang isinya nama customer
+            Session::put('id', $Id[0] -> ID_CUSTOMER); //buat session yang isinya id customer yg login
             Session::put('login', $loginMail);
             Session::put('pass', $loginPass);
 

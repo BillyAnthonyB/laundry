@@ -60,6 +60,10 @@ Route::get('/recovery', function () {
 
 Route::get('/signup', 'App\Http\Controllers\laundryController@regindex');
 Route::post('/signup', 'App\Http\Controllers\laundryController@regstore');
+
+Route::get('/logout', 'App\Http\Controllers\laundryController@logout');
+
+
 Route::get('/recoverysend', function () {
     return view('pages/recoverysend');
 });

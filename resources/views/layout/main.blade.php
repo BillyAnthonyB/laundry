@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    {{-- ini navbarf blum login --}}
+    {{-- ini navbar blum login --}}
     @if (Session::has('login'))
         {{-- ini navbar udah login --}}
     <section id = "sectionNavbar">
@@ -18,7 +18,7 @@
             <div class="max-width">
                 <div class="logo"><a href="/"><img src = "laundryResource/Logo.png" width="55%"> </a></div>
                 <ul class="menu">
-                    <li><a href="laundryku" class="menu-btn">Laundryku</a></li>
+                    <li><a href="laundryku" class="menu-btn">LaundryKu</a></li>
                     <li><a href="paket" class="menu-btn">Paket Laundry</a></li>
                     <li><a href="membership" class="menu-btn">Membership</a></li>
                     <li><a href="pickup" class="menu-btn">Pick-Up</a></li>
@@ -36,11 +36,11 @@
             <img src = "LaundryResource/fotoprofil.png">
         </div>
         <div class = "menu-profile">
-            <h3>Laundry<br><span>Luxury Bubble</span></h3>
+            <h3>{{Session() -> get('nama')}}<br><span>Luxury Bubble</span></h3>
             <ul>
-                <li><img src ="LaundryResource/profileee.png"><a href="http://127.0.0.1:8000/updateprofile">Profil</a></li>
-                <li><img src ="LaundryResource/payment.png"><a href="http://127.0.0.1:8000/laundryku">Pembayaran</a></li>
-                <li><img src ="LaundryResource/exit.png"><a href="/laundryController@logout">Keluar</a></li>
+                <li><img src ="LaundryResource/profileee.png"><a href="/updateprofile">Profil</a></li>
+                <li><img src ="LaundryResource/payment.png"><a href="/laundryku">Pembayaran</a></li>
+                <li><img src ="LaundryResource/exit.png"><a href="/logout">Keluar</a></li>
             </ul>
         </div>
     </div>
@@ -50,7 +50,7 @@
             toggleMenu.classList.toggle('active')
         }
     </script>
-    @else
+@else
 {{-- navbar --}}
 <section id = "sectionNavbar">
     <nav class="navbar">

@@ -10,17 +10,24 @@ use App\Http\Controllers\laundryController;
 class laundryModel extends Model
 {
     //menampilkan semua transaksi di laundryKu
-    function get_transaksi() {
+    function get_transaksi($loggedInId) { //tambahin variabel dri controller ke function
         // return DB::table('laundry_service.transaksi')->get();
-        $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE()";
-        $executeQueryTransaksi = DB::select($queryTransaksi);
+
+        $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() AND ID_CUSTOMER = :loggedInId ;";
+        $data = [
+            'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query
+        $executeQueryTransaksi = DB::select($queryTransaksi, $data); //tambahin data
         return $executeQueryTransaksi;
     }
 
     //cek apakah alamat user ada sebelum lanjut ke pembayaran
-    function get_cekAlamat() {
-        $queryCekAlamat = "SELECT alamat FROM laundry_service.customer limit 1";
-        $executeQueryCekAlamat = DB::select($queryCekAlamat);
+    function get_cekAlamat($loggedInId) {
+        $queryCekAlamat = "SELECT ALAMAT FROM laundry_service.customer WHERE ID_CUSTOMER = :loggedInId limit 1;";
+        $data = [
+            'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query
+        $executeQueryCekAlamat = DB::select($queryCekAlamat, $data);
         return $executeQueryCekAlamat;
     }
 
@@ -44,6 +51,15 @@ class laundryModel extends Model
             return $executeQueryCekLogin;
         }
         return null;
+    }
+
+    public function get_id($loginMail){
+        $queryId = "SELECT * FROM laundry_service.customer WHERE email = :loginMail;";
+        $data = [
+            'loginMail' => $loginMail
+        ]; //declare biar bisa dipake di query
+        $executeQueryId = DB::select($queryId, $data); //tambahin data
+        return $executeQueryId;
     }
 
     function post_datasignup($data) {

@@ -14,7 +14,7 @@
         <?php
             $adaAlamat = "http://localhost:8000/payment";
             $tidakAdaAlamat = "http://localhost:8000/updateprofile";
-            if ($hasilCekAlamat->alamat == '-')
+            if ($hasilCekAlamat->ALAMAT == '-')
             {
                 echo "<div id = 'button'> <a href=".$tidakAdaAlamat.">Bayar Sekarang</a> </div> ";
             }

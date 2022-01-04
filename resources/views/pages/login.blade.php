@@ -48,7 +48,7 @@
             <div class="mb-3 row">
                 <label for="password" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" name = 'password' id="password-field" value="secret" aria-describedby="emailHelp" placeholder=" Password" required>
+                <input type="password" class="form-control" name = 'loginPassword' id="password-field"  aria-describedby="emailHelp" placeholder=" Password" required>
                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 </div>
             </div>
