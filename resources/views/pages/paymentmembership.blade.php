@@ -17,7 +17,7 @@
         </div>
         <div id = "paragraf2">
             <h6>Pemesanan dan pembayaran</h6>
-            <h6>Pemesan: <b>Budi - Jl. Merdeka no. 1</b></h6><br>
+            <h6>Pemesan: <b>{{Session() -> get('nama')}} - {{Session() -> get('alamat')}}</b></h6><br>
             <input type ="radio" name="payment" id="ovo" class = "pembayaran">
             <label for="ovo">
                 <img src="laundryResource/ovo.png">

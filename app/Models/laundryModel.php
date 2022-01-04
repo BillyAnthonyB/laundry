@@ -10,15 +10,24 @@ use App\Http\Controllers\laundryController;
 class laundryModel extends Model
 {
     //menampilkan semua transaksi di laundryKu
-    function get_transaksi($loggedInId) { //tambahin variabel dri controller ke function
-        // return DB::table('laundry_service.transaksi')->get();
-
+    function get_transaksi($loggedInId) { //tambahin variabel dri controller ke function //INI
+        //INI
         $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() AND ID_CUSTOMER = :loggedInId ;";
         $data = [
             'loggedInId' => $loggedInId
-        ]; //declare biar bisa dipake di query
-        $executeQueryTransaksi = DB::select($queryTransaksi, $data); //tambahin data
-        return $executeQueryTransaksi;
+        ]; //declare biar bisa dipake di query //INI
+        $executeQueryTransaksi = DB::select($queryTransaksi, $data); //tambahin data //INI
+        return $executeQueryTransaksi; //INI
+    }
+
+    function get_paketdipilih($loggedInId) { //tambahin variabel dri controller ke function //INI
+        //INI
+        $querypaketdipilih = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() AND STATUS_BAYAR = 0 AND ID_CUSTOMER = :loggedInId ;";
+        $data = [
+            'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query //INI
+        $executeQuerypaketdipilih = DB::select($querypaketdipilih, $data); //tambahin data //INI
+        return $executeQuerypaketdipilih; //INI
     }
 
     //cek apakah alamat user ada sebelum lanjut ke pembayaran
@@ -67,6 +76,19 @@ class laundryModel extends Model
 
         $result =DB::insert($cmd, $data);
         return $result;
+    }
+
+    function post_update($tboxupdateprofil, $loggedInId) {
+
+        $queryupdate = "UPDATE customer " .
+        "set NAMA_CUSTOMER = :upnama, PHONE = :upphone, ALAMAT = :upaddress " .
+        "where ID_CUSTOMER = :loggedInId ;";
+        $data = [
+            'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query
+        $executequeryupdate = DB::update($queryupdate, $data);
+        return $executequeryupdate;
+
     }
 
 

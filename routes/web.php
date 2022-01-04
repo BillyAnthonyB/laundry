@@ -29,8 +29,6 @@ Route::get('/membership', function () {
 // Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_cekAlamat');
 Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_queryLaundryKu');
 
-
-
 Route::get('/faq', function () {
     return view('pages/faq');
 });
@@ -39,13 +37,14 @@ Route::get('/tentang-kami', function () {
     return view('pages/tentangkami');
 });
 
-Route::get('/updateprofile', function () {
-    return view('pages/updateprofile');
-});
+Route::get('/updateprofile', 'App\Http\Controllers\laundryController@updateindex');
+Route::post('/updateprofile', 'App\Http\Controllers\laundryController@sendqueryupdate');
 
-Route::get('/payment', function () {
-    return view('pages/payment');
-});
+// Route::get('/payment', function () {
+//     return view('pages/payment');
+// });
+Route::get('/payment', 'App\Http\Controllers\laundryController@send_querypayment');
+
 
 Route::get('/payment-membership', function () {
     return view('pages/paymentmembership');

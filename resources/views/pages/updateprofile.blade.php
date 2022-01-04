@@ -6,25 +6,28 @@
 
 @section('content')
 <div id = "profil">
-    <form>
+    <form action="/updateprofile" method="post">
+        @csrf
+
     <h1> Perbarui Profil</h1>
         <div class = "box-login">
             <div class="form-group">
                 <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >Nama</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                <input type="text" class="form-control" name = 'updatename' id="exampleInputEmail1" aria-describedby="emailHelp" required value=" {{Session() -> get('nama')}}">
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="col-sm-2 col-form-label">No Telepon</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                <input type="text" class="form-control" name = 'updatephone' id="exampleInputEmail1" aria-describedby="emailHelp" required value=" {{Session() -> get('hp')}}">
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Alamat</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                <input type="text" class="form-control" name = 'updateaddress' id="exampleInputEmail1" aria-describedby="emailHelp" required value=" {{Session() -> get('alamat')}}">
             </div>
         </div>
         <div id = "button">
-           <div id = 'batal'> <a>Batal</a> </div>
-           <div id = 'simpan'> <a>Simpan</a> </div>
+            <button type="submit" id="simpan">Simpan</button>
+           <!-- <div id = 'batal'> <a>Batal</a> </div> -->
+           <!-- <div id = 'simpan'> <a>Simpan</a> </div> -->
         </div>
     </form>
     <div id = "box-gambar">

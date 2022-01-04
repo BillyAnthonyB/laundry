@@ -1123,9 +1123,9 @@ button, input, optgroup, select, textarea {
     color: #fff;
     font-weight: bold;
     font-size: 17px;
-    padding: 5px 50px;
+    padding: 5px 35px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 47px;
     border-radius: 6px;
     border: 2px solid #18a4fc;
 }
@@ -1202,6 +1202,9 @@ button, input, optgroup, select, textarea {
 #profil #box-gambar #textmembership h6{
     font-family: Nunito;
     font-weight: bold;
+}
+#profil .col-sm-2 {
+    width: 100%;
 }
 /* pickup =============================================================================================== */
 #pickup{
@@ -1533,6 +1536,7 @@ input[type=radio] + label>img {
 #accordionLaundryku {
     width: 65vw;
     margin-left: 17.5vw;
+    height: 450px;
 }
 #accordionButton{
     display: flex;
@@ -1557,6 +1561,7 @@ input[type=radio] + label>img {
     background: none;
 }
 #accordionLaundryku h2{
+    Padding-left: 400px;
     font-weight: bolder;
 }
 #accordionLaundryku h6{
@@ -1614,6 +1619,35 @@ input[type=radio] + label>img {
 }
 #tanggalLBold{
     font-weight: bold;
+}
+#Sebelumnya h2{
+    font-size: 30px;
+    font-weight: Bolder;
+    Padding-left: 300px;
+}
+#Sebelumnya h3{
+    font-size: 22px;
+    Padding-left: 250px;
+    padding-bottom: 15px
+}
+#Sebelumnya #button a{
+    height: 50px;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 2vh;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 450px;
+    margin-bottom: 1000px
+}
+#Sebelumnya #button a:hover{
+    color: #18a4fc;
+    background: none;
 }
 /* ini admin check order=============================================================================== */
 #admin {

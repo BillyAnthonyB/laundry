@@ -33,13 +33,23 @@ class laundryController extends Controller
 
     public function send_queryLaundryku()
     {
-        $loggedInId = Session::get('id'); //ambil data session isinya id
+        $loggedInId = Session::get('id'); //ambil data session isinya id //INI
 
-        $semuaTransaksi = $this -> laundryModel -> get_transaksi($loggedInId); //masukin ke function model
+        $semuaTransaksi = $this -> laundryModel -> get_transaksi($loggedInId); //masukin ke function model //INI
         $cekAlamat = $this -> laundryModel -> get_cekAlamat($loggedInId);
 
-        return view('pages/laundryku', compact(['semuaTransaksi', 'cekAlamat']));
+        return view('pages/laundryku', compact(['semuaTransaksi', 'cekAlamat'])); //INI
     }
+
+    public function send_querypayment()
+    {
+        $loggedInId = Session::get('id'); //ambil data session isinya id //INI
+
+        $semuaPaketPayment = $this -> laundryModel -> get_paketdipilih($loggedInId); //masukin ke function model //INI
+
+        return view('pages/payment', ['semuaPaketPayment' => $semuaPaketPayment]);
+    }
+
 
     public function send_paket()
     {
@@ -65,6 +75,9 @@ class laundryController extends Controller
             $Id = $sambungKeModel -> get_id($loginMail); //nyambung ke model get id membawa var $loginMail
 
             Session::put('nama', $Id[0] -> NAMA_CUSTOMER); //buat session yang isinya nama customer
+            Session::put('alamat', $Id[0] -> ALAMAT);
+            Session::put('hp', $Id[0] -> PHONE);
+
             Session::put('id', $Id[0] -> ID_CUSTOMER); //buat session yang isinya id customer yg login
             Session::put('login', $loginMail);
             Session::put('pass', $loginPass);
@@ -94,7 +107,6 @@ class laundryController extends Controller
         return view('pages.signup', [
             'title' => 'signup',
             'active' => 'signup'
-
         ]);
     }
 
@@ -135,6 +147,40 @@ class laundryController extends Controller
         }
     }
 
+    public function sendqueryupdate(request $request)
+    {
+        $updatenama = $request->input('updatename');
+        $updatenohp = $request->input('updatephone');
+        $updateaddress = $request->input('updateaddress');
+
+        $sambungpostupdate = new  laundryModel();
+
+        $tboxupdateprofil = [
+            'upnama'=>$updatenama,
+            'upphone' =>$updatenohp,
+            'upaddress' =>$updateaddress
+        ];
+        $loggedInId = Session::get('id');
+
+        $checkUpdate = $sambungpostupdate->post_update($tboxupdateprofil, $loggedInId);
+
+        if($checkUpdate==1){
+            // echo 'berhail perbarui data diri';
+            Session::flash('success', 'anda berhasil memperbarui data diri');
+            return redirect()->back();
+        }
+        echo 'gagal';
+        // return redirect('/updateprofile');
+    }
+
+    public function updateindex()
+    {
+        return view('pages.updateprofile', [
+            'title' => 'updateprofile',
+            'active' => 'updateprofile'
+        ]);
+    }
+
     // public function logauthenticate(request $request)
     // {
     //     $validasi = $request->validate([
@@ -168,9 +214,6 @@ class laundryController extends Controller
     //     return redirect('/login');
 
     // }
-
-
-
 
     // public function logindex()
     // {

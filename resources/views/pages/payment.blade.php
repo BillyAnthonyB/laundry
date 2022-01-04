@@ -12,7 +12,9 @@
         <div class = "kotak">
             <div id = "paragraf">
                 <h4>Paket yang dipilih :</h4><br>
-                <h6>INV/1233848 Bed - Paket</h6><br>
+                @foreach($semuaPaketPayment as $paketpayment)
+                <h6>INV/{{ $paketpayment->ID_TRANSAKSI }} {{ $paketpayment->PAKET }} : {{ $paketpayment->BERAT }}</h6><br>
+                @endforeach
                 <div id = "harga">
                     <h6>Total : &nbsp</h6>
                     <h6> 3 kg</h6>
@@ -21,7 +23,7 @@
         </div>
         <div id = "paragraf2">
             <!-- <h6>Pemesanan dan pembayaran</h6> -->
-            <h6>Pemesan: <b>Budi - Jl. Merdeka no. 1</b></h6><br>
+            <h6>Pemesan: <b>{{Session() -> get('nama')}} - {{Session() -> get('alamat')}}</b></h6><br>
             <h6><b>Metode pembayaran :</h6>
             <input type ="radio" name="payment" id="ovo" class = "pembayaran">
             <label for="ovo">

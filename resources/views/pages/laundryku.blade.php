@@ -27,6 +27,7 @@
         {{-- diatas ini blum slesai lanjutin --}}
     </div>
     <br>
+
     @foreach($semuaTransaksi as $transaksi)
         {{-- <tr>
             <td>{{ $transaksi->ID_TRANSAKSI }}</td>
@@ -86,8 +87,14 @@
             </div>
         </div>
         <br>
-
     @endforeach
+    <br>
+    <div id = "Sebelumnya">
+        <h2>Belum ada laundry sebelumnya</h2>
+        <h3> Lakukan pesanan sekarang semudah menekan tombol</h3>
+        <div id = 'button'> <a href = "http://localhost:8000/paket">Pesan</a></div>
+    </div>
+    <br>
 </div>
 
 <script>
