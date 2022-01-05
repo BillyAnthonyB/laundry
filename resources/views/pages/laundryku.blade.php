@@ -89,7 +89,7 @@
         <br>
 
         <?php
-            if (is_null($transaksi->STATUS_BAYAR) == 1)
+            if (empty($transaksi->STATUS_BAYAR))
             {
                 echo "<br>";
                 echo "<div id = 'Sebelumnya'>";
