@@ -2,9 +2,11 @@
 @extends('layout.main')
 
 {{-- mengisi value title ke template --}}
-@section('title', 'update profile')
+@section('title', 'Perbarui Profil')
 
 @section('content')
+@if (Session::has('login'))
+        {{-- ini navbar udah login --}}
 <div id = "profil">
     <form action="/updateprofile" method="post">
         @csrf
@@ -49,6 +51,7 @@
 </div>
 
 <script src="app.js"></script>
-
-
+@else
+<meta http-equiv="Refresh" content="0; url='/login'" />
+@endif
 @endsection

@@ -32,7 +32,7 @@ class laundryModel extends Model
 
     //cek apakah alamat user ada sebelum lanjut ke pembayaran
     function get_cekAlamat($loggedInId) {
-        $queryCekAlamat = "SELECT ALAMAT FROM laundry_service.customer WHERE ID_CUSTOMER = :loggedInId limit 1;";
+        $queryCekAlamat = "SELECT ALAMAT, PHONE FROM laundry_service.customer WHERE ID_CUSTOMER = :loggedInId limit 1;";
         $data = [
             'loggedInId' => $loggedInId
         ]; //declare biar bisa dipake di query
@@ -40,8 +40,25 @@ class laundryModel extends Model
         return $executeQueryCekAlamat;
     }
 
+    function get_cekAlamatPickup($loggedInId) {
+        $queryCekAlamatPickup = "SELECT ALAMAT, PHONE FROM laundry_service.customer WHERE ID_CUSTOMER = :loggedInId limit 1;";
+        $data = [
+            'loggedInId' => $loggedInId
+        ];
+        $executeQueryCekAlamatPickup = DB::select($queryCekAlamatPickup, $data);
+        return $executeQueryCekAlamatPickup;
+    }
+
     function get_paket() {
         return DB::table('laundry_service.paket')->get();
+    }
+
+    function get_belumbayar($loggedInId) {
+        $queryharga = "select sum(HARGA) from transaksi where STATUS_BAYAR = '0' and ID_CUSTOMER = :loggedInId";
+        $data = [
+            'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query
+        $executequeryharga = DB::select($queryharga, $data);
     }
 
     public function cekLogin($tboxLogin){
@@ -78,16 +95,17 @@ class laundryModel extends Model
         return $result;
     }
 
-    function post_update($tboxupdateprofil, $loggedInId) {
+    function post_update($tboxupdateprofil, $loggedInIdUpdate) {
 
         $queryupdate = "UPDATE customer " .
-        "set NAMA_CUSTOMER = :upnama, PHONE = :upphone, ALAMAT = :upaddress " .
-        "where ID_CUSTOMER = :loggedInId ;";
-        $data = [
-            'loggedInId' => $loggedInId
+        "SET NAMA_CUSTOMER = :upnama, PHONE = :upphone, ALAMAT = :upaddress " .
+        "WHERE ID_CUSTOMER = :loggedInId ;";
+        $dataIdUpdate = [
+            'loggedInId' => $loggedInIdUpdate
         ]; //declare biar bisa dipake di query
-        $executequeryupdate = DB::update($queryupdate, $data);
-        return $executequeryupdate;
+        $executequeryupdate = DB::update($queryupdate, $dataIdUpdate);
+        // dd($executequeryupdate);
+        return $executequeryupdate($tboxupdateprofil, $loggedInIdUpdate);
 
     }
 

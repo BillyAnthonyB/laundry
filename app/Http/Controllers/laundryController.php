@@ -23,7 +23,6 @@ class laundryController extends Controller
     //     $semuaTransaksi = $this -> laundryModel -> get_transaksi();
     //     return view('pages/laundryku', ['semuaTransaksi' => $semuaTransaksi]);
     // }
-
     // //kirim hasil query cek alamat apakah ada ke laundryku
     // public function send_CekAlamat()
     // {
@@ -39,6 +38,13 @@ class laundryController extends Controller
         $cekAlamat = $this -> laundryModel -> get_cekAlamat($loggedInId);
 
         return view('pages/laundryku', compact(['semuaTransaksi', 'cekAlamat'])); //INI
+    }
+
+    public function send_querycekAlamatPickup()
+    {
+        $loggedInId = Session::get('id');
+        $cekAlamatPickup = $this -> laundryModel -> get_cekAlamatPickup($loggedInId);
+        return view('/pickup', ['cekAlamatPickup' => $cekAlamatPickup]);
     }
 
     public function send_querypayment()
@@ -130,7 +136,7 @@ class laundryController extends Controller
 
         if($return==1){
             // echo 'berhail signup';
-            Session::flash('success', 'anda berhasil signup');
+            Session::flash('success', 'Anda berhasil signup');
             return redirect('/login');
         }
 
@@ -160,9 +166,9 @@ class laundryController extends Controller
             'upphone' =>$updatenohp,
             'upaddress' =>$updateaddress
         ];
-        $loggedInId = Session::get('id');
+        $loggedInIdUpdate = Session::get('id');
 
-        $checkUpdate = $sambungpostupdate->post_update($tboxupdateprofil, $loggedInId);
+        $checkUpdate = $sambungpostupdate->post_update($tboxupdateprofil, $loggedInIdUpdate);
 
         if($checkUpdate==1){
             // echo 'berhail perbarui data diri';

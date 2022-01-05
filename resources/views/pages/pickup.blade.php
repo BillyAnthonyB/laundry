@@ -5,6 +5,8 @@
 @section('title', 'Pick Up')
 
 @section('content')
+@if (Session::has('login'))
+        {{-- ini navbar udah login --}}
 <section id='pickup'>
     <div id = "paragraft">
         <h1>Ajukan Pick Up</h1>
@@ -32,13 +34,30 @@
         <h1>Konfirmasi Pick-up Laundry</h1>
         <h2>Ketentuan :</h2>
         <h3>Barang yang sudah di pick up tidak dapat dibatalkan</h3>
-        <div id = "button">
+        @foreach ($cekAlamatPickup as $hasilCekAlamatPickup)
+        <?php
+            $adaAlamatPickup = "http://localhost:8000/payment";
+            $tidakAdaAlamatPickup  = "http://localhost:8000/updateprofile";
+            if ($hasilCekAlamatPickup ->ALAMAT == '-')
+            {
+
+                echo "<div id = 'button'> <div id = 'image'> <img src = 'laundryResource/Protect2.png'></div> <div id = 'ajukan'> <a href = ".$tidakAdaAlamatPickup.">Ajukan Pickup</a> </div></div>";
+            }
+            else
+            {
+                echo "<div id = 'button'> <div id = 'image'> <img src = 'laundryResource/Protect2.png'></div> <div id = 'ajukan'> <a href = ".$adaAlamatPickup.">Ajukan Pickup</a> </div></div>";
+            }
+        ?>
+        @endforeach
+        <!-- <div id = "button">
             <div id = "image">
                 <img src = "laundryResource/Protect2.png">
             </div>
             <div id = 'ajukan'> <a>Ajukan Pickup</a> </div>
-        </div>
+        </div> -->
     </div>
 </section>
-
+@else
+<meta http-equiv="Refresh" content="0; url='/login'" />
+@endif
 @endsection

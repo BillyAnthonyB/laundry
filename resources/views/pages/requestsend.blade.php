@@ -3,7 +3,8 @@
 
 {{-- mengisi value title ke template --}}
 @section('title', 'Request Sent')
-
+@if (Session::has('login'))
+        {{-- ini navbar udah login --}}
 @section('content')
 <section id='requestsend'>
     <div id = "paragraft">
@@ -31,5 +32,7 @@
         <h4>untuk melanjutkan pesanan</h4>
     </div>
 </section>
-
+@else
+<meta http-equiv="Refresh" content="0; url='/login'" />
+@endif
 @endsection

@@ -5,7 +5,8 @@
 @section('title', 'Laundryku')
 
 @section('content')
-
+@if (Session::has('login'))
+        {{-- ini navbar udah login --}}
 <div id = "accordionLaundryku">
     <br>
     <div id = "accordionButton">
@@ -76,7 +77,6 @@
                             {
                                 echo "&nbsp Pesanan sedang diproses";
                             }
-
                         }
                         ?>
                 </p>
@@ -87,15 +87,24 @@
             </div>
         </div>
         <br>
+
+        <?php
+            if (is_null($transaksi->STATUS_BAYAR) == 1)
+            {
+                echo "<br>";
+                echo "<div id = 'Sebelumnya'>";
+                echo "<h2>Belum ada laundry sebelumnya</h2>";
+                echo "<h3> Lakukan pesanan sekarang semudah menekan tombol</h3>";
+                echo "<div id = 'button'> <a href = '/paket'>Pesan</a></div>";
+                echo "</div>";
+                echo "<br>";
+                echo "</div>";
+            }
+            ?>
+
     @endforeach
-    <br>
-    <div id = "Sebelumnya">
-        <h2>Belum ada laundry sebelumnya</h2>
-        <h3> Lakukan pesanan sekarang semudah menekan tombol</h3>
-        <div id = 'button'> <a href = "http://localhost:8000/paket">Pesan</a></div>
-    </div>
-    <br>
-</div>
+
+
 
 <script>
     var acc = document.getElementsByClassName("accordionL");
@@ -113,5 +122,8 @@
   });
 }
 </script>
-
+@else
+<meta http-equiv="Refresh" content="0; url='/login'" />
+@endif
 @endsection
+
