@@ -44,7 +44,9 @@ class laundryController extends Controller
     {
         $loggedInId = Session::get('id');
         $cekAlamatPickup = $this -> laundryModel -> get_cekAlamatPickup($loggedInId);
-        return view('/pickup', ['cekAlamatPickup' => $cekAlamatPickup]);
+        // dd($cekAlamatPickup);
+        return view('pages/pickup', ['cekAlamatPickup' => $cekAlamatPickup]);
+
     }
 
     public function send_querypayment()
@@ -131,16 +133,37 @@ class laundryController extends Controller
             'password_customer' =>$password
 
         ];
+        // dd($data);
 
-        $return = $user->post_datasignup($data);
+        $checkemail = $user->post_cekemail($data);
 
-        if($return==1){
+
+        if($checkemail){
+            // echo 'maaf email udah di pake';
+            Session::flash('error', 'Maaf email telah terdaftar');
+            return redirect('/signup');
+        }
+        else{
+            $return = $user->post_datasignup($data);
+
+            if($return==1){
             // echo 'berhail signup';
-            Session::flash('success', 'Anda berhasil signup');
-            return redirect('/login');
+                 Session::flash('success', 'Anda berhasil signup');
+                return redirect('/login');
+             }
+
+
         }
 
-        return redirect('/register');
+        // $return = $user->post_datasignup($data);
+
+        // if($return==1){
+        //     // echo 'berhail signup';
+        //     Session::flash('success', 'Anda berhasil signup');
+        //     return redirect('/login');
+        // }
+
+        // return redirect('/register');
     }
 
     public function logout(request $request){
@@ -173,7 +196,7 @@ class laundryController extends Controller
         if($checkUpdate==1){
             // echo 'berhail perbarui data diri';
             Session::flash('success', 'anda berhasil memperbarui data diri');
-            return redirect()->back();
+            return redirect('/updateprofile');
         }
         echo 'gagal';
         // return redirect('/updateprofile');
@@ -186,6 +209,8 @@ class laundryController extends Controller
             'active' => 'updateprofile'
         ]);
     }
+
+
 
     // public function logauthenticate(request $request)
     // {

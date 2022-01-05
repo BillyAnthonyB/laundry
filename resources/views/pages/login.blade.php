@@ -4,18 +4,17 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 <link rel="stylesheet" href="style.css">
 
+<body>
+@if (Session::has('success'))
+            <div class="alert alert-success alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ Session::get('error') }}</strong>
+            </div>
+        @endif
 
-@if(session()->has('success'))
-
-<div class="alert alert-succes alert-dismissible fade show" role="alert">
-    {{ session('success') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert"
-    aria-label="close"></button>
-</div>
-
-@endif
 
 @if(session()->has('loginError'))
 
@@ -48,8 +47,8 @@
             <div class="mb-3 row">
                 <label for="password" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control" name = 'loginPassword' id="password-field"  aria-describedby="emailHelp" placeholder=" Password" required>
-                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                <input type="password" class="form-control" name = 'loginPassword' id="password"  aria-describedby="emailHelp" placeholder=" Password" required>
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Masuk</button>
@@ -64,15 +63,17 @@
             </div>
         </div>
     </form>
-    <script >
-        $(this).toggleClass("fa-eye fa-eye-slash");
-        var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
-        input.attr("type", "text");
-        } else {
-        input.attr("type", "password");
-        }
-        });
-    </script>
 </section>
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
 
+togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
+</script>
+</body>

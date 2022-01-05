@@ -3,14 +3,23 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
 
 <section id='signup'>
     <div id = "image">
         <img src = "laundryResource/logoFull.png">
     </div>
+    @if (Session::has('error'))
+            <div class="alert alert-danger alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ Session::get('error') }}</strong>
+            </div>
+        @endif
+
     <form action="/signup" method="POST">
         @csrf
+
         <div class = "box-login">
             <div class="mb-3 row">
                 <label for="name"  class="col-sm-2 col-form-label" >Nama</label>
@@ -49,12 +58,13 @@
                 <label for="password" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
                 <input type="password" class="form-control @error('password') is-invalid @enderror" name = 'password' id="password" aria-describedby="emailHelp" placeholder=" Password" required>
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
                 @error('password')
                     <div class="invalid-feedback">
                     {{$message}}
                     </div>
                 @enderror
-                </div>
+            </div>
             </div>
             <button type="submit" class="btn btn-primary">Daftar</button>
             <div class = "box-akun">
@@ -62,4 +72,16 @@
             </div>
         </div>
     </form>
+    <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle('bi-eye');
+});
+</script>
 </section>

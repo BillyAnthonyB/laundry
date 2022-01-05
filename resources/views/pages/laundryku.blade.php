@@ -6,26 +6,24 @@
 
 @section('content')
 @if (Session::has('login'))
-        {{-- ini navbar udah login --}}
 <div id = "accordionLaundryku">
     <br>
     <div id = "accordionButton">
-        <h2>Cucian saya</h2>
         @foreach ($cekAlamat as $hasilCekAlamat)
         <?php
             $adaAlamat = "http://localhost:8000/payment";
             $tidakAdaAlamat = "http://localhost:8000/updateprofile";
             if ($hasilCekAlamat->ALAMAT == '-')
             {
-                echo "<div id = 'button'> <a href=".$tidakAdaAlamat.">Bayar Sekarang</a> </div> ";
+                // echo "<div id = 'button'> <a href=".$tidakAdaAlamat.">Bayar Sekarang</a> </div> ";
             }
             else
             {
+                echo "<h2>Cucian saya</h2>";
                 echo "<div id = 'button'> <a href=".$adaAlamat.">Bayar Sekarang</a> </div>";
             }
         ?>
         @endforeach
-        {{-- diatas ini blum slesai lanjutin --}}
     </div>
     <br>
 
@@ -87,23 +85,40 @@
             </div>
         </div>
         <br>
-
-        <?php
-            if (empty($transaksi->STATUS_BAYAR))
-            {
-                echo "<br>";
-                echo "<div id = 'Sebelumnya'>";
-                echo "<h2>Belum ada laundry sebelumnya</h2>";
-                echo "<h3> Lakukan pesanan sekarang semudah menekan tombol</h3>";
-                echo "<div id = 'button'> <a href = '/paket'>Pesan</a></div>";
-                echo "</div>";
-                echo "<br>";
-                echo "</div>";
-            }
-            ?>
-
     @endforeach
 
+    @foreach ($cekAlamat as $hasilCekAlamat)
+        <?php
+        if ($hasilCekAlamat->ALAMAT == '-')
+        {
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<div id = 'Sebelumnya'>";
+        echo "<h2>Belum ada laundry sebelumnya</h2>";
+        echo "<h3> Lakukan pesanan sekarang semudah menekan tombol</h3>";
+        echo "<br>";
+        echo "<div id = 'button'> <a href = '/paket'>Pesan</a></div>";
+        echo "</div>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "</div>";
+        }
+        else {
+
+        }
+        ?>
+    @endforeach
 
 
 <script>

@@ -26,6 +26,10 @@
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" {{Session() -> get('alamat')}}" disabled>
             </div>
         </div>
+        <div id = "buttonkiri">
+            <a href ="/updateprofile"><div id = 'edit'>Edit kontak dan Alamat </div></a>
+
+        </div>
     </div>
     <div id = "paragraft2">
         <div id = "border">
@@ -47,7 +51,7 @@
             {
                 echo "<div id = 'button'> <div id = 'image'> <img src = 'laundryResource/Protect2.png'></div> <div id = 'ajukan'> <a href = ".$adaAlamatPickup.">Ajukan Pickup</a> </div></div>";
             }
-        ?>
+            ?>
         @endforeach
         <!-- <div id = "button">
             <div id = "image">

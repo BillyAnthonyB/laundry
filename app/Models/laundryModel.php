@@ -95,17 +95,37 @@ class laundryModel extends Model
         return $result;
     }
 
+    function post_cekemail($data) {
+        $data_baru =[
+            'email'=> $data['email']
+        ];
+
+        $querycekemail = "SELECT EMAIL FROM customer WHERE EMAIL = :email";
+        $result =DB::select($querycekemail, $data_baru);
+
+        // dd($result[0]);
+        // die;
+        // $datacekemail = [
+        //     'email' => $result[0]->EMAIL
+        // ]; //declare biar bisa dipake di query
+        return $result;
+
+    }
+
     function post_update($tboxupdateprofil, $loggedInIdUpdate) {
 
         $queryupdate = "UPDATE customer " .
         "SET NAMA_CUSTOMER = :upnama, PHONE = :upphone, ALAMAT = :upaddress " .
         "WHERE ID_CUSTOMER = :loggedInId ;";
         $dataIdUpdate = [
-            'loggedInId' => $loggedInIdUpdate
+            'loggedInId' => $loggedInIdUpdate,
+            'upnama' => $tboxupdateprofil['upnama'],
+            'upphone' => $tboxupdateprofil['upphone'],
+            'upaddress' => $tboxupdateprofil['upaddress']
         ]; //declare biar bisa dipake di query
         $executequeryupdate = DB::update($queryupdate, $dataIdUpdate);
         // dd($executequeryupdate);
-        return $executequeryupdate($tboxupdateprofil, $loggedInIdUpdate);
+        return $executequeryupdate;
 
     }
 

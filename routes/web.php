@@ -17,13 +17,15 @@ Route::get('/paket', function () {
     return view('pages/paket');
 });
 
-Route::get('/pickup', function () {
-    return view('pages/pickup');
-});
+// Route::get('/pickup', function () {
+//     return view('pages/pickup');
+// });
 
 Route::get('/membership', function () {
     return view('pages/membership');
 });
+
+Route::get('/pickup', 'App\Http\Controllers\laundryController@send_querycekAlamatPickup');
 
 // Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_transaksi');
 // Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_cekAlamat');
