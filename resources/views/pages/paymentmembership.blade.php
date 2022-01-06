@@ -16,8 +16,9 @@
             </div>
         </div>
         <div id = "paragraf2">
-            <h6>Pemesanan dan pembayaran</h6>
-            <h6>Pemesan: <b>{{Session() -> get('nama')}} - {{Session() -> get('alamat')}}</b></h6><br>
+            <h6>Pemesan: <b>{{Session() -> get('nama')}}</b></h6><br>
+            {{-- - {{Session() -> get('alamat')}} --}}
+            <h6><b>Metode Pembayaran : </b></h6>
             <input type ="radio" name="payment" id="ovo" class = "pembayaran">
             <label for="ovo">
                 <img src="laundryResource/ovo.png">
@@ -40,7 +41,7 @@
             </div>
             <div id = "paragraf2">
                 <h6>Total Tagihan</h6>
-                <h2>Rp 20.000</h2><br>
+                <h2>Rp 100.000</h2><br>
             </div>
             <div id = "button">
                 <div id = "image">
