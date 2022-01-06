@@ -48,8 +48,12 @@ Route::post('/updateprofile', 'App\Http\Controllers\laundryController@sendqueryu
 Route::get('/payment', 'App\Http\Controllers\laundryController@send_querypayment');
 
 
-Route::get('/payment-membership', function () {
+Route::get('/payment-platinum', function () {
     return view('pages/paymentmembership');
+});
+
+Route::get('/payment-silver', function () {
+    return view('pages/paymentmembershipp');
 });
 
 Route::get('/login', 'App\Http\Controllers\laundryController@loginIndex');
@@ -80,6 +84,8 @@ Route::get('/admincheckorder', function () {
 Route::get('/paymentreceived', function () {
     return view('pages/paymentreceived');
 });
+
+
 
 //SEMENTARA BUAT DEBUG
 Route::get('/debug', function () {
