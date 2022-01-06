@@ -32,7 +32,7 @@
         <h3>Mohon lakukan pembayaran setelah pesanan anda ditimbang</h3>
         <h4>untuk melanjutkan pesanan</h4>
         <div id = "button">
-            <div id = 'ok'> <a href = "home">OK</a> </div>
+            <div id = 'ok'> <a href = "/">OK</a> </div>
         </div>
     </div>
 </section>

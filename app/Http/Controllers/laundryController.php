@@ -195,6 +195,13 @@ class laundryController extends Controller
 
         if($checkUpdate==1){
             // echo 'berhail perbarui data diri';
+            // $hasloginupdate = $request->session()->has('login');
+            // $Id = $sambungpostupdate -> get_id($hasloginupdate); //nyambung ke model get id membawa var $loginMail
+
+            // Session::put('nama', $Id[0] -> NAMA_CUSTOMER); //buat session yang isinya nama customer
+            // Session::put('alamat', $Id[0] -> ALAMAT);
+            // Session::put('hp', $Id[0] -> PHONE);
+
             Session::flash('success', 'anda berhasil memperbarui data diri');
             return redirect('/updateprofile');
         }

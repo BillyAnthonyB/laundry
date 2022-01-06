@@ -45,7 +45,7 @@
         </div>
         <div id = "memberupdate">
             <h3>Perbarui Membership</h3>
-            <div id = 'Perbarui'> <a href = "http://localhost:8000/membership">Perbarui</a> </div>
+            <div id = 'Perbarui'> <a href = "/membership">Perbarui</a> </div>
         </div>
     </div>
 </div>

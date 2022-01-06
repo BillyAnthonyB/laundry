@@ -51,7 +51,7 @@
             </div>
             <div id = "paragraf2">
                 <h6>Total Tagihan</h6>
-                <h6 id = "paragraf3">Rp 20.000</h6><br>
+                <h6 id = "paragraf3">Rp 200.000</h6><br>
             </div>
             <div id = "button">
                 <div id = "image">

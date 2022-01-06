@@ -715,10 +715,10 @@ div.descWhy {
 }
 #card:hover{
     --x-pos: 0;
-    --y-angle: calc(var(--x-pos) * 7deg);
+    --y-angle: calc(var(--x-pos) * 5deg);
 
     --y-pos: 0;
-    --x-angle: calc(var(--y-pos) * 7deg);
+    --x-angle: calc(var(--y-pos) * 5deg);
 
     transform:
         perspective(200px)
@@ -738,10 +738,10 @@ div.descWhy {
 }
 #card2:hover{
     --x2-pos: 0;
-    --y2-angle: calc(var(--x2-pos) * 7deg);
+    --y2-angle: calc(var(--x2-pos) * 5deg);
 
     --y2-pos: 0;
-    --x2-angle: calc(var(--y2-pos) * 7deg);
+    --x2-angle: calc(var(--y2-pos) * 5deg);
 
     transform:
         perspective(200px)

@@ -12,7 +12,7 @@ class laundryModel extends Model
     //menampilkan semua transaksi di laundryKu
     function get_transaksi($loggedInId) { //tambahin variabel dri controller ke function //INI
         //INI
-        $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() AND ID_CUSTOMER = :loggedInId ;";
+        $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() AND ID_CUSTOMER = :loggedInId ORDER BY TANGGAL DESC;";
         $data = [
             'loggedInId' => $loggedInId
         ]; //declare biar bisa dipake di query //INI

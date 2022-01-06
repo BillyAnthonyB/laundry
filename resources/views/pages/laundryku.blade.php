@@ -41,7 +41,7 @@
         </tr> --}}
         <button class="accordionL">
             <div id = "accordionJudul">
-                <h6>Paket {{$transaksi->PAKET}} - Berat {{ $transaksi->BERAT }} kg</h6>
+                <h6>Paket {{$transaksi->PAKET}} &nbsp | &nbsp Berat {{ $transaksi->BERAT }} kg</h6>
                 <h6 id = "accordionHarga">
                     <?php
                         if ($transaksi->STATUS_CUCI == 1)

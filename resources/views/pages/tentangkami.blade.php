@@ -15,10 +15,11 @@
     </div>
 </div>
 <div class = "button-tentangkami-FAQ">
-    <a href="http://localhost:8000/faq">Pertanyaan Umum</a>
+    <a href="/faq">Pertanyaan Umum</a>
 </div>
 <div class = "havemore">
-    <h6>Apakah ada pertanyaan?</h6>
+    <br>
+    <h6>Punya pertanyaan lain?</h6>
 </div>
 <div class = "button-tentangkami-contactus">
     <a>Hubungi Kami</a>
