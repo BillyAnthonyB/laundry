@@ -6,17 +6,17 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
 
-<section id='signup'>
-    <div id = "image">
-        <img src = "laundryResource/logoFull.png">
-    </div>
-    @if (Session::has('error'))
-            <div class="alert alert-danger alert-block">
-                <button type="button" class="close" data-dismiss="alert">×</button>
+@if (Session::has('error'))
+            <div class="alertalert-dangeralert-block">
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
                 <strong>{{ Session::get('error') }}</strong>
             </div>
         @endif
 
+<section id='signup'>
+    <div id = "image">
+        <img src = "laundryResource/logoFull.png">
+    </div>
     <form action="/signup" method="POST">
         @csrf
 

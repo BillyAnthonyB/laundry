@@ -11,21 +11,25 @@
         <h1>Payment Page</h1>
         <div class = "kotak">
             <div id = "paragraf">
-                <h4>Paket yang dipilih :</h4><br>
+                <h4>Paket yang dipilih :</h4>
                 @foreach($semuaPaketPayment as $paketpayment)
-                <h6>INV/{{ $paketpayment->ID_TRANSAKSI }} {{ $paketpayment->PAKET }} : {{ $paketpayment->BERAT }}</h6><br>
+                <div class = "aturtext">
+                    <ul>
+                        <li><h6>INV/{{ $paketpayment->ID_TRANSAKSI }} {{ $paketpayment->PAKET }} : {{ $paketpayment->BERAT }} kg</h6></li>
+                    </ul>
+                </div>
                 @endforeach
-                <div id = "harga">
+                <!-- <div id = "harga">
                     <h6>Total : &nbsp</h6>
                     <h6> 3 kg</h6>
-                </div>
+                </div> -->
             </div>
         </div>
         <div id = "paragraf2">
             <!-- <h6>Pemesanan dan pembayaran</h6> -->
             <h6>Pemesan: <b>{{Session() -> get('nama')}} - {{Session() -> get('alamat')}}</b></h6><br>
             <h6><b>Metode pembayaran :</h6>
-            <input type ="radio" name="payment" id="ovo" class = "pembayaran">
+            <input type ="radio" name="payment" id="ovo" class = "pembayaran" checked="checked">
             <label for="ovo">
                 <img src="laundryResource/ovo.png">
             </label>
@@ -53,7 +57,7 @@
                 <div id = "image">
                     <img src = "laundryResource/Protect2.png">
                 </div>
-                <div id = 'bayar'> <a href = "http://127.0.0.1:8000/paymentreceived">  Bayar Sekarang</a> </div>
+                <div id = 'bayar'> <a href = "paymentreceived">  Bayar Sekarang</a> </div>
             </div>
         </div>
     </div>

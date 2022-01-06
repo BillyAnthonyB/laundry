@@ -3,9 +3,10 @@
 
 {{-- mengisi value title ke template --}}
 @section('title', 'Request Sent')
+
+@section('content')
 @if (Session::has('login'))
         {{-- ini navbar udah login --}}
-@section('content')
 <section id='requestsend'>
     <div id = "paragraft">
         <h1>Apa yang harus saya lakukan</h1>
@@ -30,6 +31,9 @@
         <h2>Kurir kami akan segera menjemput pesanan anda</h2>
         <h3>Mohon lakukan pembayaran setelah pesanan anda ditimbang</h3>
         <h4>untuk melanjutkan pesanan</h4>
+        <div id = "button">
+            <div id = 'ok'> <a href = "home">OK</a> </div>
+        </div>
     </div>
 </section>
 @else

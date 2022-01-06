@@ -210,6 +210,32 @@ class laundryController extends Controller
         ]);
     }
 
+    public function payment_silver()
+    {
+        $user = new laundryModel();
+        $loggedInId = Session::get('id');
+
+        $checkquerypayment = $user->get_paymentsilver($loggedInId);
+        // dd($checkquerypayment);
+
+        return redirect('/paymentreceived');
+        // return redirect('/paymentreceived');
+
+    }
+
+    public function payment_platinum()
+    {
+        $user = new laundryModel();
+        $loggedInId = Session::get('id');
+
+        $checkquerypaymentplat = $user->get_paymentplatinum($loggedInId);
+        // dd($checkquerypaymentplat);
+
+        return redirect('/paymentreceived');
+        // return redirect('/paymentreceived');
+
+    }
+
 
 
     // public function logauthenticate(request $request)

@@ -40,7 +40,7 @@
         <h3>Barang yang sudah di pick up tidak dapat dibatalkan</h3>
         @foreach ($cekAlamatPickup as $hasilCekAlamatPickup)
         <?php
-            $adaAlamatPickup = "http://localhost:8000/payment";
+            $adaAlamatPickup = "http://localhost:8000/requestsend";
             $tidakAdaAlamatPickup  = "http://localhost:8000/updateprofile";
             if ($hasilCekAlamatPickup ->ALAMAT == '-')
             {

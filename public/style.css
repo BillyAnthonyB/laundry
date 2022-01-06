@@ -847,6 +847,36 @@ button, input, optgroup, select, textarea {
     display: flex;
     margin-top: -25px;
 }
+.alertalert-successalert-block {
+    padding: 20px;
+    background-color: #4ae257cc;
+    color: rgb(36, 102, 52);
+}
+.alertalert-successalert-block .button {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .alertalert-dangeralert-dismissiblefadeshow{
+    padding: 20px;
+    background-color: #eb2a2acc;
+    color: white;
+  }
+  .alertalert-dangeralert-dismissiblefadeshow .button {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
 /* Recovery =============================================================================================== */
 #recovery{
     padding-top: 150px;
@@ -969,6 +999,21 @@ button, input, optgroup, select, textarea {
     cursor: pointer;
     display: flex;
     margin-top: -25px;
+}
+.alertalert-dangeralert-block{
+    padding: 20px;
+    background-color: #eb2a2acc;
+    color: white;
+}
+.alertalert-dangeralert-dismissiblefadeshow .button {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 /* Recoverysend =============================================================================================== */
 #recoverysend{
@@ -1097,6 +1142,26 @@ button, input, optgroup, select, textarea {
     top: 60%;
     left: 36%;
     font-family: Nunito;
+}
+#requestsend #paragraft2 #button #ok{
+    display: inline-block;
+    background: #18a4fc;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px 50px;
+    margin-top: 200px;
+    margin-left: 350px;
+    border-radius: 6px;
+    border: 2px solid #18a4fc;
+    transition: all 0.3s ease;
+}
+#requestsend #paragraft2 #button #ok:hover{
+    color: #18a4fc;
+    background: none;
+}
+#requestsend #paragraft2 #button #ok a{
+    text-decoration:none;
 }
 /* updateprofil =============================================================================================== */
 #profil {
@@ -1427,6 +1492,7 @@ button, input, optgroup, select, textarea {
 }
 #payment #paymentbox1 .kotak #paragraf h4 {
     font-weight: bolder;
+    margin-bottom: 2.5vh;
 }
 #payment #paymentbox1 .kotak #paragraf h6 {
     font-weight: bolder;
@@ -1462,6 +1528,9 @@ input[type=radio] + label>img {
     transition: 0.1s all;
     margin-right: 1vw;
 }
+/* #payment #paymentbox1 #kotak #paragraf .aturtext{
+    margin-left: 19rem;
+} */
 /* ini payment membership ============================================================================= */
 #paymentmembership{
     display: flex;
@@ -1551,7 +1620,7 @@ input[type=radio] + label>img {
 #paymentmembership #paymentbox2 .kotak #paragraf2 h2 {
     margin-top: 15px;
     font-weight: bolder;
-    margin-left: 385px;
+    margin-left: 373px;
     font-size: 17px;
 }
 #paymentmembership .pembayaran{
@@ -1568,6 +1637,14 @@ input[type=radio] + label>img {
     height: 52px;
     transition: 0.1s all;
     margin-right: 1vw;
+}
+#paymentmembership #paymentbox1 #card img{
+    width: 100%;
+    margin-left: 3vw;
+    margin-top: 4vh;
+}
+#paymentmembership #paymentbox2{
+    margin-left: 15vw;
 }
 /* laundryku ===========================================================================================*/
 #accordionLaundryku {

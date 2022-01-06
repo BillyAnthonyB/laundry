@@ -9,19 +9,19 @@
 
 <body>
 @if (Session::has('success'))
-            <div class="alert alert-success alert-block">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                <strong>{{ Session::get('error') }}</strong>
+            <div class="alertalert-successalert-block">
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong>{{ Session::get('success') }}</strong>
             </div>
         @endif
 
 
 @if(session()->has('loginError'))
 
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
+<div class="alertalert-dangeralert-dismissiblefadeshow" role="alert">
     {{ session('loginError') }}
-    <button type="button" class="btn-close" data-bs-dismiss="alert"
-    aria-label="close"></button>
+    <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+    </button>
 </div>
 
 @endif

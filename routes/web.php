@@ -51,10 +51,13 @@ Route::get('/payment', 'App\Http\Controllers\laundryController@send_querypayment
 Route::get('/payment-platinum', function () {
     return view('pages/paymentmembership');
 });
-
 Route::get('/payment-silver', function () {
     return view('pages/paymentmembershipp');
 });
+
+Route::get('/pay-silver', 'App\Http\Controllers\laundryController@payment_silver');
+Route::get('/pay-platinum', 'App\Http\Controllers\laundryController@payment_platinum');
+
 
 Route::get('/login', 'App\Http\Controllers\laundryController@loginIndex');
 Route::post('/login', 'App\Http\Controllers\laundryController@send_login');

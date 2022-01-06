@@ -129,6 +129,24 @@ class laundryModel extends Model
 
     }
 
+    function get_paymentsilver($loggedInId) {
+        $queryCeksilver = "update customer set ID_MEMBERSHIP = 'SILV' where ID_CUSTOMER = :loggedInId";
+        $data = [
+            'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query
+        $executeQueryCekpaymentsilv = DB::update($queryCeksilver, $data);
+        return $executeQueryCekpaymentsilv;
+    }
+
+    function get_paymentplatinum($loggedInId) {
+        $queryCekplat = "update customer set ID_MEMBERSHIP = 'PLAT' where ID_CUSTOMER = :loggedInId";
+        $data = [
+            'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query
+        $executeQueryCekpaymentplat = DB::update($queryCekplat, $data);
+        return $executeQueryCekpaymentplat;
+    }
+
 
 
 
