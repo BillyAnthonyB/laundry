@@ -11,14 +11,17 @@
     <div id = "accordionButton">
         @foreach ($cekAlamat as $hasilCekAlamat)
         <?php
-            $adaAlamat = "http://localhost:8000/payment";
-            $tidakAdaAlamat = "http://localhost:8000/updateprofile";
+            $adaAlamat = "/payment";
+            $tidakAdaAlamat = "/updateprofile";
             if ($hasilCekAlamat->ALAMAT == '-')
             {
                 // echo "<div id = 'button'> <a href=".$tidakAdaAlamat.">Bayar Sekarang</a> </div> ";
             }
             else
             {
+                //kalau udah bayar, button jangan di display
+
+
                 echo "<h2>Cucian saya</h2>";
                 echo "<div id = 'button'> <a href=".$adaAlamat.">Bayar Sekarang</a> </div>";
             }

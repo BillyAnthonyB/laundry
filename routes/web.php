@@ -58,6 +58,7 @@ Route::get('/payment-silver', function () {
 Route::get('/pay-silver', 'App\Http\Controllers\laundryController@payment_silver');
 Route::get('/pay-platinum', 'App\Http\Controllers\laundryController@payment_platinum');
 
+Route::get('/pay-laundry', 'App\Http\Controllers\laundryController@send_updateStatusBayar');
 
 Route::get('/login', 'App\Http\Controllers\laundryController@loginIndex');
 Route::post('/login', 'App\Http\Controllers\laundryController@send_login');

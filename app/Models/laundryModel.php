@@ -12,7 +12,7 @@ class laundryModel extends Model
     //menampilkan semua transaksi di laundryKu
     function get_transaksi($loggedInId) { //tambahin variabel dri controller ke function //INI
         //INI
-        $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() AND ID_CUSTOMER = :loggedInId ORDER BY TANGGAL DESC;";
+        $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 60 DAY) AND CURDATE() AND ID_CUSTOMER = :loggedInId ORDER BY TANGGAL DESC;";
         $data = [
             'loggedInId' => $loggedInId
         ]; //declare biar bisa dipake di query //INI
@@ -22,7 +22,7 @@ class laundryModel extends Model
 
     function get_paketdipilih($loggedInId) { //tambahin variabel dri controller ke function //INI
         //INI
-        $querypaketdipilih = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 30 DAY) AND CURDATE() AND STATUS_BAYAR = 0 AND ID_CUSTOMER = :loggedInId ;";
+        $querypaketdipilih = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 60 DAY) AND CURDATE() AND STATUS_BAYAR = 0 AND ID_CUSTOMER = :loggedInId ;";
         $data = [
             'loggedInId' => $loggedInId
         ]; //declare biar bisa dipake di query //INI
@@ -126,7 +126,18 @@ class laundryModel extends Model
         $executequeryupdate = DB::update($queryupdate, $dataIdUpdate);
         // dd($executequeryupdate);
         return $executequeryupdate;
+    }
 
+    //update status bayar
+    function get_updateStatusBayar($loggedInId){
+        $updateStatusBayar = "UPDATE transaksi".
+                            " SET STATUS_BAYAR = '1'".
+                            " WHERE STATUS_BAYAR = '0' AND ID_CUSTOMER = :loggedInId;";
+        $data = [
+        'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query
+        $executeUpdateStatusBayar = DB::update($updateStatusBayar, $data);
+        return $executeUpdateStatusBayar;
     }
 
     function get_paymentsilver($loggedInId) {
@@ -145,6 +156,15 @@ class laundryModel extends Model
         ]; //declare biar bisa dipake di query
         $executeQueryCekpaymentplat = DB::update($queryCekplat, $data);
         return $executeQueryCekpaymentplat;
+    }
+
+    function get_hargafix($loggedInId) {
+        $queryhargafix = "select sum(HARGA) as `hargafix` from transaksi where STATUS_BAYAR = '0' and ID_CUSTOMER = :loggedInId";
+        $data = [
+            'loggedInId' => $loggedInId
+        ]; //declare biar bisa dipake di query
+        $executequeryharga = DB::select($queryhargafix, $data);
+        return $executequeryharga;
     }
 
 

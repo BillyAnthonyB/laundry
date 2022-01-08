@@ -9,7 +9,7 @@
         {{-- ini navbar udah login --}}
 <section id='requestsend'>
     <div id = "paragraft">
-        <h1>Apa yang harus saya lakukan</h1>
+        <h1>Apa yang harus saya lakukan ?</h1>
         <h2>1. Pisahkan laundry ke kantong plastik berbeda berdasarkan kategorinya:</h2>
         <h2><li>Bed (bed cover, sarung bantal, sarung guling, selimut)</li></h2>
         <h2><li>Komplit (baju, celana, kaus kaki, pakaian dalam, pakaian sehari-hari)</li></h2>

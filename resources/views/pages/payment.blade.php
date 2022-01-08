@@ -15,8 +15,9 @@
                 @foreach($semuaPaketPayment as $paketpayment)
                 <div class = "aturtext">
                     <ul>
-                        <li><h6>INV/{{ $paketpayment->ID_TRANSAKSI }} {{ $paketpayment->PAKET }} : {{ $paketpayment->BERAT }} kg</h6></li>
+                        <li><h6>INV/{{ $paketpayment->ID_TRANSAKSI }} - Rp. {{ $paketpayment->HARGA }} </h6></li>
                     </ul>
+                    <h5>Paket : {{ $paketpayment->PAKET }} : {{ $paketpayment->BERAT }} kg</h5>
                 </div>
                 @endforeach
                 <!-- <div id = "harga">
@@ -41,6 +42,7 @@
             <label for="dana">
                 <img src="laundryResource/dana.png">
             </label>
+            <br>&nbsp
         </div>
     </div>
     <div id = "paymentbox2">
@@ -51,13 +53,15 @@
             </div>
             <div id = "paragraf2">
                 <h6>Total Tagihan</h6>
-                <h6 id = "paragraf3">Rp 200.000</h6><br>
+                @foreach ($checkqueryhargafix as $hargafix)
+                <h6 id = "paragraf3">Rp. {{$hargafix->hargafix}}</h6><br>
+                @endforeach
             </div>
             <div id = "button">
                 <div id = "image">
                     <img src = "laundryResource/Protect2.png">
                 </div>
-                <div id = 'bayar'> <a href = "paymentreceived">  Bayar Sekarang</a> </div>
+                <div id = 'bayar'> <a href = "/pay-laundry">  Bayar Sekarang</a> </div>
             </div>
         </div>
     </div>

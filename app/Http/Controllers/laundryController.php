@@ -46,16 +46,22 @@ class laundryController extends Controller
         $cekAlamatPickup = $this -> laundryModel -> get_cekAlamatPickup($loggedInId);
         // dd($cekAlamatPickup);
         return view('pages/pickup', ['cekAlamatPickup' => $cekAlamatPickup]);
+    }
 
+    public function send_updateStatusBayar()
+    {
+        $loggedInId = Session::get('id');
+        $upStatusBayar = $this -> laundryModel -> get_updateStatusBayar($loggedInId);
+        return redirect('/paymentreceived');
     }
 
     public function send_querypayment()
     {
         $loggedInId = Session::get('id'); //ambil data session isinya id //INI
-
         $semuaPaketPayment = $this -> laundryModel -> get_paketdipilih($loggedInId); //masukin ke function model //INI
-
-        return view('pages/payment', ['semuaPaketPayment' => $semuaPaketPayment]);
+        $user = new laundryModel();
+        $checkqueryhargafix = $user->get_hargafix($loggedInId);
+        return view('pages/payment', compact(['semuaPaketPayment', 'checkqueryhargafix']));
     }
 
 
@@ -151,8 +157,6 @@ class laundryController extends Controller
                  Session::flash('success', 'Anda berhasil signup');
                 return redirect('/login');
              }
-
-
         }
 
         // $return = $user->post_datasignup($data);
@@ -242,6 +246,10 @@ class laundryController extends Controller
         // return redirect('/paymentreceived');
 
     }
+
+
+
+
 
 
 

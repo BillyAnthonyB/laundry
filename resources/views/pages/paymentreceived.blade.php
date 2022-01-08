@@ -11,7 +11,7 @@
     </div>
     <div id = "text">
         <div id = "payment">
-            <h1>Pembayaran telah diterima!</h1>
+            <h1>Pembayaran telah diterima !&nbsp</h1>
             <div id = "image">
                 <img src = "laundryResource/Protect.png">
             </div>
