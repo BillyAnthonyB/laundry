@@ -14,10 +14,29 @@
                 <h4>Paket yang dipilih :</h4>
                 @foreach($semuaPaketPayment as $paketpayment)
                 <div class = "aturtext">
-                    <ul>
-                        <li><h6>INV/{{ $paketpayment->ID_TRANSAKSI }} - Rp. {{ $paketpayment->HARGA }} </h6></li>
-                    </ul>
-                    <h5>Paket : {{ $paketpayment->PAKET }} : {{ $paketpayment->BERAT }} kg</h5>
+                    <h5>
+                    <?php
+                        if ($paketpayment->JUMLAH_KOMPLIT != 0)
+                        {
+                            echo "Komplit: $paketpayment->JUMLAH_KOMPLIT kg &nbsp &nbsp &nbsp";
+                        }
+                        if ($paketpayment->JUMLAH_BED != 0)
+                        {
+                            echo "Bed: $paketpayment->JUMLAH_BED kg &nbsp &nbsp &nbsp";
+                        }
+                        if ($paketpayment->JUMLAH_SEPATU != 0) {
+                            echo "Sepatu: $paketpayment->JUMLAH_SEPATU pasang &nbsp &nbsp &nbsp";
+                        }
+                        if ($paketpayment->JUMLAH_FORMAL != 0) {
+                            echo "Formal: $paketpayment->JUMLAH_FORMAL pcs &nbsp &nbsp &nbsp";
+                        }
+                    ?>
+                    </h5>
+                    <h6>INV/{{ $paketpayment->ID_TRANSAKSI }}  Rp. {{ $paketpayment->HARGA }} </h6>
+                    <div id = "abu">
+                        <img src = "laundryResource/abu.png">
+                    </div>
+                    <br>
                 </div>
                 @endforeach
                 <!-- <div id = "harga">

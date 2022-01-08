@@ -24,4 +24,7 @@
 <div class = "button-tentangkami-contactus">
     <a>Hubungi Kami</a>
 </div>
+<div class = "linkWhatsapp">
+    <h6>Link WA :<a href="https://wa.wizard.id/bb19d4"> https://wa.wizard.id/bb19d4</a></h6>
+</div>
 @endsection

@@ -694,13 +694,17 @@ div.descWhy {
     border: 2px solid #18a4fc;
     transition: all 0.3s ease;
     margin-left: 7vw;
-    margin-bottom: 100px;
     cursor: pointer;
     text-decoration: none;
 }
 .button-tentangkami-contactus:hover{
     color: #18a4fc;
     background: none;
+}
+.linkWhatsapp{
+    margin-left: 7vw;
+    margin-top: 25px;
+    text-decoration: none;
 }
 /* MEMBERSHIP =============================================================================================== */
 /* platinum card animation on hover */
@@ -1098,7 +1102,7 @@ button, input, optgroup, select, textarea {
 #requestsend #paragraft2 #border img{
     z-index: -1;
     position: absolute;
-    width: 50%;
+    width: 45%;
     padding-left: 50px;
     font-family: Nunito;
     margin-left: 3vw;
@@ -1106,8 +1110,8 @@ button, input, optgroup, select, textarea {
 #requestsend #paragraft2 #permintaan{
     display: flex;
     flex-direction: row;
-    margin-left: 420px;
-    margin-top: 28px;
+    margin-left: 400px;
+    margin-top: 15px;
     font-family: Nunito;
 }
 #requestsend #paragraft2 #permintaan h1{
@@ -1115,7 +1119,7 @@ button, input, optgroup, select, textarea {
     font-size: 24px;
     font-weight: bold;
     position: absolute;
-    top: 35%;
+    top: 34%;
     left: 36%;
     font-family: Nunito;
 }
@@ -1124,7 +1128,7 @@ button, input, optgroup, select, textarea {
     padding-left: 250px;
     font-size: 18px;
     position: absolute;
-    top: 37%;
+    top: 34%;
     left: 36%;
     font-family: Nunito;
 }
@@ -1132,39 +1136,35 @@ button, input, optgroup, select, textarea {
     padding-left: 250px;
     font-size: 18px;
     position: absolute;
-    /* top: 51%; */
+    top: 44.6%;
     left: 36%;
     font-family: Nunito;
-    margin-top: 10vh;
 }
 #requestsend #paragraft2 h4{
     padding-left: 250px;
     font-size: 18px;
     position: absolute;
-    /* top: 60%; */
+    top: 48%;
     left: 36%;
     font-family: Nunito;
-    margin-top: 13vh;
 }
-#requestsend #paragraft2 #button #ok{
+#requestsend #paragraft2 #button #ok a{
     display: inline-block;
     background: #18a4fc;
     color: #fff;
     font-weight: bold;
     font-size: 17px;
     padding: 5px 50px;
-    margin-top: 180px;
-    margin-left: 400px;
+    margin-top: 145px;
+    margin-left: 350px;
     border-radius: 6px;
     border: 2px solid #18a4fc;
     transition: all 0.3s ease;
+    text-decoration:none;
 }
-#requestsend #paragraft2 #button #ok:hover{
+#requestsend #paragraft2 #button #ok a:hover{
     color: #18a4fc;
     background: none;
-}
-#requestsend #paragraft2 #button #ok a{
-    text-decoration:none;
 }
 #requestsend #paragraft2 #permintaan #image img{
     margin-left: 3.5vw;
@@ -1485,7 +1485,7 @@ button, input, optgroup, select, textarea {
 }
 #payment #paymentbox1 #paragraf2{
     margin-left: 3vw;
-    margin-top: 5vh;
+    margin-top: 1.5vh;
 }
 #payment #paymentbox1 h1{
     margin-left: 3vw;
@@ -1504,7 +1504,6 @@ button, input, optgroup, select, textarea {
 #payment #paymentbox1 .kotak #paragraf h4 {
     font-weight: bolder;
     margin-bottom: 2.5vh;
-    margin-left: -1.2vw;
     margin-top: -4vh;
 }
 #payment #paymentbox1 .kotak #paragraf h6 {
@@ -1542,9 +1541,11 @@ input[type=radio] + label>img {
     margin-right: 1vw;
 }
 #payment #paymentbox1 .kotak #paragraf .aturtext h5{
-    margin-left: 2vw;
     font-size: 17px;
     font-weight: bold;
+}
+#payment #paymentbox1 .kotak #paragraf {
+    margin-left: -1.2vw;
 }
 /* ini payment membership ============================================================================= */
 #paymentmembership{
@@ -1776,6 +1777,18 @@ input[type=radio] + label>img {
 #Sebelumnya #button a:hover{
     color: #18a4fc;
     background: none;
+}
+
+#textLaundryku1{
+    margin-top: -5px;
+    font-size: 29px;
+}
+
+#textLaundryku2{
+    transform: translate(-341px,33px);
+    z-index: -1;
+    font-size: 15px;
+
 }
 /* ini admin check order=============================================================================== */
 #admin {

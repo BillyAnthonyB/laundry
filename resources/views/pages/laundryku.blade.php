@@ -21,8 +21,9 @@
             {
                 //kalau udah bayar, button jangan di display
 
+                echo "<h2 id = 'textLaundryku1'>Cucian saya</h2>";
+                echo "<p id = 'textLaundryku2'>Menampilkan pesanan dalam 60 hari terakhir</p>";
 
-                echo "<h2>Cucian saya</h2>";
                 echo "<div id = 'button'> <a href=".$adaAlamat.">Bayar Sekarang</a> </div>";
             }
         ?>
@@ -44,7 +45,26 @@
         </tr> --}}
         <button class="accordionL">
             <div id = "accordionJudul">
-                <h6>Paket {{$transaksi->PAKET}} &nbsp | &nbsp Berat {{ $transaksi->BERAT }} kg</h6>
+                {{-- if logic buat check jumlah per paket --}}
+
+                <h6>
+                    <?php
+                    if ($transaksi->JUMLAH_KOMPLIT != 0)
+                    {
+                        echo "Komplit: $transaksi->JUMLAH_KOMPLIT kg &nbsp &nbsp &nbsp";
+                    }
+                    if ($transaksi->JUMLAH_BED != 0)
+                    {
+                        echo "Bed: $transaksi->JUMLAH_BED kg &nbsp &nbsp &nbsp";
+                    }
+                    if ($transaksi->JUMLAH_SEPATU != 0) {
+                        echo "Sepatu: $transaksi->JUMLAH_SEPATU pasang &nbsp &nbsp &nbsp";
+                    }
+                    if ($transaksi->JUMLAH_FORMAL != 0) {
+                        echo "Formal: $transaksi->JUMLAH_FORMAL pcs &nbsp &nbsp &nbsp";
+                    }
+                ?>
+                </h6>
                 <h6 id = "accordionHarga">
                     <?php
                         if ($transaksi->STATUS_CUCI == 1)
@@ -53,7 +73,7 @@
                         }
                         else
                         {
-                        echo "Rp.$transaksi->HARGA";
+                        echo "Rp.&nbsp$transaksi->HARGA";
                         }
                         ?>
                     </h6>

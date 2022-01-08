@@ -28,9 +28,9 @@
                     <img src = "laundryResource/Protect.png">
                 </div>
             </div>
-        <h2>Kurir kami akan segera menjemput pesanan anda</h2>
+        <h2>Kurir kami akan segera menjemput pesanan anda.</h2>
         <h3>Mohon lakukan pembayaran setelah pesanan anda ditimbang</h3>
-        <h4>untuk melanjutkan pesanan</h4>
+        <h4>untuk melanjutkan pesanan.</h4>
         <div id = "button">
             <div id = 'ok'> <a href = "/">OK</a> </div>
         </div>
