@@ -22,9 +22,6 @@
     <h6>Punya pertanyaan lain?</h6>
 </div>
 <div class = "button-tentangkami-contactus">
-    <a>Hubungi Kami</a>
-</div>
-<div class = "linkWhatsapp">
-    <h6>Link WA :<a href="https://wa.wizard.id/bb19d4"> https://wa.wizard.id/bb19d4</a></h6>
+    <a href="https://wa.wizard.id/bb19d4">Hubungi Kami</a>
 </div>
 @endsection
