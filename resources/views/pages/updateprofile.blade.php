@@ -11,6 +11,13 @@
     <form action="/updateprofile" method="post">
         @csrf
 
+        <!-- @if (Session::has('success'))
+            <div class="alertalert-successalert-block">
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong>{{ Session::get('success') }}</strong>
+            </div>
+        @endif -->
+
     <h1> Perbarui Profil</h1>
         <div class = "box-login">
             <div class="form-group">

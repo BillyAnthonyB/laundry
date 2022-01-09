@@ -186,7 +186,7 @@ class laundryController extends Controller
         $updatenohp = $request->input('updatephone');
         $updateaddress = $request->input('updateaddress');
 
-        $sambungpostupdate = new  laundryModel();
+        $sambungpostupdate = new laundryModel();
 
         $tboxupdateprofil = [
             'upnama'=>$updatenama,
@@ -199,14 +199,16 @@ class laundryController extends Controller
 
         if($checkUpdate==1){
             // echo 'berhail perbarui data diri';
-            // $hasloginupdate = $request->session()->has('login');
-            // $Id = $sambungpostupdate -> get_id($hasloginupdate); //nyambung ke model get id membawa var $loginMail
 
-            // Session::put('nama', $Id[0] -> NAMA_CUSTOMER); //buat session yang isinya nama customer
-            // Session::put('alamat', $Id[0] -> ALAMAT);
-            // Session::put('hp', $Id[0] -> PHONE);
+            // // $hasloginupdate = $request->session()->has('login');
 
-            Session::flash('success', 'anda berhasil memperbarui data diri');
+            $Id = $sambungpostupdate -> get_querykartuprofil($loggedInIdUpdate); //nyambung ke model get id membawa var $loginMail
+
+            Session::put('nama', $Id[0] -> NAMA_CUSTOMER); //buat session yang isinya nama customer
+            Session::put('alamat', $Id[0] -> ALAMAT);
+            Session::put('hp', $Id[0] -> PHONE);
+
+            Session::flash('success', 'anda berhasil memperbarui data diri'); //belum nampilin flash
             return redirect('/updateprofile');
         }
         echo 'gagal';
@@ -300,4 +302,18 @@ class laundryController extends Controller
     //     ]);
     // }
 
-}
+    public function forgot_password(Request $req){
+        $emailuser = $_POST['recoveryEmail'];
+        $modelLaundry = new laundryModel;
+        $get_pass = $modelLaundry->get_pass($emailuser);
+        $data = array(
+            'Email' => $emailuser,
+            'Password' => $get_pass->PASSWORD
+        );
+        // try{
+        //     Mail::send(''){
+
+        //     }
+        }
+    }
+

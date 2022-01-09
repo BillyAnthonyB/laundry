@@ -37,10 +37,9 @@
                 <h3> Paket cuci sepatu dengan pengerjaan</h3>
                 <h3>dry clean serta menggunakan Shoes</h3>
                 <h3>Laundry Machine dengan estimasi</h3>
-                <h3>pengerjaan 1-2 hari. 1 pasang sepatu </h3>
-                <h3>terhitung 1 kilo</h3>
+                <h3>pengerjaan 1-2 hari.</h3>
                 <div id = 'Harga'>
-                    <h4>Rp.15.000 / kg</h4>
+                    <h4>Rp.15.000 / pasang</h4>
                     <div id = 'button'> <a href="/pickup">Pesan</a> </div>
                 </div>
             </div>

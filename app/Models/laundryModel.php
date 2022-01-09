@@ -176,10 +176,14 @@ class laundryModel extends Model
         return $executequeryharga;
     }
 
-
-
-
-
+    public function get_pass($loginMail){
+        $data = [
+            'loginMail' => $loginMail
+        ]; //declare biar bisa dipake di query
+        $queryPass = "SELECT `PASSWORD` FROM customer  WHERE EMAIL = :recoveryEmail;";
+        $executeQueryPass = DB::select($queryPass, $data); //tambahin data
+        return $executeQueryPass[0];
+    }
 
 
 }

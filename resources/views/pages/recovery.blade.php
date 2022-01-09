@@ -17,7 +17,7 @@
             <div class="mb-3 row">
                 <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >Email</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="recoveryEmail" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Kirimkan Email</button>

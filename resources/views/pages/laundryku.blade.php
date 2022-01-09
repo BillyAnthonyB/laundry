@@ -56,7 +56,34 @@
                     <?php
                         if ($transaksi->STATUS_BAYAR == 0)
                         {
-                        echo "&nbsp Lakukan pembayaran untuk melanjutkan pesanan";
+                            if ($transaksi->JUMLAH_KOMPLIT == 0)
+                            {
+                                if ($transaksi->JUMLAH_BED == 0)
+                                {
+                                    if ($transaksi->JUMLAH_SEPATU == 0)
+                                    {
+                                        if ($transaksi->JUMLAH_FORMAL == 0)
+                                        {
+                                            echo "&nbsp Staff sedang menjemput pesanan";
+                                        }
+                                    }
+                                }
+                            }
+
+                            if ($transaksi->JUMLAH_KOMPLIT != 0)
+                            {
+                                if ($transaksi->JUMLAH_BED != 0)
+                                {
+                                    if ($transaksi->JUMLAH_SEPATU != 0)
+                                    {
+                                        if ($transaksi->JUMLAH_FORMAL != 0)
+                                        {
+                                            echo "&nbsp Lakukan pembayaran untuk melanjutkan pesanan";
+                                        }
+                                    }
+                                }
+                            }
+
                         }
                         else
                         {
@@ -73,16 +100,17 @@
                 </h6>
                 <h6 id = "accordionHarga">
                     <?php
-                        if ($transaksi->STATUS_CUCI == 1)
+                        if($transaksi->HARGA == 0)
                         {
-                            echo "Rp.&nbsp$transaksi->HARGA";
+                            echo " ";
                         }
                         else
                         {
-                            echo "Rp.&nbsp$transaksi->HARGA";
+                            echo"Rp. $transaksi->HARGA";
                         }
                         ?>
-                    </h6>
+
+                </h6>
             </div>
         </button>
         <div class="panel">

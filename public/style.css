@@ -509,7 +509,7 @@ div.descWhy {
 #PaketLaundry #Barisan1 #Paket2 #PaketSepatu #harga{
     display: flex;
     align-items: center;
-    padding-top: 5vh;
+    padding-top: 9vh;
 }
 #PaketLaundry #Barisan1 #Paket2 #PaketSepatu #harga h4{
     padding-right:2vw;
@@ -1164,8 +1164,8 @@ button, input, optgroup, select, textarea {
     background: none;
 }
 #requestsend #paragraft2 #permintaan #image img{
-    margin-left: 3.5vw;
-    margin-top: 2vh;
+    margin-left: 4.5vw;
+    margin-top: 3vh;
 }
 /* updateprofil =============================================================================================== */
 #profil {
@@ -1385,7 +1385,7 @@ button, input, optgroup, select, textarea {
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
-    margin: -15px 2px;
+    margin: -15px 12px;
     cursor: pointer;
     position: absolute;
     top: 60%;
