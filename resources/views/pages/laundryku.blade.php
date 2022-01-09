@@ -19,12 +19,17 @@
             }
             else
             {
-                //kalau udah bayar, button jangan di display
-
                 echo "<h2 id = 'textLaundryku1'>Cucian saya</h2>";
-                echo "<p id = 'textLaundryku2'>Menampilkan pesanan dalam 60 hari terakhir</p>";
+                //kalau udah bayar, button jangan di display
+                foreach ($semuaTransaksi as $transaksi2)
+                {
+                    if ($transaksi2->STATUS_BAYAR == 0)
+                    {
+                        echo "<div id = 'button'> <a href=".$adaAlamat.">Bayar Sekarang</a> </div>";
+                        break;
+                    }
+                }
 
-                echo "<div id = 'button'> <a href=".$adaAlamat.">Bayar Sekarang</a> </div>";
             }
         ?>
         @endforeach
@@ -49,41 +54,6 @@
 
                 <h6>
                     <?php
-                    if ($transaksi->JUMLAH_KOMPLIT != 0)
-                    {
-                        echo "Komplit: $transaksi->JUMLAH_KOMPLIT kg &nbsp &nbsp &nbsp";
-                    }
-                    if ($transaksi->JUMLAH_BED != 0)
-                    {
-                        echo "Bed: $transaksi->JUMLAH_BED kg &nbsp &nbsp &nbsp";
-                    }
-                    if ($transaksi->JUMLAH_SEPATU != 0) {
-                        echo "Sepatu: $transaksi->JUMLAH_SEPATU pasang &nbsp &nbsp &nbsp";
-                    }
-                    if ($transaksi->JUMLAH_FORMAL != 0) {
-                        echo "Formal: $transaksi->JUMLAH_FORMAL pcs &nbsp &nbsp &nbsp";
-                    }
-                ?>
-                </h6>
-                <h6 id = "accordionHarga">
-                    <?php
-                        if ($transaksi->STATUS_CUCI == 1)
-                        {
-                        echo "Pesanan selesai";
-                        }
-                        else
-                        {
-                        echo "Rp.&nbsp$transaksi->HARGA";
-                        }
-                        ?>
-                    </h6>
-            </div>
-        </button>
-        <div class="panel">
-            <div id = "statusL">
-                <p><br>Status: </p>
-                <p id = "statusLBold"><br>
-                    <?php
                         if ($transaksi->STATUS_BAYAR == 0)
                         {
                         echo "&nbsp Lakukan pembayaran untuk melanjutkan pesanan";
@@ -100,6 +70,42 @@
                             }
                         }
                         ?>
+                </h6>
+                <h6 id = "accordionHarga">
+                    <?php
+                        if ($transaksi->STATUS_CUCI == 1)
+                        {
+                            echo "Rp.&nbsp$transaksi->HARGA";
+                        }
+                        else
+                        {
+                            echo "Rp.&nbsp$transaksi->HARGA";
+                        }
+                        ?>
+                    </h6>
+            </div>
+        </button>
+        <div class="panel">
+            <div id = "statusL">
+                {{-- <p><br>Detail Pesanan: &nbsp</p> --}}
+                <p id = "statusLBold"><br>
+
+                    <?php
+                    if ($transaksi->JUMLAH_KOMPLIT != 0)
+                    {
+                        echo "Komplit: $transaksi->JUMLAH_KOMPLIT kg <br> ";
+                    }
+                    if ($transaksi->JUMLAH_BED != 0)
+                    {
+                        echo "Bed: $transaksi->JUMLAH_BED kg <br> ";
+                    }
+                    if ($transaksi->JUMLAH_SEPATU != 0) {
+                        echo "Sepatu: $transaksi->JUMLAH_SEPATU pasang <br> ";
+                    }
+                    if ($transaksi->JUMLAH_FORMAL != 0) {
+                        echo "Formal: $transaksi->JUMLAH_FORMAL pcs <br> ";
+                    }
+                ?>
                 </p>
             </div>
             <div id = "tanggalL">
@@ -108,7 +114,9 @@
             </div>
         </div>
         <br>
+
     @endforeach
+
 
     @foreach ($cekAlamat as $hasilCekAlamat)
         <?php
@@ -130,14 +138,13 @@
         echo "<br>";
         echo "<br>";
         echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
         echo "</div>";
         }
         else {
+            echo "<br>";
+            echo "<br>";
+
+            echo "<p id = 'textLaundryku2'>Menampilkan pesanan dalam 60 hari terakhir</p>";
 
         }
         ?>
@@ -155,7 +162,7 @@
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.maxHeight = panel.scrollHeight + 29+ "px";
     }
   });
 }

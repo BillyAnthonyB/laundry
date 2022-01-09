@@ -39,7 +39,7 @@ Route::get('/tentang-kami', function () {
     return view('pages/tentangkami');
 });
 
-Route::get('/updateprofile', 'App\Http\Controllers\laundryController@updateindex');
+Route::get('/updateprofile', 'App\Http\Controllers\laundryController@send_querykartuprofil');
 Route::post('/updateprofile', 'App\Http\Controllers\laundryController@sendqueryupdate');
 
 // Route::get('/payment', function () {

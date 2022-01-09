@@ -13,30 +13,37 @@
             <div id = "paragraf">
                 <h4>Paket yang dipilih :</h4>
                 @foreach($semuaPaketPayment as $paketpayment)
-                <div class = "aturtext">
-                    <h5>
-                    <?php
-                        if ($paketpayment->JUMLAH_KOMPLIT != 0)
-                        {
-                            echo "Komplit: $paketpayment->JUMLAH_KOMPLIT kg &nbsp &nbsp &nbsp";
-                        }
-                        if ($paketpayment->JUMLAH_BED != 0)
-                        {
-                            echo "Bed: $paketpayment->JUMLAH_BED kg &nbsp &nbsp &nbsp";
-                        }
-                        if ($paketpayment->JUMLAH_SEPATU != 0) {
-                            echo "Sepatu: $paketpayment->JUMLAH_SEPATU pasang &nbsp &nbsp &nbsp";
-                        }
-                        if ($paketpayment->JUMLAH_FORMAL != 0) {
-                            echo "Formal: $paketpayment->JUMLAH_FORMAL pcs &nbsp &nbsp &nbsp";
-                        }
-                    ?>
-                    </h5>
-                    <h6>INV/{{ $paketpayment->ID_TRANSAKSI }}  Rp. {{ $paketpayment->HARGA }} </h6>
-                    <div id = "abu">
-                        <img src = "laundryResource/abu.png">
+                <div id = "kotakkanan">
+                    <div id = "biru">
+                        <img src = "laundryResource/biru.png">
                     </div>
-                    <br>
+                    <div class = "aturtext">
+                        <h5>
+                        <?php
+                            if ($paketpayment->JUMLAH_KOMPLIT != 0)
+                            {
+                                echo "Komplit: $paketpayment->JUMLAH_KOMPLIT kg &nbsp &nbsp &nbsp";
+                            }
+                            if ($paketpayment->JUMLAH_BED != 0)
+                            {
+                                echo "Bed: $paketpayment->JUMLAH_BED kg &nbsp &nbsp &nbsp";
+                            }
+                            if ($paketpayment->JUMLAH_SEPATU != 0) {
+                                echo "Sepatu: $paketpayment->JUMLAH_SEPATU pasang &nbsp &nbsp &nbsp";
+                            }
+                            if ($paketpayment->JUMLAH_FORMAL != 0) {
+                                echo "Formal: $paketpayment->JUMLAH_FORMAL pcs &nbsp &nbsp &nbsp";
+                            }
+                        ?>
+                        </h5>
+                        <div id = "flexkanan">
+                            <h6>INV/{{ $paketpayment->ID_TRANSAKSI }} </h6>
+                            <p> Rp. {{ $paketpayment->HARGA }}</p>
+                        </div>
+                        <div id = "abu">
+                            <img src = "laundryResource/abu.png">
+                        </div>
+                    </div>
                 </div>
                 @endforeach
                 <!-- <div id = "harga">

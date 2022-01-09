@@ -88,6 +88,15 @@ class laundryModel extends Model
         return $executeQueryId;
     }
 
+    public function get_querykartuprofil($loggedInId){
+        $querykartu = "SELECT * FROM laundry_service.customer WHERE ID_CUSTOMER = :loggedInId";
+        $data = [
+            'loggedInId' => $loggedInId
+        ];
+        $executequerykartu = DB::select($querykartu, $data); //tambahin data
+        return $executequerykartu;
+    }
+
     function post_datasignup($data) {
         $cmd = "INSERT INTO customer( `ID_MEMBERSHIP`, `NAMA_CUSTOMER`, `ALAMAT`, `PHONE`, `EMAIL`, `PASSWORD`, `DELETE_CUSTOMER`) VALUES ('REGU', :nama,'-', '-', :email, :password_customer,'0')";
 

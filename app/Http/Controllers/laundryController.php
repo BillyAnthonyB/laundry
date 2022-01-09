@@ -247,9 +247,13 @@ class laundryController extends Controller
 
     }
 
-
-
-
+    public function send_querykartuprofil()
+    {
+        $loggedInId = Session::get('id');
+        $cekMembership = $this -> laundryModel ->get_querykartuprofil($loggedInId);
+        // dd($cekAlamatPickup);
+        return view('pages/updateprofile', ['cekMembership' => $cekMembership]);
+    }
 
 
 

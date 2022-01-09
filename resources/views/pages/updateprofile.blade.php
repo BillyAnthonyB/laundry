@@ -39,7 +39,25 @@
         <div id = "imageupdateprofile">
             <div id = "container">
                 <div id = "card">
-                    <img src = "laundryResource/Reguler.png">
+                    @foreach($cekMembership as $idmembership)
+                    <?php
+                    $Platinum  = "<img src ='laundryResource/Platinum.png'>";
+                    $Reguler = "<img src ='laundryResource/Reguler.png'>";
+                    $Silver = "<img src ='laundryResource/Silver.png'>";
+                    if ($idmembership->ID_MEMBERSHIP == "REGU")
+                    {
+                        echo $Reguler;
+                    }
+                    if ($idmembership->ID_MEMBERSHIP == "SILV")
+                    {
+                        echo $Silver;
+                    }
+                    if ($idmembership->ID_MEMBERSHIP == "PLAT")
+                    {
+                        echo $Platinum ;
+                    }
+                    ?>
+                    @endforeach
                 </div>
             </div>
         </div>
