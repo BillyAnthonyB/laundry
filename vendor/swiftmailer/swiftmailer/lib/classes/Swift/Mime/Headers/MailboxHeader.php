@@ -303,6 +303,8 @@ class Swift_Mime_Headers_MailboxHeader extends Swift_Mime_Headers_AbstractHeader
         return implode(', ', $this->createNameAddressStrings($mailboxes));
     }
 
+
+
     /**
      * Redefine the encoding requirements for mailboxes.
      *

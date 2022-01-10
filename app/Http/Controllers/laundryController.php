@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\laundryModel;
 use App\Models\User;
+use Illuminate\Support\Facades\Main;
+use Exception;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use Illuminate\Support\Facades\Session;
+// use illuminate\contract\Mailer;
+use Illuminate\Support\Facades\Mail;
+
 
 class laundryController extends Controller
 {
@@ -46,6 +51,7 @@ class laundryController extends Controller
         $cekAlamatPickup = $this -> laundryModel -> get_cekAlamatPickup($loggedInId);
         // dd($cekAlamatPickup);
         return view('pages/pickup', ['cekAlamatPickup' => $cekAlamatPickup]);
+        Session::flash('alamat', 'Mohon mengisi alamat terlebih dahulu !');
     }
 
     public function send_updateStatusBayar()
@@ -73,6 +79,7 @@ class laundryController extends Controller
 
     public function send_login(Request $request)
     {
+
         $loginMail = $request->input('loginEmail');
         $loginPass = $request->input('loginPassword');
 
@@ -97,11 +104,21 @@ class laundryController extends Controller
             Session::put('pass', $loginPass);
 
             Session::flash('success', 'Anda berhasil login');
+            $cookieID = $request->input('loginEmail');
+            $cookiePass = $request->input('loginPassword');
+            setcookie($cookieID,$cookiePass);
 
             return redirect('/');
         }
         else
         {
+            //buat logika if buat login id dan pass karyawan
+            $loginCountCheckKaryawan = $sambungKeModel -> cekLoginKaryawan($tboxLogin);
+            if($loginCountCheckKaryawan)
+            {
+                return redirect('/laundry-management');
+            }
+
             Session::flash('loginError', 'Email atau password salah.');
             return redirect('/login');
         }
@@ -202,16 +219,16 @@ class laundryController extends Controller
 
             // // $hasloginupdate = $request->session()->has('login');
 
-            $Id = $sambungpostupdate -> get_querykartuprofil($loggedInIdUpdate); //nyambung ke model get id membawa var $loginMail
+            $Id = $sambungpostupdate -> get_querykartuprofil($loggedInIdUpdate);
 
             Session::put('nama', $Id[0] -> NAMA_CUSTOMER); //buat session yang isinya nama customer
             Session::put('alamat', $Id[0] -> ALAMAT);
             Session::put('hp', $Id[0] -> PHONE);
 
-            Session::flash('success', 'anda berhasil memperbarui data diri'); //belum nampilin flash
+            Session::flash('success', 'Anda berhasil memperbarui data diri');
             return redirect('/updateprofile');
         }
-        echo 'gagal';
+        // echo 'gagal';
         // return redirect('/updateprofile');
     }
 
@@ -252,9 +269,19 @@ class laundryController extends Controller
     public function send_querykartuprofil()
     {
         $loggedInId = Session::get('id');
+
         $cekMembership = $this -> laundryModel ->get_querykartuprofil($loggedInId);
         // dd($cekAlamatPickup);
         return view('pages/updateprofile', ['cekMembership' => $cekMembership]);
+    }
+
+    public function send_inserttransaksi()
+    {
+        $user = new laundryModel();
+        $loggedInId = Session::get('id');
+        $cekMembership = $this -> laundryModel ->get_querykartuprofil($loggedInId);
+        $inserttransaksi = $user -> post_transaksi($loggedInId, $cekMembership);
+        return redirect('/requestsend');
     }
 
 
@@ -310,10 +337,15 @@ class laundryController extends Controller
             'Email' => $emailuser,
             'Password' => $get_pass->PASSWORD
         );
-        // try{
-        //     Mail::send(''){
-
-        //     }
+        try{
+            Mail::send('pages/recoverypass', $data, function($data) use($req){
+                // dd($data);
+                $data->from(env('MAIL_USERNAME'), 'name');
+                $data->to($req->Email, 'verifikasi')->subject('verifikasi password');
+            });
+        }catch(Exception $ex){
+            return response (['status' => false, 'errors' => $ex->getMessage()]);
         }
+        return redirect('/login');
     }
-
+}

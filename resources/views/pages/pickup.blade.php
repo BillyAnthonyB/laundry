@@ -7,6 +7,17 @@
 @section('content')
 @if (Session::has('login'))
         {{-- ini navbar udah login --}}
+
+        @if (Session::get('alamat') == '-')
+             @if (Session::has('alamat'))
+            <div class="alertalert-dangeralert-block">
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong>{{ Session::get('danger') }}</strong>
+            </div>
+            @endif
+        @endif
+
+
 <section id='pickup'>
     <div id = "paragraft">
         <h1>Ajukan Pick Up</h1>
@@ -40,7 +51,7 @@
         <h3>Barang yang sudah di pick up tidak dapat dibatalkan</h3>
         @foreach ($cekAlamatPickup as $hasilCekAlamatPickup)
         <?php
-            $adaAlamatPickup = "/requestsend";
+            $adaAlamatPickup = "/ajukan-pickup";
             $tidakAdaAlamatPickup  = "/updateprofile";
             if ($hasilCekAlamatPickup ->ALAMAT == '-')
             {

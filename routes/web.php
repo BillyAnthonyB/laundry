@@ -26,6 +26,8 @@ Route::get('/membership', function () {
 });
 
 Route::get('/pickup', 'App\Http\Controllers\laundryController@send_querycekAlamatPickup');
+Route::get('/ajukan-pickup', 'App\Http\Controllers\laundryController@send_inserttransaksi');
+
 
 // Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_transaksi');
 // Route::get('/laundryku', 'App\Http\Controllers\laundryController@send_cekAlamat');
@@ -63,9 +65,16 @@ Route::get('/pay-laundry', 'App\Http\Controllers\laundryController@send_updateSt
 Route::get('/login', 'App\Http\Controllers\laundryController@loginIndex');
 Route::post('/login', 'App\Http\Controllers\laundryController@send_login');
 
+Route::get('/laundry-management', function () {
+    return view('pages/admincheckorder');
+});
+
 Route::get('/recovery', function () {
     return view('pages/recovery');
 });
+Route::post('/recovery', 'App\Http\Controllers\laundryController@forgot_password');
+
+
 
 Route::get('/signup', 'App\Http\Controllers\laundryController@regindex');
 Route::post('/signup', 'App\Http\Controllers\laundryController@regstore');
@@ -89,12 +98,12 @@ Route::get('/paymentreceived', function () {
     return view('pages/paymentreceived');
 });
 
-
-
-//SEMENTARA BUAT DEBUG
-Route::get('/debug', function () {
-    return view('layout/in');
+Route::get('/recoverypass', function () {
+    return view('pages/recoverypass');
 });
+
+
+
 
 
 

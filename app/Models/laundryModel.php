@@ -12,7 +12,7 @@ class laundryModel extends Model
     //menampilkan semua transaksi di laundryKu
     function get_transaksi($loggedInId) { //tambahin variabel dri controller ke function //INI
         //INI
-        $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 60 DAY) AND CURDATE() AND ID_CUSTOMER = :loggedInId ORDER BY TANGGAL DESC;";
+        $queryTransaksi = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 45 DAY) AND CURDATE() AND ID_CUSTOMER = :loggedInId ORDER BY TANGGAL DESC;";
         $data = [
             'loggedInId' => $loggedInId
         ]; //declare biar bisa dipake di query //INI
@@ -22,7 +22,7 @@ class laundryModel extends Model
 
     function get_paketdipilih($loggedInId) { //tambahin variabel dri controller ke function //INI
         //INI
-        $querypaketdipilih = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 60 DAY) AND CURDATE() AND STATUS_BAYAR = 0 AND ID_CUSTOMER = :loggedInId ;";
+        $querypaketdipilih = "SELECT * FROM laundry_service.transaksi WHERE tanggal BETWEEN (CURDATE() - INTERVAL 45 DAY) AND CURDATE() AND STATUS_BAYAR = 0 AND HARGA > 0 AND ID_CUSTOMER = :loggedInId ;";
         $data = [
             'loggedInId' => $loggedInId
         ]; //declare biar bisa dipake di query //INI
@@ -75,6 +75,24 @@ class laundryModel extends Model
 
         if(isset($executeQueryCekLogin) && count($executeQueryCekLogin) > 0){
             return $executeQueryCekLogin;
+        }
+        return null;
+    }
+
+    public function cekLoginKaryawan($tboxLogin){
+        $queryCekLoginK = "SELECT count(*) is_exist ".
+                         "FROM laundry_service.karyawan ".
+                         "WHERE ID_KARYAWAN = :loginEmail AND PASSWORD = :loginPassword ;";
+        $executeQueryCekLoginK = DB::select($queryCekLoginK, $tboxLogin);
+        // dd($executeQueryCekLogin);
+
+        if($executeQueryCekLoginK[0]->is_exist == 1){
+            return true;
+        }
+        return false;
+
+        if(isset($executeQueryCekLoginK) && count($executeQueryCekLoginK) > 0){
+            return $executeQueryCekLoginK;
         }
         return null;
     }
@@ -141,7 +159,7 @@ class laundryModel extends Model
     function get_updateStatusBayar($loggedInId){
         $updateStatusBayar = "UPDATE transaksi".
                             " SET STATUS_BAYAR = '1'".
-                            " WHERE STATUS_BAYAR = '0' AND ID_CUSTOMER = :loggedInId;";
+                            " WHERE STATUS_BAYAR = '0' AND HARGA > 0 AND ID_CUSTOMER = :loggedInId;";
         $data = [
         'loggedInId' => $loggedInId
         ]; //declare biar bisa dipake di query
@@ -176,13 +194,25 @@ class laundryModel extends Model
         return $executequeryharga;
     }
 
-    public function get_pass($loginMail){
+    public function get_pass($emailuser){
         $data = [
-            'loginMail' => $loginMail
+            'recoveryEmail' => $emailuser
         ]; //declare biar bisa dipake di query
         $queryPass = "SELECT `PASSWORD` FROM customer  WHERE EMAIL = :recoveryEmail;";
         $executeQueryPass = DB::select($queryPass, $data); //tambahin data
         return $executeQueryPass[0];
+    }
+
+
+    public function post_transaksi($loggedInId, $cekMembership){
+        $querytransaksi = "insert into transaksi (`ID_MEMBERSHIP`, `ID_CUSTOMER`, `HARGA`, `STATUS_CUCI`, `STATUS_BAYAR`, `TANGGAL`, `JUMLAH_KOMPLIT`, `JUMLAH_BED`, `JUMLAH_SEPATU`, `JUMLAH_FORMAL`, `DELETE_TRANSAKSI`)
+        values (:membership, :loggedInId, '0', '0', '0', curdate(), '0', '0', '0', '0', '0' );";
+        $data = [
+            'loggedInId' => $loggedInId,
+            'membership' => $cekMembership[0] ->ID_MEMBERSHIP
+        ];
+        $executequerytransaksi = DB::select($querytransaksi, $data);
+        return $executequerytransaksi;
     }
 
 

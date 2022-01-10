@@ -23,7 +23,7 @@
                 //kalau udah bayar, button jangan di display
                 foreach ($semuaTransaksi as $transaksi2)
                 {
-                    if ($transaksi2->STATUS_BAYAR == 0)
+                    if ($transaksi2->STATUS_BAYAR == 0 and $transaksi2 ->HARGA>0)
                     {
                         echo "<div id = 'button'> <a href=".$adaAlamat.">Bayar Sekarang</a> </div>";
                         break;
@@ -172,7 +172,7 @@
             echo "<br>";
             echo "<br>";
 
-            echo "<p id = 'textLaundryku2'>Menampilkan pesanan dalam 60 hari terakhir</p>";
+            echo "<p id = 'textLaundryku2'>Menampilkan pesanan dalam 45 hari terakhir</p>";
 
         }
         ?>

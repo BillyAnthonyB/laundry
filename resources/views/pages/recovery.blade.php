@@ -9,7 +9,8 @@
     <div id = "image">
         <img src = "laundryResource/logoFull.png">
     </div>
-    <form>
+    <form action="{{url('/recovery')}}" method="POST">
+        @csrf
         <div class = "box-login">
             <div class = "text-recovery">
                 <h6>Kami akan mengirimkan tautan ke email anda<br>untuk membantu masuk ke akun anda</h6>
@@ -17,7 +18,7 @@
             <div class="mb-3 row">
                 <label for="exampleInputEmail1"  class="col-sm-2 col-form-label" >Email</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control" id="exampleInputEmail1" name="recoveryEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="recoveryEmail" aria-describedby="emailHelp" placeholder=" Enter email">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Kirimkan Email</button>
