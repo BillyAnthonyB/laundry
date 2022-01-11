@@ -24,7 +24,7 @@
             <div class="mb-3 row">
                 <label for="name"  class="col-sm-2 col-form-label" >Nama</label>
                 <div class="col-sm-10">
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name = 'name'  id="name" aria-describedby="emailHelp" placeholder=" Nama" required value="{{ old('name') }}">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name = 'name'  id="name" aria-describedby="emailHelp" placeholder="Nama" required value="{{ old('name') }}">
                 @error('name')
                     <div class="invalid-feedback">
                     {{$message}}
@@ -35,7 +35,7 @@
             <div class="mb-3 row">
                 <label for="email"  class="col-sm-2 col-form-label" >Email</label>
                 <div class="col-sm-10">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" name = 'email' id="email" aria-describedby="emailHelp" placeholder=" Email" required value="{{ old('email') }}">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name = 'email' id="email" aria-describedby="emailHelp" placeholder="Email" required value="{{ old('email') }}">
                 @error('email')
                     <div class="invalid-feedback">
                     {{$message}}
@@ -57,7 +57,7 @@
             <div class="mb-3 row">
                 <label for="password" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                <input type="password" class="form-control @error('password') is-invalid @enderror" name = 'password' id="password" aria-describedby="emailHelp" placeholder=" Password" required>
+                <input type="password" class="form-control @error('password') is-invalid @enderror" name = 'password' id="password" aria-describedby="emailHelp" placeholder="Password" required>
                 <i class="bi bi-eye-slash" id="togglePassword"></i>
                 @error('password')
                     <div class="invalid-feedback">

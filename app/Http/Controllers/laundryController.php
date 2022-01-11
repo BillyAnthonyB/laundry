@@ -286,49 +286,6 @@ class laundryController extends Controller
 
 
 
-    // public function logauthenticate(request $request)
-    // {
-    //     $validasi = $request->validate([
-    //         'email' => 'required|email:dns',
-    //         'password' => 'required|min:5'
-
-    //     ]);
-
-    //     if(Auth::attempt($validasi)){
-
-    //         $request->session()->regenerate();
-    //         return redirect()->intended('/in');
-
-    //     }
-
-    //     return back()->with('loginError', 'login failed');
-    // }
-
-    // public function homeindex()
-    // {
-    //     return view('pages/home');
-
-    // }
-
-    // public function register(Request $request)
-    // {
-
-
-    //     $simpanDataUser = $this -> laundryModel -> post_datasignup();
-
-    //     return redirect('/login');
-
-    // }
-
-    // public function logindex()
-    // {
-    //   return view('pages.login', [
-    //     'title' => 'login',
-    //     'active' => 'login'
-
-    //     ]);
-    // }
-
     public function forgot_password(Request $req){
         $emailuser = $_POST['recoveryEmail'];
         $modelLaundry = new laundryModel;
@@ -338,14 +295,20 @@ class laundryController extends Controller
             'Password' => $get_pass->PASSWORD
         );
         try{
+                        // Mail::send('pages/recoverypass', array('pesan' => $get_pass) , function($pesan) use($request){
+                        //     $pesan->to("prasetyon100402@gmail.com",'Verifikasi')->subject('Password Recovery');
+                        //     $pesan->from(env('MAIL_USERNAME','luxurybubblelaundry@gmail.com'),'Luxury Bubble');
+                        // });
             Mail::send('pages/recoverypass', $data, function($data) use($req){
-                // dd($data);
-                $data->from(env('MAIL_USERNAME'), 'name');
-                $data->to($req->Email, 'verifikasi')->subject('verifikasi password');
+                // dd($data)
+                // $data->to("prasetyon100402@gmail.com", 'verifikasi')->subject('Password recovery');
+                $data->to($req->recoveryEmail, 'verifikasi')->subject('Password recovery');
+                $data->from(env('MAIL_USERNAME','luxurybubblelaundry@gmail.com'), 'Luxury Bubble');
+
             });
-        }catch(Exception $ex){
-            return response (['status' => false, 'errors' => $ex->getMessage()]);
+        }catch(Exception $e){
+            return response (['status' => false, 'errors' => $e->getMessage()]);
         }
-        return redirect('/login');
+        return redirect('recoverysend');
     }
 }

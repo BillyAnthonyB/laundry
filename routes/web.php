@@ -101,6 +101,9 @@ Route::get('/paymentreceived', function () {
 Route::get('/recoverypass', function () {
     return view('pages/recoverypass');
 });
+Route::post('/recoverypass', 'App\Http\Controllers\laundryController@send_pass');
+
+
 
 
 

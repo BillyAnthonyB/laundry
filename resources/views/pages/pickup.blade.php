@@ -43,9 +43,6 @@
         </div>
     </div>
     <div id = "paragraft2">
-        <div id = "border">
-            <img src = "laundryResource/border.png">
-        </div>
         <h1>Konfirmasi Pick-up Laundry</h1>
         <h2>Ketentuan :</h2>
         <h3>Barang yang sudah di pick up tidak dapat dibatalkan</h3>
@@ -63,7 +60,7 @@
                 echo "<div id = 'button'> <div id = 'image'> <img src = 'laundryResource/Protect2.png'></div> <div id = 'ajukan'> <a href = ".$adaAlamatPickup.">Ajukan Pickup</a> </div></div>";
             }
             ?>
-        @endforeach
+        @endforeach`
         <!-- <div id = "button">
             <div id = "image">
                 <img src = "laundryResource/Protect2.png">

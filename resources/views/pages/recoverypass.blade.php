@@ -11,7 +11,9 @@
     <div id = "page">
         <h1><b>Luxury Bubble [Lupa Password]</h1><br>
         <h3>Maaf mendengar Anda mengalami masalah saat masuk ke Luxury Bubble. Kami mendapat pesan bahwa Anda lupa kata sandi Anda. Jika ini Anda, Anda dapat langsung kembali ke akun Anda sekarang.</h3><br><br>
-        <h3>Password anda adalah {{$Password}}</h3><br><br>
+        {{-- @foreach ($get_pass as $pass) --}}
+            <h3>Password anda adalah {{$Password}}</h3><br><br>
+        {{-- @endforeach --}}
         <h3>Jika anda tidak meminta tautan untuk masuk, anda dapat mengabaikan pesan ini </h3>
         <div id = "image">
             <img src = "laundryResource/Logo.png" >
