@@ -9,12 +9,17 @@
         {{-- ini navbar udah login --}}
 
         @if (Session::get('alamat') == '-')
-             @if (Session::has('alamat'))
-            <div class="alertalert-dangeralert-block">
+             {{-- @if (Session::has('alamat')) --}}
+            {{-- <div class="alertalert-dangeralert-block">
                 <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
                 <strong>{{ Session::get('danger') }}</strong>
+            </div> --}}
+            <div class="alertalert-dangeralert-dismissiblefadeshow" role="alert">
+                {{ session('loginError') }}
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+                </button>
             </div>
-            @endif
+            {{-- @endif --}}
         @endif
 
 
@@ -43,24 +48,25 @@
         </div>
     </div>
     <div id = "paragraft2">
-        <h1>Konfirmasi Pick-up Laundry</h1>
-        <h2>Ketentuan :</h2>
-        <h3>Barang yang sudah di pick up tidak dapat dibatalkan</h3>
-        @foreach ($cekAlamatPickup as $hasilCekAlamatPickup)
-        <?php
-            $adaAlamatPickup = "/ajukan-pickup";
-            $tidakAdaAlamatPickup  = "/updateprofile";
-            if ($hasilCekAlamatPickup ->ALAMAT == '-')
-            {
+        <div id = "text">
+            <h1>Konfirmasi Pick-up Laundry</h1><br><br>
+            <h2>Ketentuan : <br>Barang yang sudah di pick up tidak dapat dibatalkan</h2>
+                @foreach ($cekAlamatPickup as $hasilCekAlamatPickup)
+            <?php
+                $adaAlamatPickup = "/ajukan-pickup";
+                $tidakAdaAlamatPickup  = "/updateprofile";
+                if ($hasilCekAlamatPickup ->ALAMAT == '-')
+                {
 
-                echo "<div id = 'button'> <div id = 'image'> <img src = 'laundryResource/Protect2.png'></div> <div id = 'ajukan'> <a href = ".$tidakAdaAlamatPickup.">Ajukan Pickup</a> </div></div>";
-            }
-            else
-            {
-                echo "<div id = 'button'> <div id = 'image'> <img src = 'laundryResource/Protect2.png'></div> <div id = 'ajukan'> <a href = ".$adaAlamatPickup.">Ajukan Pickup</a> </div></div>";
-            }
-            ?>
-        @endforeach`
+                    echo "<div id = 'button'> <div id = 'image'> <img src = 'laundryResource/Protect2.png'></div> <div id = 'ajukan'> <a href = ".$tidakAdaAlamatPickup.">Ajukan Pickup</a> </div></div>";
+                }
+                else
+                {
+                    echo "<div id = 'button'> <div id = 'image'> <img src = 'laundryResource/Protect2.png'></div> <div id = 'ajukan'> <a href = ".$adaAlamatPickup.">Ajukan Pickup</a> </div></div>";
+                }
+                ?>
+            @endforeach
+        </div>
         <!-- <div id = "button">
             <div id = "image">
                 <img src = "laundryResource/Protect2.png">

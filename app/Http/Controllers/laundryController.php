@@ -227,6 +227,9 @@ class laundryController extends Controller
 
             Session::flash('success', 'Anda berhasil memperbarui data diri');
             return redirect('/updateprofile');
+
+            Session::flash('loginError', 'Mohon lengkapi data alamat dan kontak.');
+
         }
         // echo 'gagal';
         // return redirect('/updateprofile');

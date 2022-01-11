@@ -42,5 +42,31 @@
                     </select>
             </form>
         </div>
+        <br>
+        {{-- dsni pasang tabel --}}
+        <table id="adminTable">
+            <tr>
+              <th>Tanggal</th>
+              <th>Nama</th>
+              <th>Kontak</th>
+              <th>Alamat</th>
+              <th>Paket Komplit</th>
+              <th>Paket Bed</th>
+              <th>Paket Formal</th>
+              <th>Paket Sepatu</th>
+              <th>Harga</th>
+              <th>Status Cuci</th>
+              <th>Status Bayar</th>
+
+
+
+
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+          </table>
     </div>
 </section>

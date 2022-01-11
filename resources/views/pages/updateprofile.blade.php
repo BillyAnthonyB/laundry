@@ -15,12 +15,17 @@
         @endif
 
         @if (Session::get('alamat') == '-')
-             @if (Session::has('alamat'))
-            <div class="alertalert-dangeralert-block">
+             {{-- @if (Session::has('alamat')) --}}
+            {{-- <div class="alertalert-dangeralert-block">
                 <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
                 <strong>{{ Session::get('danger') }}</strong>
+            </div> --}}
+            <div class="alertalert-dangeralert-dismissiblefadeshow" role="alert">
+                {{ session('loginError') }}
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+                </button>
             </div>
-            @endif
+            {{-- @endif --}}
         @endif
 
 <div id = "profil">
