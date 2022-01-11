@@ -1939,8 +1939,9 @@ input[type=radio] + label>img {
   }
 
   #adminTable td, #adminTable th {
-    border: 0.1px solid #ddd;
+    border: 0.01px solid #ddd;
     padding: 8px;
+    font-size: 14px;
   }
 
   #adminTable tr:hover {background-color: #e0f4fc;}
@@ -1951,5 +1952,7 @@ input[type=radio] + label>img {
     text-align: left;
     background-color: #fff;
     color: black;
+    font-size: 14px;
+
     /* width: 80px; */
   }

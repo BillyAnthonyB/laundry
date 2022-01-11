@@ -116,6 +116,8 @@ class laundryController extends Controller
             $loginCountCheckKaryawan = $sambungKeModel -> cekLoginKaryawan($tboxLogin);
             if($loginCountCheckKaryawan)
             {
+                Session::put('login', $loginMail);
+                Session::put('pass', $loginPass);
                 return redirect('/laundry-management');
             }
 
@@ -274,6 +276,11 @@ class laundryController extends Controller
         $loggedInId = Session::get('id');
 
         $cekMembership = $this -> laundryModel ->get_querykartuprofil($loggedInId);
+
+        //klo ga ada alamat, flash minta lengkapi data
+        if($cekMembership[0]->ALAMAT === '-'){
+            Session::flash('loginError', 'Mohon lengkapi data alamat dan kontak anda');
+        }
         // dd($cekAlamatPickup);
         return view('pages/updateprofile', ['cekMembership' => $cekMembership]);
     }
@@ -286,8 +293,6 @@ class laundryController extends Controller
         $inserttransaksi = $user -> post_transaksi($loggedInId, $cekMembership);
         return redirect('/requestsend');
     }
-
-
 
     public function forgot_password(Request $req){
         $emailuser = $_POST['recoveryEmail'];
@@ -314,4 +319,11 @@ class laundryController extends Controller
         }
         return redirect('recoverysend');
     }
+
+    public function send_admin(){
+        $transaksiAdmin = $this -> laundryModel -> get_admin();
+        return view('pages/admincheckorder', ['transaksiAdmin' => $transaksiAdmin]);
+    }
+
+
 }

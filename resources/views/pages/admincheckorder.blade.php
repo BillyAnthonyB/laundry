@@ -1,6 +1,19 @@
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <title>Admin</title>
+</head>
+<body>
 
+</body>
+</html>
+
+@if (Session::has('login'))
 
 <section id='admin'>
     <div id= "flex">
@@ -57,16 +70,30 @@
               <th>Harga</th>
               <th>Status Cuci</th>
               <th>Status Bayar</th>
-
-
-
-
             </tr>
+
+            @foreach ($transaksiAdmin as $admin)
             <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
+                <td>{{$admin->TANGGAL}}</td>
+                <td>{{$admin->NAMA_CUSTOMER}}</td>
+                <td>{{$admin->PHONE}}</td>
+                <td>{{$admin->ALAMAT}}</td>
+                <td>{{$admin->JUMLAH_KOMPLIT}}</td>
+                <td>{{$admin->JUMLAH_BED}}</td>
+                <td>{{$admin->JUMLAH_FORMAL}}</td>
+                <td>{{$admin->JUMLAH_SEPATU}}</td>
+                <td>{{$admin->HARGA}}</td>
+                <td>{{$admin->STATUS_CUCI}}</td>
+                <td>{{$admin->STATUS_BAYAR}}</td>
             </tr>
+            @endforeach
+
+
+
           </table>
     </div>
 </section>
+
+@else
+<meta http-equiv="Refresh" content="0; url='/login'" />
+@endif

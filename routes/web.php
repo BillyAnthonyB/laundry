@@ -65,16 +65,17 @@ Route::get('/pay-laundry', 'App\Http\Controllers\laundryController@send_updateSt
 Route::get('/login', 'App\Http\Controllers\laundryController@loginIndex');
 Route::post('/login', 'App\Http\Controllers\laundryController@send_login');
 
-Route::get('/laundry-management', function () {
-    return view('pages/admincheckorder');
-});
+// Route::get('/laundry-management', function () {
+//     return view('pages/admincheckorder');
+// });
+
+Route::get('/laundry-management', 'App\Http\Controllers\laundryController@send_admin');
+
 
 Route::get('/recovery', function () {
     return view('pages/recovery');
 });
 Route::post('/recovery', 'App\Http\Controllers\laundryController@forgot_password');
-
-
 
 Route::get('/signup', 'App\Http\Controllers\laundryController@regindex');
 Route::post('/signup', 'App\Http\Controllers\laundryController@regstore');
