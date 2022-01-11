@@ -5,7 +5,14 @@
 @section('title', 'Payment Membership')
 
 @section('content')
-
+@if (Session::has('login'))
+        {{-- ini navbar udah login --}}
+        @if (Session::has('success'))
+            <div class="alertalert-successalert-block">
+                <span class="button" onclick="this.parentElement.style.display='none';">&times;</span>
+                <strong>{{ Session::get('success') }}</strong>
+            </div>
+        @endif
 <section id = "paymentmembership">
     <div id = "paymentbox1">
         <h1>Membership Payment Page</h1>
@@ -58,4 +65,7 @@
     </div>
 </section>
 <script src="app.js"></script>
+@else
+<meta http-equiv="Refresh" content="0; url='/login'" />
+@endif
 @endsection
