@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
+Route::get('/home', function () {
 return view('pages/home');
 });
 
@@ -11,7 +11,9 @@ Route::get('/in', function () {
     return view('layout/in');
     });
 
-Route::get('/home', 'App\Http\Controllers\laundryController@homeindex');
+// Route::get('/home', 'App\Http\Controllers\laundryController@homeindex');
+Route::get('/', 'App\Http\Controllers\laundryController@session_login');
+
 
 Route::get('/paket', function () {
     return view('pages/paket');
@@ -102,7 +104,20 @@ Route::get('/paymentreceived', function () {
 Route::get('/recoverypass', function () {
     return view('pages/recoverypass');
 });
+
+Route::get('/adminedit', function () {
+    return view('pages/adminedit');
+});
+
+Route::get('/adminedit/{id_transaksi}', 'App\Http\Controllers\laundryController@selectTable');
+
+//href button buat update jumlah paket di page admin edit
+Route::get('/admin/update/{id_transaksi}', 'App\Http\Controllers\laundryController@updateTable');
+
+
 Route::post('/recoverypass', 'App\Http\Controllers\laundryController@send_pass');
+
+
 
 
 

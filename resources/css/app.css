@@ -1,0 +1,36 @@
+#adminedit #flex img {
+    width: auto;
+    height: 10%;
+    position: absolute;
+    margin-left: 1vw;
+    margin-top: 1vh;
+}
+#adminedit #flex {
+    display: flex;
+    flex-direction: row;
+}
+#adminedit #flex #judul{
+    margin-left: 7.5vw;
+    margin-top: 2.4vh;
+}
+#adminedit #flex #judul h1{
+    font-size: 26px;
+}
+#adminedit #flex #judul h3{
+    font-size: 16px;
+}
+#adminedit #flex #exit{
+    display: flex;
+}
+#adminedit #flex #exit img{
+    margin-left: 63vw;
+    height: 4%;
+    margin-top: 3.5vh;
+}
+#adminedit #flex #exit a{
+    margin-left: 65.5vw;
+    margin-top: 4vh;
+    text-decoration: none;
+    color: #18a4fc;
+    font-weight: bold;
+}

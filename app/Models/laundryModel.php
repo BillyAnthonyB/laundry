@@ -215,11 +215,7 @@ class laundryModel extends Model
         return $executequerytransaksi;
     }
 
-    public function get_admin(){
-        $queryAdmin = "select t.id_transaksi, t.ID_MEMBERSHIP, t.ID_CUSTOMER, t.TANGGAL , c.NAMA_CUSTOMER, c.PHONE, c.ALAMAT, t.JUMLAH_KOMPLIT, t.JUMLAH_BED, t.JUMLAH_FORMAL, t.JUMLAH_SEPATU, t.HARGA, t.STATUS_CUCI, t.STATUS_BAYAR from transaksi t left join customer c on t.ID_CUSTOMER = c.ID_CUSTOMER";
-        $executeQueryAdmin = DB::select($queryAdmin);
-        return $executeQueryAdmin;
-    }
+
 
 
 }

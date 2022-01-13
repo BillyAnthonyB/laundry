@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\adminModel;
 use Illuminate\Http\Request;
 use App\Models\laundryModel;
 use App\Models\User;
@@ -12,6 +13,8 @@ use Auth;
 use Illuminate\Support\Facades\Session;
 // use illuminate\contract\Mailer;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controller\DB;
+
 
 
 class laundryController extends Controller
@@ -77,8 +80,21 @@ class laundryController extends Controller
         return view('pages/paket', ['semuaPaket' => $semuaPaket]);
     }
 
+    public function session_login(Request $req){
+        $login = Session::get('login');
+        if($login != '')
+        {
+           Session::put('login', $login);
+           return view('pages/home');
+        }
+        else{
+            return redirect('/login');
+        }
+    }
+
     public function send_login(Request $request)
     {
+        session_start();
 
         $loginMail = $request->input('loginEmail');
         $loginPass = $request->input('loginPassword');
@@ -321,9 +337,31 @@ class laundryController extends Controller
     }
 
     public function send_admin(){
-        $transaksiAdmin = $this -> laundryModel -> get_admin();
+
+        $model = new adminModel;
+        $transaksiAdmin = $model -> get_admin();
         return view('pages/admincheckorder', ['transaksiAdmin' => $transaksiAdmin]);
+
+        // $transaksiAdmin = adminModel::paginate(2);
+        // return view('pages/admincheckorder', ['transaksiAdmin'=> $transaksiAdmin]);
     }
+
+    public function updateTable($id_transaksi, Request $request){
+        $model = new adminModel;
+        $upTable = $model->update_table($request, $id_transaksi);
+
+        return redirect('/laundry-management');
+    }
+
+    public function selectTable($id_transaksi){
+        $model = new adminModel;
+        $selectTableEdit = $model->select_table($id_transaksi);
+
+        return view('pages/adminedit', ['selectTableEdit' => $selectTableEdit]);
+    }
+
+
+
 
 
 }
