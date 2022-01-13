@@ -112,8 +112,7 @@ Route::get('/adminedit', function () {
 Route::get('/adminedit/{id_transaksi}', 'App\Http\Controllers\laundryController@selectTable');
 
 //href button buat update jumlah paket di page admin edit
-Route::get('/admin/update/{id_transaksi}', 'App\Http\Controllers\laundryController@updateTable');
-
+Route::post('/adminupdate', 'App\Http\Controllers\laundryController@updateTable');
 
 Route::post('/recoverypass', 'App\Http\Controllers\laundryController@send_pass');
 

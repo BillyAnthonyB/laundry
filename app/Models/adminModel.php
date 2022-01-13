@@ -21,6 +21,7 @@ class adminModel extends Model
         $queryAdmin = DB::table('transaksi')
         ->join('customer', 'customer.ID_CUSTOMER', '=', 'transaksi.ID_CUSTOMER')
         ->select('transaksi.id_transaksi', 'transaksi.ID_MEMBERSHIP', 'transaksi.ID_CUSTOMER', 'transaksi.TANGGAL' , 'customer.NAMA_CUSTOMER', 'customer.PHONE', 'customer.ALAMAT', 'transaksi.JUMLAH_KOMPLIT', 'transaksi.JUMLAH_BED', 'transaksi.JUMLAH_FORMAL', 'transaksi.JUMLAH_SEPATU', 'transaksi.HARGA', 'transaksi.STATUS_CUCI', 'transaksi.STATUS_BAYAR')
+        ->orderBy('transaksi.TANGGAL', 'desc')
         ->paginate(7);
         return $queryAdmin;
     }
@@ -33,30 +34,46 @@ class adminModel extends Model
         return $selectAdmin;
     }
 
-    // public function update_table($id_transaksi){
-    //     //query update dari ari
+    public function update_table($tboxUp){
+        $queryupdate = "update transaksi set JUMLAH_KOMPLIT = :upKomplit, JUMLAH_BED = :upBed, JUMLAH_SEPATU = :upSepatu, STATUS_CUCI = :upCuci, HARGA = :upHarga, JUMLAH_FORMAL = :upFormal where id_transaksi = :upId";
+            $dataIdUpdate = [
+                'upKomplit' => $tboxUp['upKomplit'],
+                'upBed' => $tboxUp['upBed'],
+                'upSepatu' => $tboxUp['upSepatu'],
+                'upFormal' => $tboxUp['upFormal'],
+                'upCuci' => $tboxUp['upCuci'],
+                'upHarga' => $tboxUp['upHarga'],
+                'upId' => $tboxUp['upId']
+            ]; //declare biar bisa dipake di query
+            $executequeryupdate = DB::update($queryupdate, $dataIdUpdate);
+            // dd($executequeryupdate);
+            return $executequeryupdate;
 
-    //     // DB::table('mahasiswa')->insert(
-    //     //     [
-    //     //         'nim' => $request->nim,
-    //     //         'nama' => $request->nama,
-    //     //         'tempat_lahir' => '',
-    //     //         'tanggal_lahir' => date("Ymd"),
-    //     //         'fakultas' => '',
-    //     //         'program_studi' => '',
-    //     //         'ipk' => 0
-    //     //     ]);
+        //query update dari ari
 
-    //         DB::table('transaksi')
-    //         ->where('id_transaksi', $id_transaksi)
-    //         ->update(
-    //                 [
-    //                     'JUMLAH_KOMPLIT' => $request->tboxKomplit,
-    //                     'JUMLAH_BED' => $request->tboxBed,
-    //                     'JUMLAH_SEPATU' => $request->tboxSepatu,
-    //                     'JUMLAH_FORMAL' => $request->tboxFormal
-    //                 ]);
-    // }
+        // DB::table('mahasiswa')->insert(
+        //     [
+        //         'nim' => $request->nim,
+        //         'nama' => $request->nama,
+        //         'tempat_lahir' => '',
+        //         'tanggal_lahir' => date("Ymd"),
+        //         'fakultas' => '',
+        //         'program_studi' => '',
+        //         'ipk' => 0
+        //     ]);
+
+            // DB::table('transaksi')
+            // ->where('id_transaksi',  $tboxUp->upId)
+            // ->update(
+            //         [
+            //             'upKomplit' => $tboxUp->JUMLAH_KOMPLIT,
+            //             'upBed' => $tboxUp->JUMLAH_BED,
+            //             'upSepatu' => $tboxUp->JUMLAH_SEPATU,
+            //             'upFormal' => $tboxUp->JUMLAH_FORMAL,
+            //             'upHarga' => $tboxUp->HARGA,
+            //             'upCuci' => $tboxUp->STATUS_CUCI
+            //         ]);
+    }
 
 
 

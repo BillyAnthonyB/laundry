@@ -69,21 +69,29 @@
                                     }
                                 }
                             }
-
-                            if ($transaksi->JUMLAH_KOMPLIT != 0)
-                            {
-                                if ($transaksi->JUMLAH_BED != 0)
+                            $counter = 0;
+                            if($transaksi->STATUS_CUCI == 0){
+                                if ($transaksi->JUMLAH_KOMPLIT != 0)
                                 {
-                                    if ($transaksi->JUMLAH_SEPATU != 0)
-                                    {
-                                        if ($transaksi->JUMLAH_FORMAL != 0)
-                                        {
-                                            echo "&nbsp Lakukan pembayaran untuk melanjutkan pesanan";
-                                        }
-                                    }
+                                    $counter = $counter + 1;
+                                }
+                                elseif ($transaksi->JUMLAH_BED != 0)
+                                {
+                                    $counter = $counter + 1;
+                                }
+                                elseif($transaksi->JUMLAH_SEPATU != 0)
+                                {
+                                    $counter = $counter + 1;
+                                }
+                                elseif ($transaksi->JUMLAH_FORMAL != 0)
+                                {
+                                    $counter = $counter + 1;
                                 }
                             }
-
+                            if($counter > 0)
+                            {
+                                echo "&nbsp Lakukan pembayaran untuk melanjutkan pesanan";
+                            }
                         }
                         else
                         {

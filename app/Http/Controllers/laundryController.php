@@ -346,9 +346,46 @@ class laundryController extends Controller
         // return view('pages/admincheckorder', ['transaksiAdmin'=> $transaksiAdmin]);
     }
 
-    public function updateTable($id_transaksi, Request $request){
+    public function updateTable(Request $request){
         $model = new adminModel;
-        $upTable = $model->update_table($request, $id_transaksi);
+        $upTboxKomplit = $_POST['tboxKomplit'];
+        $upTboxBed = $_POST['tboxBed'];
+        $upTboxFormal = $_POST['tboxFormal'];
+        $upTboxSepatu = $_POST['tboxSepatu'];
+        $upTboxHarga = $_POST['tboxHarga'];
+        $upTboxId = $_POST['tboxId'];
+        $upTboxStatusCuci = $_POST['tboxStatusCuci'];
+        $upTboxMembership = $_POST['tboxMembership'];
+
+
+        $komplit = $upTboxKomplit;
+        $bed = $upTboxBed;
+        $formal = $upTboxFormal;
+        $sepatu = $upTboxSepatu;
+
+        $total = ($komplit * 5000) + ($bed * 17000) + ($formal * 15000) + ($sepatu * 15000);
+
+        $diskon = $total;
+        if($upTboxMembership == "PLAT")
+        {
+            $diskon = $total - ($total * 12 / 100);
+        }
+        if($upTboxMembership == "SILV")
+        {
+            $diskon = $total - ($total * 8 / 100);
+        }
+
+        $tboxUp = [
+            'upKomplit'=>$upTboxKomplit,
+            'upBed' =>$upTboxBed,
+            'upFormal' =>$upTboxFormal,
+            'upSepatu' =>$upTboxSepatu,
+            'upCuci' => $upTboxStatusCuci,
+            'upHarga' => $diskon,
+            'upId' => $upTboxId
+        ];
+
+        $upTable = $model->update_table($tboxUp);
 
         return redirect('/laundry-management');
     }

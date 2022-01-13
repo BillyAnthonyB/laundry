@@ -34,7 +34,6 @@
         {{-- @endforeach --}}
         <h3 style="font-family:nunito;">Jika anda tidak meminta tautan untuk masuk, anda dapat mengabaikan pesan ini </h3>
         <div id = "image">
-            <img src = "laundryResource/Logo.png" >
             <h3>2021 LuxuryBubble</h3>
         </div>
     </div>

@@ -84,7 +84,7 @@
                 <td>{{$admin->JUMLAH_KOMPLIT}}</td>
                 <td>{{$admin->JUMLAH_BED}}</td>
                 <td>{{$admin->JUMLAH_FORMAL}}</td>
-                <td>{{$admin->STATUS_CUCI}}</td>
+                <td>{{$admin->JUMLAH_SEPATU}}</td>
                 @if ($admin->STATUS_CUCI== 0)
                     <td><img src="laundryResource/proses.png" width="88%"></td>
                 @else
@@ -116,7 +116,7 @@
                 </form>
 
                 {{-- debug --}}
-                <td>{{ $admin->id_transaksi}}</td>
+                {{-- <td>{{ $admin->id_transaksi}}</td> --}}
                 {{-- <td><div id = 'button' type="submit"> <a href="/admin/update/{{$admin->id_transaksi}}">EDIT</a> </div></td> --}}
 
 
