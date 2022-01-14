@@ -64,12 +64,12 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingFour">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-          <h6>Bagaimana cara melakukan pembayaran pesanan ?<h6>
+          <h6>Bagaimana jika terjadi kerusakan pada pakaian setelah laundry ?<h6>
         </button>
       </h2>
       <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
         <div class="accordion-body">
-          Setelah melakukan request pick - up anda akan diminta membayar pada sejumlah tagihan pesanan anda, masuk menu payment dan pilih dompet digital yang anda gunakan. setelah itu pembayaran akan di konfirmasi
+        Jika kerusakan terjadi karena kelalaian dari staff luxury bubble kami akan bertanggung jawab terhadap pakaian customer yang mengalami kerusakan, pengaduan ketidaknyamanan pelanggan bisa langsung melalui customer service
         </div>
       </div>
     </div>
